@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1D2228">
+<meta name="description" content="ANIVERA — Every Animal. Every Stage of Life. Animal profiles, health notes, and care reminders in one workspace.">
+<title>ANIVERA · Animal Care Workspace</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+<a class="brand" href="#" aria-label="ANIVERA home"><span class="logo">A</span><span>ANIVERA</span></a>
+<div class="side-label">Workspace</div>
+<nav class="nav" aria-label="Main navigation">
+<button class="active" data-view="overview"><span class="ico">▦</span> Overview</button>
+<button data-view="animals"><span class="ico">🐾</span> Animal records <span id="animal-total" style="margin-left:auto;font-size:10px">0</span></button>
+<button data-view="health"><span class="ico">＋</span> Health records</button>
+<button data-view="tasks"><span class="ico">◷</span> Care reminders</button>
+</nav>
+<div class="side-bottom"><strong>Every Animal. Every Stage of Life.</strong>One connected workspace for animal identity, care history, and lifecycle events.<br><br>Bird lifecycle management is handled separately by WINGLY.</div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="crumb">ANIVERA / Workspace</div><h1 id="page-title">Overview</h1><div class="crumb" id="page-subtitle">Your animal-care workspace at a glance.</div></div><div class="top-actions"><input id="global-search" class="search" type="search" placeholder="Search animals…" aria-label="Search animals"><button class="btn" data-action="animal">＋ Add animal</button></div></header>
+<div class="notice"><strong>Prototype mode:</strong> sample records are stored only in this browser. Do not enter sensitive personal or real clinical information. This is not a secure production database.</div>
+<section class="view active" id="view-overview">
+<div class="stats" id="stats"></div>
+<section class="panel"><div class="panel-head"><div><h2>Animal records</h2><p>Your most recently added profiles</p></div><button class="btn ghost small" data-view="animals">View all →</button></div><div class="table-wrap"><table><thead><tr><th>Animal</th><th>Species</th><th>Group</th><th>Location</th><th>Status</th><th>Actions</th></tr></thead><tbody id="table-preview"></tbody></table></div></section>
+<div class="lower"><section class="panel"><div class="panel-head"><div><h2>Lifecycle activity</h2><p>Recent care events and updates</p></div><button class="btn ghost small" data-action="health">＋ Health entry</button></div><div class="event-list" id="recent"></div></section><section class="panel"><div class="panel-head"><div><h2>Upcoming care</h2><p>Tasks that need attention</p></div><button class="btn ghost small" data-action="task">＋ Add</button></div><div id="tasks-preview"></div></section></div>
+</section>
+<section class="view" id="view-animals"><section class="panel"><div class="panel-head"><div><h2>All animal profiles</h2><p id="animal-count">0 records</p></div><div style="display:flex;gap:8px;align-items:center"><select class="filter" id="animal-filter" aria-label="Filter animal group"><option value="all">All groups</option><option value="companion">Companion</option><option value="livestock">Livestock</option><option value="wildlife">Wildlife</option><option value="exotic">Exotic</option><option value="rescue">Rescue</option></select><button class="btn small" data-action="animal">＋ Add</button></div></div><div class="cards" id="animal-cards"></div></section></section>
+<section class="view" id="view-health"><section class="panel"><div class="panel-head"><div><h2>Health history</h2><p>Dated observations, visits, vaccinations, and treatment notes</p></div><button class="btn" data-action="health">＋ Add health record</button></div><div class="event-list" id="health-entries"></div></section></section>
+<section class="view" id="view-tasks"><section class="panel"><div class="panel-head"><div><h2>Care reminders</h2><p>Mark tasks complete as care is carried out</p></div><button class="btn" data-action="task">＋ Add reminder</button></div><div id="all-tasks"></div></section></section>
+<div class="footer-note">ANIVERA early prototype · Demo data is stored in this browser only · <button id="export-data" class="btn ghost small">Export demo backup</button> <button id="reset-demo" class="btn ghost small">Reset sample data</button></div>
+</main>
+</div>
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal"><div class="modal-head"><h2 id="modal-title">Add record</h2><button class="close" type="button" id="modal-close" aria-label="Close dialog">×</button></div><form id="modal-form"><div id="modal-body"></div><div class="modal-actions"><button class="btn ghost" type="button" id="modal-cancel">Cancel</button><button class="btn" type="submit" id="modal-submit">Save</button></div></form></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js" defer></script>
+<script src="cloud-sync.js" defer></script>
+</body>
+</html>
