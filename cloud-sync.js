@@ -30,9 +30,15 @@
     const { data, error } = await client.from('workspace_snapshots').select('data').eq('owner_id', user.id).maybeSingle();
     if (error) { status('Cloud read failed: ' + error.message); return; }
     if (data && data.data && Array.isArray(data.data.animals)) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data.data));
-      status('Cloud workspace loaded · ' + user.email + '. Reloading…');
-      location.reload(); return;
+      if (localStorage.getItem('anivera-cloud-user') !== user.id) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data.data));
+        localStorage.setItem('anivera-cloud-user', user.id);
+        status('Cloud workspace loaded · ' + user.email + '. Reloading…');
+        location.reload(); return;
+      }
+      activateSync(user);
+      status('Connected · Cloud workspace ready for ' + user.email);
+      return;
     }
     const local = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     const { error: writeError } = await client.from('workspace_snapshots').upsert({ owner_id: user.id, data: local, updated_at: new Date().toISOString() }, { onConflict: 'owner_id' });
