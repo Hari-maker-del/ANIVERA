@@ -27,6 +27,17 @@
   }
   async function signedIn(user) {
     status('Loading your cloud workspace…');
+    const previousUser = localStorage.getItem('anivera-cloud-user');
+    // Never upload one account's local workspace into another account.
+    // Start the new account with a clean local demo workspace, then reload
+    // so app.js initializes its own seed before the first cloud snapshot is created.
+    if (previousUser && previousUser !== user.id) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem('anivera-cloud-user', user.id);
+      status('Switching account safely…');
+      location.reload();
+      return;
+    }
     const { data, error } = await client.from('workspace_snapshots').select('data').eq('owner_id', user.id).maybeSingle();
     if (error) { status('Cloud read failed: ' + error.message); return; }
     if (data && data.data && Array.isArray(data.data.animals)) {
