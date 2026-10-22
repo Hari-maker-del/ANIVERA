@@ -15,7 +15,7 @@
 @media(max-width:1080px){.hero{grid-template-columns:minmax(0,1fr) minmax(280px,.95fr) minmax(0,1fr);gap:0}.orbit-card{width:160px;height:250px;margin-left:-80px;margin-top:-125px}.center-hub{padding:22px 4px}h1{font-size:42px;letter-spacing:-2px}.navlinks{gap:14px}.orbit-zone{min-height:440px;height:68vh}}
 @media(max-width:760px){.shell{padding:0 17px}.nav{height:68px}.navlinks a:not(.btn){display:none}.navlinks .btn{padding:11px 12px}.hero{display:flex;flex-direction:column;min-height:auto;padding-top:20px;gap:0}.center-hub{order:0;padding:35px 0 25px;max-width:520px}.orbit-zone{height:370px;min-height:370px;width:100%;max-width:560px}.orbit-zone.left-zone{order:1}.orbit-zone.right-zone{order:2}.orbit-label{top:8px}.orbit-card{width:150px;height:225px;margin-left:-75px;margin-top:-112px}.feature-grid{grid-template-columns:1fr}.section{padding:55px 0}.cta{padding:26px;display:block}.cta .btn{margin-top:12px}.hub-links{max-width:420px;margin-left:auto;margin-right:auto}h1{font-size:48px}.intro{font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-</style>
+.orbit-card{padding:0;appearance:none;text-align:left;cursor:pointer;font:inherit;color:inherit}.orbit-card:focus-visible{outline:3px solid var(--amber);outline-offset:4px}.card-open-hint{position:absolute;top:12px;right:10px;z-index:3;border-radius:5px;background:#1D2228cc;color:#fff;font-size:7px;font-weight:800;letter-spacing:.7px;padding:6px 7px;opacity:0;transform:translateY(-3px);transition:.2s}.orbit-card:hover .card-open-hint,.orbit-card:focus-visible .card-open-hint{opacity:1;transform:translateY(0)}.animal-modal-backdrop{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:#101820b8;backdrop-filter:blur(9px)}.animal-modal-backdrop.open{display:flex}.animal-modal{position:relative;width:min(880px,96vw);max-height:min(86vh,760px);overflow:auto;display:grid;grid-template-columns:minmax(250px,.9fr) minmax(300px,1.1fr);border-radius:22px;background:#fff;box-shadow:0 30px 100px #0005;animation:animalPop .22s ease-out}.animal-modal-photo{position:relative;min-height:430px;background:#f1f1eb}.animal-modal-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.animal-modal-copy{padding:clamp(24px,4vw,44px);align-self:center}.animal-modal-kicker{font-size:10px;letter-spacing:1.5px;color:var(--amber);font-weight:800;text-transform:uppercase}.animal-modal-copy h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.4px;line-height:1.05;margin:13px 0 6px}.animal-modal-scientific{font-size:14px;color:#687078;font-style:italic;margin-bottom:20px}.animal-modal-description{font-size:14px;line-height:1.8;color:#505963}.animal-modal-facts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}.animal-fact{padding:12px;border:1px solid #E1E2E2;border-radius:10px}.animal-fact small{display:block;color:#727a82;font-size:9px;letter-spacing:.8px;text-transform:uppercase}.animal-fact strong{display:block;margin-top:5px;font-size:12px;color:#1D2228}.animal-modal-close{position:absolute;top:13px;right:13px;z-index:2;border:1px solid #e1e2e2;background:#fff;color:#1D2228;width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer;box-shadow:0 3px 15px #0001}.animal-modal-close:hover{background:#FB8122;color:#fff;border-color:#FB8122}@keyframes animalPop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@media(max-width:620px){.animal-modal{grid-template-columns:1fr;max-height:90vh}.animal-modal-photo{min-height:260px;height:32vh}.animal-modal-copy{padding:24px}.animal-modal-facts{gap:7px}}@media(prefers-reduced-motion:reduce){.animal-modal{animation:none}}</style>
 </head>
 <body>
 <header class="shell nav"><a class="brand" href="#" aria-label="ANIVERA home"><span class="brandmark">A</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><nav class="navlinks"><a href="#how">How it works</a><a href="#features">Features</a><a href="#lifecycle">Lifecycle</a><a href="#about">About</a><a class="btn" href="dashboard.html">Open workspace <span>→</span></a></nav></header>
@@ -32,7 +32,7 @@
 </main>
 <footer class="shell footer"><div class="footrow"><a class="brand" href="#"><span class="brandmark">A</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><span>Every Animal. Every Stage of Life.</span><span>For birds, explore WINGLY.</span></div><p>ANIVERA is an early-stage prototype. Example visuals are illustrative and do not represent verified platform outcomes. It is not a substitute for professional veterinary care.</p></footer>
 
-<script src="animals-data.js"></script>
+<div class="animal-modal-backdrop" id="animalModalBackdrop" role="presentation"><section class="animal-modal" role="dialog" aria-modal="true" aria-labelledby="animalModalName"><button class="animal-modal-close" id="animalModalClose" type="button" aria-label="Close animal details">×</button><div class="animal-modal-photo"><img id="animalModalImage" alt=""></div><div class="animal-modal-copy"><div class="animal-modal-kicker" id="animalModalCategory">ANIMAL PROFILE</div><h2 id="animalModalName">Animal name</h2><div class="animal-modal-scientific" id="animalModalScientific"></div><p class="animal-modal-description" id="animalModalDescription"></p><div class="animal-modal-facts"><div class="animal-fact"><small>Animal type</small><strong id="animalModalType"></strong></div><div class="animal-fact"><small>Species ID</small><strong id="animalModalId"></strong></div></div></div></section></div><script src="animals-data.js"></script>
 <script>
 (function(){
  const all=window.ANIVERA_ANIMALS||[];
@@ -65,14 +65,29 @@
 'Invertebrates':'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=90'
 };return photos[category]||photos[type]||photos.Wildlife}
  function fallback(name,type){const palette={Wildlife:['#dce5d6','#244f40'],Primates:['#e9dfd2','#684a35'],Livestock:['#e9e3d5','#735b3d'],Companion:['#e6e6df','#405b53'],Marine:['#d8e7e7','#275a63'],Reptiles:['#e0e6d5','#49613d'],Amphibians:['#e2e8d7','#4e7251'],Fish:['#d9e9e9','#28647a'],Invertebrates:['#e9e0d4','#725c43']};const c=palette[type]||['#e3e7df','#244f40'];return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="'+c[0]+'"/><stop offset="1" stop-color="#f8f6ef"/></linearGradient></defs><rect width="600" height="900" fill="url(#g)"/><circle cx="300" cy="340" r="170" fill="#ffffff80"/><text x="300" y="530" font-size="27" text-anchor="middle" fill="'+c[1]+'" font-family="Arial" font-weight="700">'+esc(name.toUpperCase())+'</text><text x="300" y="574" font-size="16" text-anchor="middle" fill="'+c[1]+'" opacity=".75" font-family="Arial" letter-spacing="4">'+esc(type.toUpperCase())+'</text></svg>')}
+ const descriptions={
+'Wildlife':'A wild species that lives independently in its natural habitat. ANIVERA can help organize its identity, observations, health records, and lifecycle milestones.',
+'Primates':'A primate species with distinctive social and behavioural needs. Record observations, health history, habitat context, and key lifecycle events.',
+'Marsupials':'A mammal whose young develop through a distinctive reproductive lifecycle. Track individual identity, care notes, health history, and milestones.',
+'Marine':'An aquatic or marine mammal whose wellbeing is closely tied to its environment. Keep observations, health records, and lifecycle events connected.',
+'Livestock':'A managed farm animal with individual identity, health, breeding, and care needs. Keep routine records and lifecycle milestones organized.',
+'Companion':'A companion animal with individual care, health, and wellbeing needs. Maintain a connected profile with history, routines, and important milestones.',
+'Reptiles':'A reptile with species-specific habitat, temperature, feeding, and health needs. Record care observations and lifecycle events for its individual profile.',
+'Amphibians':'An amphibian with life stages often connected to both aquatic and terrestrial environments. Organize observations, habitat details, and health history.',
+'Fish':'An aquatic species whose health is influenced by water quality and habitat conditions. Track identity, observations, care, and lifecycle information.',
+'Invertebrates':'An invertebrate with its own habitat and lifecycle characteristics. Organize identification, observations, and relevant care records.'
+};
+function openAnimalModal(id){const a=all.find(x=>x.id===id);if(!a)return;const backdrop=document.getElementById('animalModalBackdrop');const img=document.getElementById('animalModalImage');img.src=knownImages[a.name]||categoryPhoto(a.category,a.animalType);img.onerror=()=>{img.onerror=null;img.src=fallback(a.name,a.animalType)};img.alt=a.name;document.getElementById('animalModalCategory').textContent=a.category+' · ANIMAL PROFILE';document.getElementById('animalModalName').textContent=a.name;document.getElementById('animalModalScientific').textContent=a.scientificName;document.getElementById('animalModalDescription').textContent=descriptions[a.category]||'View this animal as part of the ANIVERA lifecycle catalogue. Keep its identity, health observations, care records, and important lifecycle events connected in one profile.';document.getElementById('animalModalType').textContent=a.animalType;document.getElementById('animalModalId').textContent=a.id;backdrop.classList.add('open');document.body.style.overflow='hidden';document.getElementById('animalModalClose').focus();selectedAnimal=id;}
+function closeAnimalModal(){const b=document.getElementById('animalModalBackdrop');if(!b)return;b.classList.remove('open');document.body.style.overflow='';selectedAnimal=null;}
+document.getElementById('animalModalClose').addEventListener('click',closeAnimalModal);document.getElementById('animalModalBackdrop').addEventListener('click',e=>{if(e.target.id==='animalModalBackdrop')closeAnimalModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAnimalModal()});
  function createOrbit(elId,items,direction,duration){
   const el=document.getElementById(elId);if(!el||!items.length)return;
-  const visible=9,step=360/visible;let angle=0,paused=false,last=0,dragX=null;
+  const visible=9,step=360/visible;let angle=0,paused=false,last=0,dragX=null,selectedAnimal=null;
   el.innerHTML='';
   const cards=[];
   for(let i=0;i<visible;i++){
-   const card=document.createElement('a');card.className='orbit-card';card.href='dashboard.html';card.setAttribute('aria-label','Open '+items[i%items.length].name+' animal profile');
-   card.innerHTML='<img loading="lazy" alt=""><div class="card-meta"><span class="card-name"></span><span class="card-type"></span><span class="card-scientific"></span></div>';
+   const card=document.createElement('button');card.type='button';card.className='orbit-card';card.setAttribute('aria-label','View '+items[i%items.length].name+' details');
+   card.innerHTML='<img loading="lazy" alt=""><div class="card-meta"><span class="card-name"></span><span class="card-type"></span><span class="card-scientific"></span></div><span class="card-open-hint">VIEW DETAILS +</span>';card.addEventListener('click',()=>openAnimalModal(card.dataset.animalId));
    el.appendChild(card);cards.push(card);
   }
   function render(){
@@ -102,10 +117,9 @@
    });
   }
   function frame(t){if(!last)last=t;const dt=Math.min(t-last,40);last=t;if(!paused&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){angle=(angle+dt*360/duration*direction)%360;render()}requestAnimationFrame(frame)}
-  el.addEventListener('mouseenter',()=>paused=true);el.addEventListener('mouseleave',()=>paused=false);el.addEventListener('focusin',()=>paused=true);el.addEventListener('focusout',()=>paused=false);
-  el.addEventListener('pointerdown',e=>{dragX=e.clientX;el.setPointerCapture?.(e.pointerId);paused=true});
-  el.addEventListener('pointerup',e=>{if(dragX!==null){angle+=((e.clientX-dragX)/3)*direction;dragX=null;render()}paused=false});
-  el.addEventListener('pointercancel',()=>{dragX=null;paused=false});
+  el.addEventListener('pointerdown',e=>{dragX=e.clientX;el.setPointerCapture?.(e.pointerId)});
+  el.addEventListener('pointerup',e=>{if(dragX!==null){const delta=e.clientX-dragX;if(Math.abs(delta)>12){angle+=((delta)/3)*direction;render()}dragX=null}});
+  el.addEventListener('pointercancel',()=>{dragX=null});
   render();requestAnimationFrame(frame);
  }
  createOrbit('leftOrbit',left,1,26000);createOrbit('rightOrbit',right,-1,32000);
