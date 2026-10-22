@@ -2,11 +2,39 @@
 
 **Every Animal. Every Stage of Life.**
 
-ANIVERA is an animal lifecycle management platform for pets, livestock, wildlife, exotic animals, and rescued or rehabilitating animals. Bird-specific lifecycle management is handled separately by WINGLY.
+ANIVERA is an animal lifecycle workspace for companion animals, livestock, wildlife, exotic animals, and rescued or rehabilitating animals. Bird-focused lifecycle management is handled separately by WINGLY.
 
-## Current stage
+## Current build
 
-The repository is being initialized with a responsive frontend starter. This first milestone is a static landing page; authentication, database, health records, permissions, and backend integrations are not implemented yet.
+The repository contains a responsive, interactive frontend prototype:
+
+- Overview dashboard with animal, care-task, health-entry, and in-care counts
+- Animal profile creation, editing, search, filtering, and detail view
+- Health timeline entries for visits, vaccinations, treatment, medication, and observations
+- Care reminders with due dates and completion tracking
+- Lifecycle activity timeline
+- Export of local demo data as JSON and reset of sample data
+- Responsive layout for desktop and mobile
+- No build step or third-party runtime dependencies
+
+## Run locally
+
+1. Clone or download this repository.
+2. Open `index.html` in a modern browser, or serve the directory with a static web server.
+3. Use the dashboard to add sample animal profiles, health entries, and care reminders.
+
+## Important prototype limitations
+
+This is a frontend prototype, not a production-ready clinical or multi-user system. Records are stored in browser `localStorage` on the current device and browser only. There is no authentication, cloud database, server-side authorization, synchronization, encrypted record store, audit trail, or backup service. Do not enter sensitive personal information or rely on it for real clinical workflows. Exported JSON files are unencrypted.
+
+Before production use, implement and test:
+- Authentication and role-based authorization
+- A server-side database and validated API
+- Organization membership and scoped data access
+- Audit logs for edits, care events, and custody transfers
+- Secure file storage, backup/restore, retention, and privacy controls
+- Automated tests and accessibility review
+- Veterinary and wildlife workflow review appropriate to each deployment
 
 ## Brand system
 
@@ -15,19 +43,6 @@ The repository is being initialized with a responsive frontend starter. This fir
 - Charcoal: `#1D2228`
 - Silver gray: `#E1E2E2`
 
-## Run locally
-
-Open `index.html` in a browser. No build step or dependencies are required for the current static prototype.
-
-## Planned modules
-
-- Animal profiles and identification
-- Ownership, custody, and transfer history
-- Health, vaccination, treatment, and veterinary records
-- Lifecycle events, care tasks, and reminders
-- Rescue, rehabilitation, and release/adoption workflows
-- Role-based access for owners, caretakers, veterinarians, and organizations
-
 ## Domain
 
-`faunex.com` is a preferred domain idea only; availability and registration have not been verified.
+`faunex.com` is a preferred domain idea only. Availability and registration have not been verified.
