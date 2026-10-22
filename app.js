@@ -22,6 +22,8 @@ const seed={
 function offsetDate(n){const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.animals))return x}catch(e){}return structuredClone(seed)}
 let db=load(),current='overview',filter='all',query='';
+// Persist the initial demo workspace so first-time cloud sign-in has a valid snapshot to upload.
+if(!localStorage.getItem(KEY)){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){/* Storage may be disabled; the in-memory demo still works. */}}
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
 const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateFmt=d=>d?new Date(d+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'No date';
