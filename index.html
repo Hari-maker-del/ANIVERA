@@ -77,8 +77,9 @@
 'Fish':'An aquatic species whose health is influenced by water quality and habitat conditions. Track identity, observations, care, and lifecycle information.',
 'Invertebrates':'An invertebrate with its own habitat and lifecycle characteristics. Organize identification, observations, and relevant care records.'
 };
-function openAnimalModal(id){const a=all.find(x=>x.id===id);if(!a)return;const backdrop=document.getElementById('animalModalBackdrop');const img=document.getElementById('animalModalImage');img.src=knownImages[a.name]||categoryPhoto(a.category,a.animalType);img.onerror=()=>{img.onerror=null;img.src=fallback(a.name,a.animalType)};img.alt=a.name;document.getElementById('animalModalCategory').textContent=a.category+' · ANIMAL PROFILE';document.getElementById('animalModalName').textContent=a.name;document.getElementById('animalModalScientific').textContent=a.scientificName;document.getElementById('animalModalDescription').textContent=descriptions[a.category]||'View this animal as part of the ANIVERA lifecycle catalogue. Keep its identity, health observations, care records, and important lifecycle events connected in one profile.';document.getElementById('animalModalType').textContent=a.animalType;document.getElementById('animalModalId').textContent=a.id;backdrop.classList.add('open');document.body.style.overflow='hidden';document.getElementById('animalModalClose').focus();selectedAnimal=id;}
-function closeAnimalModal(){const b=document.getElementById('animalModalBackdrop');if(!b)return;b.classList.remove('open');document.body.style.overflow='';selectedAnimal=null;}
+const orbitControls={};let activeOrbitId=null;
+function openAnimalModal(id,orbitId){const a=all.find(x=>x.id===id);if(!a)return;const backdrop=document.getElementById('animalModalBackdrop');const img=document.getElementById('animalModalImage');img.src=knownImages[a.name]||categoryPhoto(a.category,a.animalType);img.onerror=()=>{img.onerror=null;img.src=fallback(a.name,a.animalType)};img.alt=a.name;document.getElementById('animalModalCategory').textContent=a.category+' · ANIMAL PROFILE';document.getElementById('animalModalName').textContent=a.name;document.getElementById('animalModalScientific').textContent=a.scientificName;document.getElementById('animalModalDescription').textContent=descriptions[a.category]||'View this animal as part of the ANIVERA lifecycle catalogue. Keep its identity, health observations, care records, and important lifecycle events connected in one profile.';document.getElementById('animalModalType').textContent=a.animalType;document.getElementById('animalModalId').textContent=a.id;backdrop.classList.add('open');document.body.style.overflow='hidden';activeOrbitId=orbitId||null;if(activeOrbitId&&orbitControls[activeOrbitId])orbitControls[activeOrbitId].pause();document.getElementById('animalModalClose').focus();}
+function closeAnimalModal(){const b=document.getElementById('animalModalBackdrop');if(!b)return;b.classList.remove('open');document.body.style.overflow='';if(activeOrbitId&&orbitControls[activeOrbitId])orbitControls[activeOrbitId].resume();activeOrbitId=null;}
 document.getElementById('animalModalClose').addEventListener('click',closeAnimalModal);document.getElementById('animalModalBackdrop').addEventListener('click',e=>{if(e.target.id==='animalModalBackdrop')closeAnimalModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAnimalModal()});
  function createOrbit(elId,items,direction,duration){
   const el=document.getElementById(elId);if(!el||!items.length)return;
@@ -87,9 +88,10 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
   const cards=[];
   for(let i=0;i<visible;i++){
    const card=document.createElement('button');card.type='button';card.className='orbit-card';card.setAttribute('aria-label','View '+items[i%items.length].name+' details');
-   card.innerHTML='<img loading="lazy" alt=""><div class="card-meta"><span class="card-name"></span><span class="card-type"></span><span class="card-scientific"></span></div><span class="card-open-hint">VIEW DETAILS +</span>';card.addEventListener('click',()=>openAnimalModal(card.dataset.animalId));
+   card.innerHTML='<img loading="lazy" alt=""><div class="card-meta"><span class="card-name"></span><span class="card-type"></span><span class="card-scientific"></span></div><span class="card-open-hint">VIEW DETAILS +</span>';card.addEventListener('click',()=>openAnimalModal(card.dataset.animalId,elId));
    el.appendChild(card);cards.push(card);
   }
+  orbitControls[elId]={pause:()=>{paused=true},resume:()=>{paused=false;last=0}};
   function render(){
    cards.forEach((card,i)=>{
     const animal=items[(Math.floor((angle/step)+i)%items.length+items.length)%items.length];
