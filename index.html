@@ -76,6 +76,48 @@ header .navlinks .nav-signin{padding:9px 3px;font-weight:600}
 header .navlinks .nav-explore{padding:10px 16px;font-weight:700}
 @media(max-width:1050px){header .navlinks{gap:12px!important}header .navlinks .species-search{min-width:110px;max-width:145px}}
 @media(max-width:760px){header .navlinks .nav-signin{display:inline-flex}header .navlinks .nav-explore{padding:9px 11px!important}header .navlinks .species-search{display:none}}
+
+/* Mobile-first correction: fit the source photograph, keep species copy visible, and preserve auth actions. */
+@media(max-width:760px){
+ header.shell.nav{top:8px;left:3%;right:3%;width:94%;height:auto;min-height:54px;padding:7px 10px;border-radius:17px;gap:8px}
+ header .brand{font-size:14px!important;gap:6px}
+ header .brandmark{width:29px;height:29px;font-size:18px}
+ header .brand small{font-size:5px;letter-spacing:.8px}
+ header .navlinks{display:flex;flex:1;gap:6px!important;justify-content:flex-end;font-size:9px}
+ header .navlinks a:not(.nav-home):not(.nav-signin):not(.nav-explore){display:none}
+ header .navlinks .nav-home{display:none}
+ header .navlinks .nav-signin{display:inline-flex;padding:7px 5px;font-size:9px}
+ header .navlinks .nav-explore{display:inline-flex;padding:8px 9px!important;font-size:9px;white-space:nowrap}
+ header .navlinks .species-search{display:none}
+ .cinema-hero{height:calc(100svh - 8px);min-height:720px;overflow:hidden;padding-top:0}
+ .cinema-photo{background-size:contain!important;background-position:center 31%!important;background-repeat:no-repeat!important;background-color:#222b32}
+ .cinema-hero:before{background:linear-gradient(180deg,#11182030 0%,#11182008 24%,#11182016 42%,#111820c9 62%,#111820f2 100%),linear-gradient(90deg,#11182055,transparent 78%)}
+ .cinema-copy{left:5%;top:auto;bottom:88px;transform:none;width:88%;max-width:420px;padding:12px 12px 12px 0;text-shadow:0 2px 12px #0008}
+ .cinema-index{margin-bottom:10px;font-size:9px}
+ .cinema-kicker{margin-bottom:7px;font-size:8px}
+ .cinema-copy h1{font-size:clamp(38px,10vw,56px);line-height:.92;letter-spacing:-1.4px;margin-bottom:7px}
+ .cinema-scientific{font-size:14px}
+ .cinema-description{font-size:11px;line-height:1.35;margin:8px 0 10px;max-width:340px}
+ .cinema-facts{gap:8px;margin-bottom:10px}
+ .cinema-facts>div{grid-template-columns:13px auto;column-gap:4px;padding-right:7px}
+ .cinema-facts>div>span{font-size:12px}
+ .cinema-facts small,.cinema-facts b{font-size:8px}
+ .cinema-learn{padding:8px 13px;min-width:118px;font-size:9px}
+ .cinema-dots{right:12px;top:44%;bottom:auto;transform:translateY(-50%);flex-direction:column;max-height:35vh;max-width:none;gap:7px}
+ .cinema-dot{width:7px;height:7px}
+ .cinema-dot.active{width:15px;height:15px}
+ .cinema-bottom{left:5%;bottom:22px;font-size:7px}
+ .cinema-arrows{right:5%;bottom:15px;gap:6px}
+ .cinema-arrows button{width:32px;height:32px;font-size:18px}
+ .cinema-copy.is-leaving{transform:translateY(6px)}
+}
+@media(max-width:390px){
+ header .brand small{display:none}
+ header .navlinks .nav-explore{font-size:8px;padding:8px 7px!important}
+ .cinema-copy{width:90%;bottom:78px}
+ .cinema-description{max-width:290px}
+ .cinema-facts{gap:5px}
+}
 </style>
 </head>
 <body>
