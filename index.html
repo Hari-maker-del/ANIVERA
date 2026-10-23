@@ -221,6 +221,46 @@ header .navlinks .nav-explore{padding:10px 16px;font-weight:700}
   .cinema-copy {width:min(360px,38vw)!important}
 }
 
+
+/* Mobile layout repair: hero, proof strip and feature/steps content */
+.prooflead small,.proofitem small{display:block!important;line-height:1.45!important;margin-top:5px!important}
+@media(max-width:760px){
+  .proof{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px 18px!important;padding-top:24px!important;padding-bottom:12px!important}
+  .prooflead{grid-column:1/-1!important}
+  .prooflead,.proofitem{display:block!important;min-width:0!important;font-size:12px!important;line-height:1.4!important;overflow-wrap:anywhere}
+  .prooflead small,.proofitem small{font-size:12px!important}
+  .section-head{text-align:left!important;margin-bottom:24px!important}
+  .feature-grid{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}
+  .feature{min-width:0!important;padding:20px!important}
+  .steps{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}
+  .step{min-width:0!important}
+  .cta{display:flex!important;flex-direction:column!important;align-items:flex-start!important;padding:24px!important}
+  .cta h2{font-size:clamp(24px,6vw,32px)!important;line-height:1.15!important}
+  .cta p{font-size:13px!important}
+  .cinema-hero{height:auto!important;min-height:0!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;background:#141b1e!important;padding-top:0!important}
+  .cinema-photo{position:absolute!important;inset:0 0 auto 0!important;height:48%!important;background-size:cover!important;background-position:center 35%!important;background-repeat:no-repeat!important;z-index:0!important}
+  .cinema-hero:before{inset:0!important;z-index:1!important;background:linear-gradient(180deg,#141b1e00 0%,#141b1e00 25%,#141b1e28 38%,#141b1ef5 48%,#141b1e 66%)!important}
+  .cinema-copy{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:auto!important;max-width:none!important;margin:calc(44svh) 22px 78px!important;padding:18px 0 0!important;z-index:3!important}
+  .cinema-copy h1{font-size:clamp(38px,10vw,54px)!important;line-height:.96!important;margin:0 0 10px!important}
+  .cinema-description{font-size:14px!important;line-height:1.5!important;max-width:100%!important;margin:12px 0 16px!important}
+  .cinema-facts{display:flex!important;flex-wrap:wrap!important;gap:12px!important}
+  .cinema-facts>div{min-width:0!important}
+  .cinema-dots{z-index:4!important;top:24%!important;right:12px!important;bottom:auto!important;transform:none!important}
+  .cinema-bottom{z-index:4!important;bottom:20px!important;left:20px!important}
+  .cinema-arrows{z-index:4!important;bottom:12px!important;right:16px!important}
+  .cinema-counter{display:none!important}
+  .section{padding-top:52px!important;padding-bottom:52px!important}
+  .section h2{font-size:clamp(27px,7.4vw,36px)!important;line-height:1.12!important}
+  .section p{font-size:14px!important;line-height:1.55!important}
+}
+@media(max-width:420px){
+  .proof{grid-template-columns:1fr 1fr!important;gap:13px!important}
+  .prooflead{font-size:14px!important}
+  .cinema-copy{margin-left:18px!important;margin-right:18px!important}
+  .cinema-facts{gap:8px!important}
+  .cinema-facts>div{flex:1 1 28%!important}
+}
+
 </style>
 </head>
 <body>
