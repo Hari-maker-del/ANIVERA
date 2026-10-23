@@ -15,15 +15,54 @@
 @media(max-width:1080px){.hero{grid-template-columns:minmax(0,1fr) minmax(280px,.95fr) minmax(0,1fr);gap:0}.orbit-card{width:160px;height:250px;margin-left:-80px;margin-top:-125px}.center-hub{padding:22px 4px}h1{font-size:42px;letter-spacing:-2px}.navlinks{gap:14px}.orbit-zone{min-height:440px;height:68vh}}
 @media(max-width:760px){.shell{padding:0 17px}.nav{height:68px}.navlinks a:not(.btn){display:none}.navlinks .btn{padding:11px 12px}.hero{display:flex;flex-direction:column;min-height:auto;padding-top:20px;gap:0}.center-hub{order:0;padding:35px 0 25px;max-width:520px}.orbit-zone{height:370px;min-height:370px;width:100%;max-width:560px}.orbit-zone.left-zone{order:1}.orbit-zone.right-zone{order:2}.orbit-label{top:8px}.orbit-card{width:150px;height:225px;margin-left:-75px;margin-top:-112px}.feature-grid{grid-template-columns:1fr}.section{padding:55px 0}.cta{padding:26px;display:block}.cta .btn{margin-top:12px}.hub-links{max-width:420px;margin-left:auto;margin-right:auto}h1{font-size:48px}.intro{font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-.orbit-card{padding:0;appearance:none;text-align:left;cursor:pointer;font:inherit;color:inherit}.orbit-card:focus-visible{outline:3px solid var(--amber);outline-offset:4px}.card-open-hint{position:absolute;top:12px;right:10px;z-index:3;border-radius:5px;background:#1D2228cc;color:#fff;font-size:7px;font-weight:800;letter-spacing:.7px;padding:6px 7px;opacity:0;transform:translateY(-3px);transition:.2s}.orbit-card:hover .card-open-hint,.orbit-card:focus-visible .card-open-hint{opacity:1;transform:translateY(0)}.animal-modal-backdrop{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:#101820b8;backdrop-filter:blur(9px)}.animal-modal-backdrop.open{display:flex}.animal-modal{position:relative;width:min(880px,96vw);max-height:min(86vh,760px);overflow:auto;display:grid;grid-template-columns:minmax(250px,.9fr) minmax(300px,1.1fr);border-radius:22px;background:#fff;box-shadow:0 30px 100px #0005;animation:animalPop .22s ease-out}.animal-modal-photo{position:relative;min-height:430px;background:#f1f1eb}.animal-modal-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.animal-modal-copy{padding:clamp(24px,4vw,44px);align-self:center}.animal-modal-kicker{font-size:10px;letter-spacing:1.5px;color:var(--amber);font-weight:800;text-transform:uppercase}.animal-modal-copy h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.4px;line-height:1.05;margin:13px 0 6px}.animal-modal-scientific{font-size:14px;color:#687078;font-style:italic;margin-bottom:20px}.animal-modal-description{font-size:14px;line-height:1.8;color:#505963}.animal-modal-facts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}.animal-fact{padding:12px;border:1px solid #E1E2E2;border-radius:10px}.animal-fact small{display:block;color:#727a82;font-size:9px;letter-spacing:.8px;text-transform:uppercase}.animal-fact strong{display:block;margin-top:5px;font-size:12px;color:#1D2228}.animal-modal-close{position:absolute;top:13px;right:13px;z-index:2;border:1px solid #e1e2e2;background:#fff;color:#1D2228;width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer;box-shadow:0 3px 15px #0001}.animal-modal-close:hover{background:#FB8122;color:#fff;border-color:#FB8122}@keyframes animalPop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@media(max-width:620px){.animal-modal{grid-template-columns:1fr;max-height:90vh}.animal-modal-photo{min-height:260px;height:32vh}.animal-modal-copy{padding:24px}.animal-modal-facts{gap:7px}}@media(prefers-reduced-motion:reduce){.animal-modal{animation:none}}</style>
+.orbit-card{padding:0;appearance:none;text-align:left;cursor:pointer;font:inherit;color:inherit}.orbit-card:focus-visible{outline:3px solid var(--amber);outline-offset:4px}.card-open-hint{position:absolute;top:12px;right:10px;z-index:3;border-radius:5px;background:#1D2228cc;color:#fff;font-size:7px;font-weight:800;letter-spacing:.7px;padding:6px 7px;opacity:0;transform:translateY(-3px);transition:.2s}.orbit-card:hover .card-open-hint,.orbit-card:focus-visible .card-open-hint{opacity:1;transform:translateY(0)}.animal-modal-backdrop{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:#101820b8;backdrop-filter:blur(9px)}.animal-modal-backdrop.open{display:flex}.animal-modal{position:relative;width:min(880px,96vw);max-height:min(86vh,760px);overflow:auto;display:grid;grid-template-columns:minmax(250px,.9fr) minmax(300px,1.1fr);border-radius:22px;background:#fff;box-shadow:0 30px 100px #0005;animation:animalPop .22s ease-out}.animal-modal-photo{position:relative;min-height:430px;background:#f1f1eb}.animal-modal-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.animal-modal-copy{padding:clamp(24px,4vw,44px);align-self:center}.animal-modal-kicker{font-size:10px;letter-spacing:1.5px;color:var(--amber);font-weight:800;text-transform:uppercase}.animal-modal-copy h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.4px;line-height:1.05;margin:13px 0 6px}.animal-modal-scientific{font-size:14px;color:#687078;font-style:italic;margin-bottom:20px}.animal-modal-description{font-size:14px;line-height:1.8;color:#505963}.animal-modal-facts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}.animal-fact{padding:12px;border:1px solid #E1E2E2;border-radius:10px}.animal-fact small{display:block;color:#727a82;font-size:9px;letter-spacing:.8px;text-transform:uppercase}.animal-fact strong{display:block;margin-top:5px;font-size:12px;color:#1D2228}.animal-modal-close{position:absolute;top:13px;right:13px;z-index:2;border:1px solid #e1e2e2;background:#fff;color:#1D2228;width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer;box-shadow:0 3px 15px #0001}.animal-modal-close:hover{background:#FB8122;color:#fff;border-color:#FB8122}@keyframes animalPop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@media(max-width:620px){.animal-modal{grid-template-columns:1fr;max-height:90vh}.animal-modal-photo{min-height:260px;height:32vh}.animal-modal-copy{padding:24px}.animal-modal-facts{gap:7px}}@media(prefers-reduced-motion:reduce){.animal-modal{animation:none}}
+/* WWF-inspired cinematic species slideshow */
+body{background:#202629;color:#f7f5ef}
+.site-header{position:relative}
+header.shell.nav{position:absolute;z-index:20;top:0;left:0;right:0;height:66px;padding:0 5.5%;border-bottom:1px solid #ffffff12;color:#f7f5ef;background:linear-gradient(#10141655,transparent)}
+header .brand,header .navlinks,header .navlinks a{color:#f7f5ef}
+header .brand small{color:#aab0b1}
+header .brandmark{background:#fff;color:#202629;border-radius:0;width:40px;height:46px;font-family:Georgia,serif;font-size:28px}
+header .btn{background:transparent;border:0;border-bottom:1px solid #b7b9b8;border-radius:0;padding:8px 0;color:#f7f5ef}
+.cinema-hero{height:100svh;min-height:580px;position:relative;overflow:hidden;background:#202629;isolation:isolate}
+.cinema-photo{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:center 38%;transition:opacity .6s ease,background-image .5s ease}
+.cinema-hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#202629 0%,#202629ed 17%,#202629a8 36%,#20262922 65%,#20262999 100%),linear-gradient(0deg,#202629aa,transparent 35%,#10141644)}
+.cinema-copy{position:absolute;left:9.5%;top:50%;transform:translateY(-43%);width:min(440px,44vw);color:#f6f2e9}
+.cinema-kicker{font-size:9px;letter-spacing:3px;color:#aeb3b2;text-transform:uppercase;margin-bottom:16px}
+.cinema-kicker:after{content:"";display:inline-block;vertical-align:middle;width:52px;height:1px;background:#687072;margin-left:12px}
+.cinema-copy h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(54px,7vw,94px);letter-spacing:-3.5px;line-height:.88;margin:0 0 34px;color:#f8f5ee}
+.cinema-copy h1 em{font-style:normal;color:#f8f5ee}
+.cinema-status-label{font-size:9px;letter-spacing:2.6px;color:#92999a;margin-bottom:9px}
+.cinema-status{font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,2vw,25px);color:#f4f0e8}
+.cinema-scientific{margin-top:12px;color:#b6b9b7;font-size:11px;font-style:italic;letter-spacing:.4px}
+.cinema-dots{position:absolute;right:4.5%;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;align-items:center}
+.cinema-dot{width:9px;height:9px;padding:0;border:1px solid #7c8384;border-radius:50%;background:#7c838466;cursor:pointer;transition:all .25s}
+.cinema-dot.active{width:27px;height:27px;border:1px solid #7c8384;background:radial-gradient(circle,#fff 0 4px,transparent 5px);box-shadow:0 0 0 4px #ffffff08}
+.cinema-counter{position:absolute;right:4.2%;bottom:32px;color:#a6acad;font-size:9px;letter-spacing:2px}
+.cinema-bottom{position:absolute;left:9.5%;bottom:35px;color:#aeb3b2;font-size:9px;letter-spacing:2px}
+.cinema-bottom b{color:#FB8122;font-weight:700}
+.cinema-fade{animation:cinemaFade .65s ease}
+@keyframes cinemaFade{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.after-hero{background:#fff;color:#1D2228}
+@media(max-width:760px){header.shell.nav{padding:0 18px}.cinema-hero{min-height:650px}.cinema-photo{background-position:58% center}.cinema-hero:before{background:linear-gradient(90deg,#202629d9,#20262988 55%,#20262935),linear-gradient(0deg,#202629aa,transparent 55%,#10141655)}.cinema-copy{left:7%;top:54%;width:78vw}.cinema-copy h1{font-size:clamp(53px,14vw,76px)}.cinema-dots{right:6%;top:auto;bottom:82px;transform:none;flex-direction:row}.cinema-bottom{left:7%;bottom:31px}.cinema-counter{right:7%;bottom:31px}.navlinks a:not(.btn){display:none}}
+@media(prefers-reduced-motion:reduce){.cinema-photo,.cinema-dot{transition:none}.cinema-fade{animation:none}}
+</style>
 </head>
 <body>
 <header class="shell nav"><a class="brand" href="#" aria-label="ANIVERA home"><span class="brandmark">A</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><nav class="navlinks"><a href="#how">How it works</a><a href="#features">Features</a><a href="#lifecycle">Lifecycle</a><a href="#about">About</a><a class="btn" href="dashboard.html">Open workspace <span>→</span></a></nav></header>
 <main>
-<section class="shell hero" aria-label="ANIVERA animal kingdom">
-<div class="orbit-zone left-zone"><div class="orbit-label"><i></i>WILDLIFE & NATURE</div><div class="orbit" id="leftOrbit" aria-label="Rotating wildlife animal cards"></div></div>
-<div class="center-hub"><div class="eyebrow">THE UNIVERSAL ANIMAL LIFECYCLE PLATFORM</div><h1>Every animal.<br>Every stage.<br><em>Better care.</em></h1><p class="intro">Discover, understand, and care for the animal kingdom through one intelligent lifecycle platform — from wildlife and marine life to livestock and companion animals.</p><div class="hub-actions"><a class="btn" href="dashboard.html">Explore ANIVERA <span>→</span></a><a class="btn light" href="#about">Discover ANIVERA</a></div><nav class="hub-links" aria-label="Explore ANIVERA"><a class="hub-link" href="#features">Animal Explorer ↗</a><a class="hub-link" href="#features">Animal Categories ↗</a><a class="hub-link" href="dashboard.html">Lifecycle Workspace ↗</a><a class="hub-link" href="#about">About ANIVERA ↗</a></nav><div class="hub-foot"><b>50 FEATURED ANIMALS</b> · NON-AVIAN ANIMALS · WINGLY IS FOR BIRDS</div></div>
-<div class="orbit-zone right-zone"><div class="orbit-label"><i></i>LAND · SEA · SKY (NON-AVIAN)</div><div class="orbit" id="rightOrbit" aria-label="Rotating domestic, marine, and other animal cards"></div></div>
+<section class="cinema-hero" aria-label="Featured ANIVERA species slideshow">
+<div class="cinema-photo" id="cinemaPhoto" role="img" aria-label="Featured animal portrait"></div>
+<div class="cinema-copy cinema-fade" id="cinemaCopy">
+<div class="cinema-kicker">SPECIES</div>
+<h1 id="cinemaName">Amur<br>Leopard</h1>
+<div class="cinema-status-label" id="cinemaStatusLabel">ANIMAL TYPE</div>
+<div class="cinema-status" id="cinemaStatus">Wild Mammal</div>
+<div class="cinema-scientific" id="cinemaScientific">Panthera pardus orientalis</div>
+</div>
+<div class="cinema-dots" id="cinemaDots" aria-label="Choose featured animal"></div>
+<div class="cinema-bottom">ANIVERA <b>·</b> EVERY ANIMAL. EVERY STAGE.</div>
+<div class="cinema-counter" id="cinemaCounter">01 / 50</div>
 </section>
 <section class="shell"><div class="proof"><div class="prooflead">One connected workspace<small>Made for the full animal journey</small></div><div class="proofitem">IDENTITY<small>Unique profiles</small></div><div class="proofitem">HEALTH<small>Care history</small></div><div class="proofitem">ROUTINES<small>Tasks & reminders</small></div><div class="proofitem">LIFECYCLE<small>Milestones</small></div></div></section>
 <section class="section gray" id="features"><div class="shell"><div class="section-head"><div class="kicker">One connected animal journey</div><h2>Care for the whole life, not just one moment.</h2><p class="desc">Bring animal identity, health history, care plans, and lifecycle milestones into a clearer shared view.</p></div><div class="feature-grid"><article class="feature"><div class="symbol">⌁</div><h3>Animal identity</h3><p>Maintain a dedicated profile with species, identifiers, location, and key details.</p></article><article class="feature"><div class="symbol">✚</div><h3>Health & care history</h3><p>Keep observations, treatments, vaccinations, and care notes together.</p></article><article class="feature"><div class="symbol">◷</div><h3>Lifecycle tracking</h3><p>Follow milestones and care tasks as an animal moves through different stages.</p></article></div></div></section>
@@ -126,7 +165,46 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
   el.addEventListener('pointercancel',()=>{dragX=null});
   render();requestAnimationFrame(frame);
  }
- createOrbit('leftOrbit',left,1,26000);createOrbit('rightOrbit',right,-1,32000);
+
+ const slideshowNames=["Amur Tiger","Bengal Tiger","African Elephant","Lion","Snow Leopard","Jaguar","Cheetah","Giant Panda","Red Panda","Mountain Gorilla","Black Rhinoceros","Hippopotamus","Gray Wolf","Arctic Fox","Polar Bear","Brown Bear","Red Kangaroo","Koala","Blue Whale","Humpback Whale","Orca","Bottlenose Dolphin","Dugong","Harbor Seal","Domestic Cattle","Water Buffalo","Domestic Goat","Domestic Sheep","Domestic Horse","Domestic Donkey","Domestic Dog","Domestic Cat","European Rabbit","Guinea Pig","Saltwater Crocodile","Green Sea Turtle","King Cobra","Komodo Dragon","Green Iguana","Green Anaconda","Gharial","American Alligator","Veiled Chameleon","Tokay Gecko","West Indian Manatee","Sperm Whale","Dromedary Camel","Alpaca","Llama","Giraffe"];
+ const slideshowAnimals=slideshowNames.map(n=>all.find(a=>a.name===n)).filter(Boolean);
+ const photoByName={
+ "Amur Tiger":"https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=2000&q=90",
+ "Bengal Tiger":"https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=2000&q=90",
+ "African Elephant":"https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2000&q=90",
+ "Lion":"https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=2000&q=90",
+ "Giant Panda":"https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=2000&q=90",
+ "Domestic Dog":"https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=2000&q=90",
+ "Domestic Cat":"https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=2000&q=90",
+ "Domestic Horse":"https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=2000&q=90",
+ "Giraffe":"https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=2000&q=90",
+ "Red Fox":"https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=2000&q=90"
+ };
+ const photo=document.getElementById('cinemaPhoto'),nameEl=document.getElementById('cinemaName'),statusEl=document.getElementById('cinemaStatus'),scientificEl=document.getElementById('cinemaScientific'),dots=document.getElementById('cinemaDots'),counter=document.getElementById('cinemaCounter'),copy=document.getElementById('cinemaCopy');
+ let currentSlide=0,slideTimer=null;
+ function paintSlide(index){
+  if(!slideshowAnimals.length)return;
+  currentSlide=(index+slideshowAnimals.length)%slideshowAnimals.length;
+  const a=slideshowAnimals[currentSlide];
+  const image=photoByName[a.name]||categoryPhoto(a.category,a.animalType);
+  photo.style.opacity='.35';
+  const preloader=new Image();
+  preloader.onload=()=>{photo.style.backgroundImage='url("'+image+'")';photo.style.opacity='1'};
+  preloader.onerror=()=>{photo.style.backgroundImage='url("'+categoryPhoto(a.category,a.animalType)+'")';photo.style.opacity='1'};
+  preloader.src=image;
+  nameEl.innerHTML=esc(a.name).replace(/\s+/, '<br>');
+  statusEl.textContent=a.animalType;
+  document.getElementById('cinemaStatusLabel').textContent='ANIMAL TYPE';
+  scientificEl.textContent=a.scientificName;
+  counter.textContent=String(currentSlide+1).padStart(2,'0')+' / '+String(slideshowAnimals.length).padStart(2,'0');
+  [...dots.children].forEach((dot,i)=>{dot.classList.toggle('active',i===currentSlide);dot.setAttribute('aria-current',i===currentSlide?'true':'false')});
+  copy.classList.remove('cinema-fade');void copy.offsetWidth;copy.classList.add('cinema-fade');
+ }
+ slideshowAnimals.forEach((a,i)=>{const dot=document.createElement('button');dot.type='button';dot.className='cinema-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Show '+a.name);dot.addEventListener('click',()=>{paintSlide(i);startTimer()});dots.appendChild(dot)});
+ function startTimer(){if(slideTimer)clearInterval(slideTimer);slideTimer=setInterval(()=>paintSlide(currentSlide+1),3000)}
+ paintSlide(0);startTimer();
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){if(slideTimer)clearInterval(slideTimer)}else startTimer()});
+
  window.ANIVERA_SPECIES_VALIDATION={total:all.length,left:left.length,right:right.length,duplicateNames:all.length-new Set(all.map(a=>a.name.trim().toLowerCase())).size,duplicateScientific:all.length-new Set(all.map(a=>a.scientificName.trim().toLowerCase())).size,birds:all.filter(a=>/bird|avian|aves|parrot|eagle|owl|chicken|duck|penguin/i.test(a.name+' '+a.animalType+' '+a.category)).length};
 })();
 </script></body></html>
