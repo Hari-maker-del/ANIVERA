@@ -118,6 +118,31 @@ header .navlinks .nav-explore{padding:10px 16px;font-weight:700}
  .cinema-description{max-width:290px}
  .cinema-facts{gap:5px}
 }
+
+/* FINAL OVERRIDES — keep after all reference styles so mobile rules cannot be overwritten. */
+.cinema-copy{visibility:visible;z-index:5}
+.cinema-hero:before{z-index:0}
+.cinema-photo{z-index:-1}
+.cinema-copy,.cinema-dots,.cinema-bottom,.cinema-arrows,.cinema-counter{position:absolute}
+@media(max-width:760px){
+ .cinema-hero{height:calc(100svh - 8px)!important;min-height:740px!important}
+ .cinema-photo{background-size:contain!important;background-position:center 30%!important;background-repeat:no-repeat!important}
+ .cinema-hero:before{z-index:0;background:linear-gradient(180deg,#11182012 0%,#11182000 22%,#11182020 43%,#111820df 62%,#111820f5 100%)!important}
+ .cinema-copy{left:5%!important;right:5%!important;top:auto!important;bottom:82px!important;transform:none!important;width:90%!important;max-width:440px!important;z-index:6!important;opacity:1!important;visibility:visible!important;padding:10px 6px 8px 0!important}
+ .cinema-copy.is-leaving{opacity:1!important;transform:none!important}
+ .cinema-index{margin-bottom:7px!important}
+ .cinema-kicker{margin-bottom:6px!important}
+ .cinema-copy h1{font-size:clamp(38px,10vw,55px)!important;line-height:.92!important;margin-bottom:6px!important}
+ .cinema-scientific{font-size:14px!important}
+ .cinema-description{font-size:11px!important;line-height:1.35!important;margin:7px 0 9px!important;max-width:340px!important}
+ .cinema-facts{gap:7px!important;margin-bottom:9px!important}
+ .cinema-facts>div{padding-right:6px!important}
+ .cinema-facts small,.cinema-facts b{font-size:8px!important}
+ .cinema-learn{padding:7px 12px!important}
+ .cinema-dots{z-index:7!important;right:10px!important;top:40%!important;bottom:auto!important;transform:translateY(-50%)!important;flex-direction:column!important;max-height:32vh!important}
+ .cinema-bottom{z-index:7!important;bottom:19px!important;left:5%!important}
+ .cinema-arrows{z-index:7!important;bottom:12px!important;right:4%!important}
+}
 </style>
 </head>
 <body>
