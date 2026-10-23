@@ -168,7 +168,28 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
 
  const slideshowNames=["Amur Leopard","Bengal Tiger","African Elephant","Lion","Snow Leopard","Jaguar","Cheetah","Giant Panda","Red Panda","Mountain Gorilla","Black Rhinoceros","Hippopotamus","Gray Wolf","Arctic Fox","Polar Bear","Brown Bear","Red Kangaroo","Koala","Blue Whale","Humpback Whale","Orca","Bottlenose Dolphin","Dugong","Harbor Seal","Domestic Cattle","Water Buffalo","Domestic Goat","Domestic Sheep","Domestic Horse","Domestic Donkey","Domestic Dog","Domestic Cat","European Rabbit","Guinea Pig","Saltwater Crocodile","Green Sea Turtle","King Cobra","Komodo Dragon","Green Iguana","Green Anaconda","Gharial","American Alligator","Veiled Chameleon","Tokay Gecko","West Indian Manatee","Sperm Whale","Dromedary Camel","Alpaca","Llama","Giraffe"];
  const slideshowAnimals=slideshowNames.map(n=>n==="Amur Leopard"?{...all.find(a=>a.name==="Leopard"),name:"Amur Leopard",scientificName:"Panthera pardus orientalis",imageQuery:"Amur Leopard"}:all.find(a=>a.name===n)).filter(Boolean);
- const photoByName={"Amur Leopard":"https://loremflickr.com/1800/1200/amur,leopard","Bengal Tiger":"https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=2000&q=90","African Elephant":"https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2000&q=90","Lion":"https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=2000&q=90","Snow Leopard":"https://loremflickr.com/1800/1200/snow,leopard","Jaguar":"https://loremflickr.com/1800/1200/jaguar","Cheetah":"https://loremflickr.com/1800/1200/cheetah","Giant Panda":"https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=2000&q=90","Red Panda":"https://loremflickr.com/1800/1200/red,panda","Mountain Gorilla":"https://loremflickr.com/1800/1200/mountain,gorilla","Black Rhinoceros":"https://loremflickr.com/1800/1200/black,rhinoceros","Hippopotamus":"https://loremflickr.com/1800/1200/hippopotamus","Gray Wolf":"https://loremflickr.com/1800/1200/gray,wolf","Arctic Fox":"https://loremflickr.com/1800/1200/arctic,fox","Polar Bear":"https://loremflickr.com/1800/1200/polar,bear","Brown Bear":"https://loremflickr.com/1800/1200/brown,bear","Red Kangaroo":"https://loremflickr.com/1800/1200/red,kangaroo","Koala":"https://loremflickr.com/1800/1200/koala","Blue Whale":"https://loremflickr.com/1800/1200/blue,whale","Humpback Whale":"https://loremflickr.com/1800/1200/humpback,whale","Orca":"https://loremflickr.com/1800/1200/orca","Bottlenose Dolphin":"https://loremflickr.com/1800/1200/bottlenose,dolphin","Dugong":"https://loremflickr.com/1800/1200/dugong","Harbor Seal":"https://loremflickr.com/1800/1200/harbor,seal","Domestic Cattle":"https://loremflickr.com/1800/1200/domestic,cattle","Water Buffalo":"https://loremflickr.com/1800/1200/water,buffalo","Domestic Goat":"https://loremflickr.com/1800/1200/domestic,goat","Domestic Sheep":"https://loremflickr.com/1800/1200/domestic,sheep","Domestic Horse":"https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=2000&q=90","Domestic Donkey":"https://loremflickr.com/1800/1200/domestic,donkey","Domestic Dog":"https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=2000&q=90","Domestic Cat":"https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=2000&q=90","European Rabbit":"https://loremflickr.com/1800/1200/european,rabbit","Guinea Pig":"https://loremflickr.com/1800/1200/guinea,pig","Saltwater Crocodile":"https://loremflickr.com/1800/1200/saltwater,crocodile","Green Sea Turtle":"https://loremflickr.com/1800/1200/green,sea,turtle","King Cobra":"https://loremflickr.com/1800/1200/king,cobra","Komodo Dragon":"https://loremflickr.com/1800/1200/komodo,dragon","Green Iguana":"https://loremflickr.com/1800/1200/green,iguana","Green Anaconda":"https://loremflickr.com/1800/1200/green,anaconda","Gharial":"https://loremflickr.com/1800/1200/gharial","American Alligator":"https://loremflickr.com/1800/1200/american,alligator","Veiled Chameleon":"https://loremflickr.com/1800/1200/veiled,chameleon","Tokay Gecko":"https://loremflickr.com/1800/1200/tokay,gecko","West Indian Manatee":"https://loremflickr.com/1800/1200/west,indian,manatee","Sperm Whale":"https://loremflickr.com/1800/1200/sperm,whale","Dromedary Camel":"https://loremflickr.com/1800/1200/dromedary,camel","Alpaca":"https://loremflickr.com/1800/1200/alpaca","Llama":"https://loremflickr.com/1800/1200/llama","Giraffe":"https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=2000&q=90"};
+ const photoByName={}; // Resolved from species-specific Wikipedia article thumbnails below.
+ const verifiedImageCache=new Map();
+ const wikipediaTitle={
+  "Amur Leopard":"Amur leopard","Bengal Tiger":"Bengal tiger","African Elephant":"African bush elephant","Lion":"Lion","Snow Leopard":"Snow leopard","Jaguar":"Jaguar","Cheetah":"Cheetah","Giant Panda":"Giant panda","Red Panda":"Red panda","Mountain Gorilla":"Mountain gorilla","Black Rhinoceros":"Black rhinoceros","Hippopotamus":"Hippopotamus","Gray Wolf":"Gray wolf","Arctic Fox":"Arctic fox","Polar Bear":"Polar bear","Brown Bear":"Brown bear","Red Kangaroo":"Red kangaroo","Koala":"Koala","Blue Whale":"Blue whale","Humpback Whale":"Humpback whale","Orca":"Orca","Bottlenose Dolphin":"Common bottlenose dolphin","Dugong":"Dugong","Harbor Seal":"Harbor seal","Domestic Cattle":"Cattle","Water Buffalo":"Domestic water buffalo","Domestic Goat":"Domestic goat","Domestic Sheep":"Sheep","Domestic Horse":"Horse","Domestic Donkey":"Donkey","Domestic Dog":"Dog","Domestic Cat":"Cat","European Rabbit":"European rabbit","Guinea Pig":"Domestic guinea pig","Saltwater Crocodile":"Saltwater crocodile","Green Sea Turtle":"Green sea turtle","King Cobra":"King cobra","Komodo Dragon":"Komodo dragon","Green Iguana":"Green iguana","Green Anaconda":"Green anaconda","Gharial":"Gharial","American Alligator":"American alligator","Veiled Chameleon":"Veiled chameleon","Tokay Gecko":"Tokay gecko","West Indian Manatee":"West Indian manatee","Sperm Whale":"Sperm whale","Dromedary Camel":"Dromedary","Alpaca":"Alpaca","Llama":"Llama","Giraffe":"Giraffe"
+ };
+ async function getSpeciesImage(animal){
+  if(verifiedImageCache.has(animal.name))return verifiedImageCache.get(animal.name);
+  const title=wikipediaTitle[animal.name]||animal.name;
+  try{
+   const response=await fetch("https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(title),{headers:{"Accept":"application/json"}});
+   if(!response.ok)throw new Error("Species image unavailable");
+   const data=await response.json();
+   const image=data.thumbnail&&data.thumbnail.source;
+   if(!image)throw new Error("No article thumbnail");
+   verifiedImageCache.set(animal.name,image);
+   return image;
+  }catch(error){
+   const backup=categoryPhoto(animal.category,animal.animalType);
+   verifiedImageCache.set(animal.name,backup);
+   return backup;
+  }
+ }
  const photoLayers=[document.getElementById("cinemaPhotoA"),document.getElementById("cinemaPhotoB")];
  let visibleLayer=0,currentSlide=0,slideTimer=null,slideBusy=false;
  const nameEl=document.getElementById("cinemaName"),statusEl=document.getElementById("cinemaStatus"),scientificEl=document.getElementById("cinemaScientific"),dots=document.getElementById("cinemaDots"),counter=document.getElementById("cinemaCounter"),copy=document.getElementById("cinemaCopy");
@@ -176,12 +197,28 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
   if(!slideshowAnimals.length||slideBusy)return;
   currentSlide=(index+slideshowAnimals.length)%slideshowAnimals.length;
   const a=slideshowAnimals[currentSlide];
-  const image=photoByName[a.name]||("https://loremflickr.com/1800/1200/"+encodeURIComponent(a.name.replace(/\\s+/g,",")));
   const nextLayer=1-visibleLayer,target=photoLayers[nextLayer];slideBusy=true;
-  const preloader=new Image();
-  preloader.onload=()=>{target.style.backgroundImage='url("'+image+'")';target.setAttribute("aria-label",a.name+" photograph");requestAnimationFrame(()=>{target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;copy.classList.add("is-leaving");window.setTimeout(()=>{nameEl.textContent=a.name;statusEl.textContent=a.animalType;document.getElementById("cinemaStatusLabel").textContent="ANIMAL TYPE";scientificEl.textContent=a.scientificName;counter.textContent=String(currentSlide+1).padStart(2,"0")+" / "+String(slideshowAnimals.length).padStart(2,"0");[...dots.children].forEach((dot,i)=>{dot.classList.toggle("active",i===currentSlide);dot.setAttribute("aria-current",i===currentSlide?"true":"false")});copy.classList.remove("is-leaving");slideBusy=false;},instant?0:320);});};
-  preloader.onerror=()=>{const safe=categoryPhoto(a.category,a.animalType);target.style.backgroundImage='url("'+safe+'")';target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;nameEl.textContent=a.name;statusEl.textContent=a.animalType;scientificEl.textContent=a.scientificName;counter.textContent=String(currentSlide+1).padStart(2,"0")+" / "+String(slideshowAnimals.length).padStart(2,"0");[...dots.children].forEach((dot,i)=>dot.classList.toggle("active",i===currentSlide));slideBusy=false;};
-  preloader.src=image;
+  getSpeciesImage(a).then(image=>{
+   const preloader=new Image();
+   preloader.onload=()=>{
+    target.style.backgroundImage='url("'+image+'")';
+    target.setAttribute("aria-label",a.name+" photograph");
+    requestAnimationFrame(()=>{
+     target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;
+     copy.classList.add("is-leaving");
+     window.setTimeout(()=>{
+      nameEl.textContent=a.name;statusEl.textContent=a.animalType;
+      document.getElementById("cinemaStatusLabel").textContent="ANIMAL TYPE";
+      scientificEl.textContent=a.scientificName;
+      counter.textContent=String(currentSlide+1).padStart(2,"0")+" / "+String(slideshowAnimals.length).padStart(2,"0");
+      [...dots.children].forEach((dot,i)=>{dot.classList.toggle("active",i===currentSlide);dot.setAttribute("aria-current",i===currentSlide?"true":"false")});
+      copy.classList.remove("is-leaving");slideBusy=false;
+     },instant?0:320);
+    });
+   };
+   preloader.onerror=()=>{target.style.backgroundImage='url("'+categoryPhoto(a.category,a.animalType)+'")';target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;nameEl.textContent=a.name;statusEl.textContent=a.animalType;scientificEl.textContent=a.scientificName;slideBusy=false;};
+   preloader.src=image;
+  });
  }
  slideshowAnimals.forEach((a,i)=>{const dot=document.createElement("button");dot.type="button";dot.className="cinema-dot"+(i===0?" active":"");dot.setAttribute("aria-label","Show "+a.name);dot.addEventListener("click",()=>{paintSlide(i);startTimer()});dots.appendChild(dot)});
  function startTimer(){if(slideTimer)clearInterval(slideTimer);slideTimer=setInterval(()=>{if(!document.hidden)paintSlide(currentSlide+1)},3000)}
