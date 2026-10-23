@@ -25,7 +25,7 @@ header .brand small{color:#aab0b1}
 header .brandmark{background:#fff;color:#202629;border-radius:0;width:40px;height:46px;font-family:Georgia,serif;font-size:28px}
 header .btn{background:transparent;border:0;border-bottom:1px solid #b7b9b8;border-radius:0;padding:8px 0;color:#f7f5ef}
 .cinema-hero{height:100svh;min-height:580px;position:relative;overflow:hidden;background:#202629;isolation:isolate}
-.cinema-photo{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:68% center;opacity:0;transition:opacity 1s ease;will-change:opacity}.cinema-photo.visible{opacity:1}
+.cinema-photo{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:var(--animal-focus-x,68%) var(--animal-focus-y,42%);opacity:0;transition:opacity 1s ease;will-change:opacity}.cinema-photo.visible{opacity:1}
 .cinema-hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#202629 0%,#202629f5 25%,#202629d9 36%,#20262966 49%,#20262912 70%,#20262944 100%),linear-gradient(0deg,#20262955,transparent 28%,#10141622)}
 .cinema-copy{position:absolute;left:7.5%;top:50%;transform:translateY(-43%);width:min(400px,31vw);padding:24px 22px 26px 0;color:#f6f2e9;text-shadow:0 2px 18px #0008;z-index:2}
 .cinema-kicker{font-size:9px;letter-spacing:3px;color:#aeb3b2;text-transform:uppercase;margin-bottom:16px}
@@ -46,6 +46,10 @@ header .btn{background:transparent;border:0;border-bottom:1px solid #b7b9b8;bord
 .after-hero{background:#fff;color:#1D2228}
 @media(max-width:760px){header.shell.nav{padding:0 18px}.cinema-hero{min-height:650px}.cinema-photo{background-position:65% center}.cinema-hero:before{background:linear-gradient(90deg,#202629d9,#20262988 55%,#20262935),linear-gradient(0deg,#202629aa,transparent 55%,#10141655)}.cinema-copy{left:5%;top:52%;width:min(72vw,350px);padding-right:8px}.cinema-copy h1{font-size:clamp(42px,10vw,64px);letter-spacing:-1.8px}.cinema-dots{right:5%;top:auto;bottom:80px;transform:none;flex-direction:row;max-height:none;max-width:68vw;overflow:hidden}.cinema-bottom{left:5%;bottom:31px}.cinema-counter{right:5%;bottom:31px}.navlinks a:not(.btn){display:none}}
 @media(prefers-reduced-motion:reduce){.cinema-photo,.cinema-dot{transition:none}.cinema-fade{animation:none}}
+
+/* Keep species copy clear of faces; per-image focus can be tuned without changing the layout. */
+.cinema-hero:before{background:linear-gradient(90deg,#202629 0%,#202629f7 24%,#202629d9 37%,#20262970 52%,#20262916 73%,#20262928 100%),linear-gradient(0deg,#20262955,transparent 30%,#10141620)}
+.cinema-photo[data-placeholder="true"]{background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;background-color:#202629}
 </style>
 </head>
 <body>
@@ -180,7 +184,11 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
    const data=await response.json(),page=Object.values(data.query.pages)[0],image=page&&page.thumbnail&&page.thumbnail.source;
    if(!image)throw new Error("No species article thumbnail");
    verifiedImageCache.set(animal.name,image);return image;
-  }catch(error){const backup=categoryPhoto(animal.category,animal.animalType);verifiedImageCache.set(animal.name,backup);return backup}
+  }catch(error){
+   // Never show a different species as a fallback. Use a neutral labelled placeholder instead.
+   const backup=fallback(animal.name,animal.animalType);
+   verifiedImageCache.set(animal.name,backup);return backup
+  }
  }
  const photoLayers=[document.getElementById("cinemaPhotoA"),document.getElementById("cinemaPhotoB")];
  let visibleLayer=0,currentSlide=0,slideTimer=null,slideBusy=false;
@@ -194,6 +202,9 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
    const preloader=new Image();
    preloader.onload=()=>{
     target.style.backgroundImage='url("'+image+'")';
+    target.style.setProperty("--animal-focus-x",a.name==="Polar Bear"?"50%":"68%");
+    target.style.setProperty("--animal-focus-y",a.name==="Polar Bear"?"35%":"42%");
+    target.dataset.placeholder=image.startsWith("data:image/svg+xml")?"true":"false";
     target.setAttribute("aria-label",a.name+" photograph");
     requestAnimationFrame(()=>{
      target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;
@@ -208,7 +219,7 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
      },instant?0:320);
     });
    };
-   preloader.onerror=()=>{target.style.backgroundImage='url("'+categoryPhoto(a.category,a.animalType)+'")';target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;nameEl.textContent=a.name;statusEl.textContent=a.animalType;scientificEl.textContent=a.scientificName;slideBusy=false;};
+   preloader.onerror=()=>{const safe=fallback(a.name,a.animalType);target.style.backgroundImage='url("'+safe+'")';target.dataset.placeholder="true";target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;nameEl.textContent=a.name;statusEl.textContent=a.animalType;scientificEl.textContent=a.scientificName;renderDots();slideBusy=false;};
    preloader.src=image;
   });
  }
