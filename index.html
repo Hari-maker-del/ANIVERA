@@ -47,6 +47,24 @@ header .btn{background:transparent;border:0;border-bottom:1px solid #b7b9b8;bord
 @media(max-width:760px){header.shell.nav{padding:0 18px}.cinema-hero{min-height:650px}.cinema-photo{background-position:65% center}.cinema-hero:before{background:linear-gradient(90deg,#202629d9,#20262988 55%,#20262935),linear-gradient(0deg,#202629aa,transparent 55%,#10141655)}.cinema-copy{left:5%;top:52%;width:min(72vw,350px);padding-right:8px}.cinema-copy h1{font-size:clamp(42px,10vw,64px);letter-spacing:-1.8px}.cinema-dots{right:5%;top:auto;bottom:80px;transform:none;flex-direction:row;max-height:none;max-width:68vw;overflow:hidden}.cinema-bottom{left:5%;bottom:31px}.cinema-counter{right:5%;bottom:31px}.navlinks a:not(.btn){display:none}}
 @media(prefers-reduced-motion:reduce){.cinema-photo,.cinema-dot{transition:none}.cinema-fade{animation:none}}
 
+/* GLOBAL species image treatment: protect the whole animal from cover-cropping on every slide. */
+.cinema-photo{
+ background-size:contain!important;
+ background-position:68% center!important;
+ background-repeat:no-repeat!important;
+ background-color:#202629;
+}
+.cinema-hero:before{
+ background:linear-gradient(90deg,#202629 0%,#202629f5 23%,#202629df 35%,#20262972 50%,#20262918 76%,#20262930 100%),linear-gradient(0deg,#20262955,transparent 28%,#10141620);
+}
+.cinema-copy{width:min(370px,29vw);left:6.5%;padding:24px 18px 26px 0}
+.cinema-copy h1{font-size:clamp(44px,4.7vw,70px);line-height:.94;letter-spacing:-2px}
+@media(max-width:760px){
+ .cinema-photo{background-size:contain!important;background-position:62% center!important}
+ .cinema-copy{left:4%;width:min(65vw,310px);padding-right:6px}
+ .cinema-copy h1{font-size:clamp(38px,9vw,58px);letter-spacing:-1.4px}
+ .cinema-hero:before{background:linear-gradient(90deg,#202629f5 0%,#202629d8 34%,#20262970 54%,#20262912 100%),linear-gradient(0deg,#20262955,transparent 30%,#10141625)}
+}
 /* Keep species copy clear of faces; per-image focus can be tuned without changing the layout. */
 .cinema-hero:before{background:linear-gradient(90deg,#202629 0%,#202629f7 24%,#202629d9 37%,#20262970 52%,#20262916 73%,#20262928 100%),linear-gradient(0deg,#20262955,transparent 30%,#10141620)}
 .cinema-photo[data-placeholder="true"]{background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;background-color:#202629}
