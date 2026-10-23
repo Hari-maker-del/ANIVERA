@@ -189,7 +189,7 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
  }
 
  const featuredAmur={...all.find(a=>a.name==="Leopard"),name:"Amur Leopard",scientificName:"Panthera pardus orientalis",imageQuery:"Amur leopard"};
- const slideshowAnimals=[featuredAmur,...all.filter(a=>a.name!=="Leopard")];
+ const slideshowAnimals=[featuredAmur,...all.filter(a=>a.name!=="Leopard").slice(0,99)]; // 100 featured slides total, including Amur Leopard.
  const verifiedImageCache=new Map();
  const wikipediaTitle={"Amur Leopard":"Amur leopard","Bengal Tiger":"Bengal tiger","African Elephant":"African bush elephant","Snow Leopard":"Snow leopard","Mountain Gorilla":"Mountain gorilla","Black Rhinoceros":"Black rhinoceros","Bottlenose Dolphin":"Common bottlenose dolphin","Domestic Cattle":"Cattle","Water Buffalo":"Domestic water buffalo","Domestic Goat":"Domestic goat","Domestic Sheep":"Sheep","Domestic Horse":"Horse","Domestic Donkey":"Donkey","Domestic Dog":"Dog","Domestic Cat":"Cat","European Rabbit":"European rabbit","Guinea Pig":"Domestic guinea pig","Saltwater Crocodile":"Saltwater crocodile","Green Sea Turtle":"Green sea turtle","King Cobra":"King cobra","Komodo Dragon":"Komodo dragon","Green Iguana":"Green iguana","Green Anaconda":"Green anaconda","American Alligator":"American alligator","Veiled Chameleon":"Veiled chameleon","Tokay Gecko":"Tokay gecko","West Indian Manatee":"West Indian manatee","Dromedary Camel":"Dromedary","Giant Panda":"Giant panda","Red Panda":"Red panda","Gray Wolf":"Gray wolf","Red Fox":"Red fox","Arctic Fox":"Arctic fox","Polar Bear":"Polar bear","Brown Bear":"Brown bear","Red Kangaroo":"Red kangaroo","Blue Whale":"Blue whale","Humpback Whale":"Humpback whale","Orca":"Orca","Dugong":"Dugong","Harbor Seal":"Harbor seal","Sperm Whale":"Sperm whale","Alpaca":"Alpaca","Llama":"Llama","Giraffe":"Giraffe"};
  async function getSpeciesImage(animal){
@@ -252,7 +252,7 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
   }
  }
  renderDots();
- function startTimer(){if(slideTimer)clearInterval(slideTimer);slideTimer=setInterval(()=>{if(!document.hidden)paintSlide(currentSlide+1)},3000)}
+ function startTimer(){if(slideTimer)clearInterval(slideTimer);slideTimer=setInterval(()=>{if(!document.hidden)paintSlide(currentSlide+1)},5000)}
  paintSlide(0,true);startTimer();
  document.addEventListener('visibilitychange',()=>{if(document.hidden){if(slideTimer)clearInterval(slideTimer)}else startTimer()});
 
