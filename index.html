@@ -34,23 +34,58 @@ header .btn{background:#ffffff15;border:1px solid #ffffff70;border-radius:999px;
 .cinema-copy.is-leaving{opacity:0;transform:translateY(calc(-43% + 8px));transition:opacity .32s ease,transform .32s ease}.cinema-copy{opacity:1;transition:opacity .32s ease,transform .32s ease}
 @media(max-width:760px){header.shell.nav{top:8px;left:3%;right:3%;width:94%;height:60px;padding:0 14px;border-radius:16px}.cinema-hero{min-height:650px}.cinema-photo{background-position:68% center}.cinema-hero:before{background:linear-gradient(90deg,#141b1ee8 0%,#141b1ebd 35%,#141b1e48 60%,#141b1e08 100%),linear-gradient(0deg,#141b1e45,transparent 30%,#141b1e18)}.cinema-copy{left:5%;top:53%;width:min(66vw,330px);padding-right:6px}.cinema-copy h1{font-size:clamp(40px,9vw,62px);letter-spacing:-1.5px}.cinema-dots{right:4%;top:auto;bottom:80px;transform:none;flex-direction:row;max-height:none;max-width:68vw;overflow:hidden}.cinema-bottom{left:5%;bottom:31px}.cinema-counter{right:5%;bottom:31px}.navlinks a:not(.btn){display:none}}
 @media(prefers-reduced-motion:reduce){.cinema-photo,.cinema-dot{transition:none}.cinema-copy{transition:none}}
+
+/* Reference-matched ANIVERA wildlife landing page */
+header.shell.nav{position:absolute;z-index:20;top:16px;left:4%;right:4%;width:92%;height:48px;padding:0 14px 0 18px;display:flex;gap:14px;border:1px solid #ffffff95;border-radius:28px;background:linear-gradient(110deg,#ffffff40,#dcecff22);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);box-shadow:0 8px 28px #09111e20,inset 0 1px 0 #ffffff70;color:#fff}
+header .brand{flex-shrink:0;gap:8px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:500;letter-spacing:.3px;color:#fff}
+header .brandmark{width:34px;height:32px;display:grid;place-items:center;border-radius:50%;background:#ffffff18;border:1px solid #ffffff80;color:#fff;font-size:24px}
+header .brand small{font-family:Arial,sans-serif;font-size:6px;letter-spacing:1.35px;color:#f2f5f8;margin-top:2px}
+header .navlinks{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,2vw,27px);min-width:0;flex:1;font-size:10px;font-weight:500;color:#fff}
+header .navlinks a{white-space:nowrap;color:#fff;opacity:.96}
+header .navlinks .nav-home{padding:8px 17px;border-radius:24px;background:#ffffff45;box-shadow:inset 0 1px 0 #ffffff90}
+header .navlinks .btn{display:inline-flex;padding:9px 13px;border-radius:24px;background:#ffffff28;border:1px solid #ffffff95;color:#fff;font-size:9px;font-weight:500}
+.species-search{height:31px;display:flex;align-items:center;gap:7px;padding:0 11px;border:1px solid #ffffff85;background:#ffffff17;border-radius:22px;min-width:145px;max-width:190px;flex:1}
+.species-search span{font-size:19px;line-height:1;color:#fff}.species-search input{width:100%;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;font-size:9px}.species-search input::placeholder{color:#f4f7fa}
+.cinema-hero{height:100svh;min-height:590px;position:relative;overflow:hidden;background:#29323b;isolation:isolate}
+.cinema-photo{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:68% center;background-repeat:no-repeat;opacity:0;transition:opacity 1s ease;will-change:opacity}.cinema-photo.visible{opacity:1}
+.cinema-hero:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,#111820c7 0%,#1118209c 22%,#11182050 39%,#11182008 62%,#11182005 100%),linear-gradient(0deg,#1118204a,transparent 24%,#11182020)}
+.cinema-copy{position:absolute;left:4.5%;top:53%;transform:translateY(-43%);width:min(330px,29vw);padding:10px 8px 12px 0;color:#fff;text-shadow:0 2px 14px #0005;z-index:2}
+.cinema-index{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:1.3px;color:#f5f6f7;margin-bottom:22px}.cinema-index i{width:35px;height:1px;background:#ffffff75}
+.cinema-kicker{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:2px;color:#f2f4f5;text-transform:uppercase;margin-bottom:12px}.cinema-kicker:after{display:none}.cinema-mountain{font-size:18px}
+.cinema-copy h1{font-family:Georgia,'Times New Roman',serif;font-weight:600;font-size:clamp(48px,5.6vw,78px);letter-spacing:-2.8px;line-height:.86;margin:0 0 12px;overflow-wrap:normal;max-width:100%;color:#fff}
+.cinema-scientific{margin-top:0;color:#f4f3f0;font-family:Georgia,'Times New Roman',serif;font-size:17px;font-style:italic;letter-spacing:0}
+.cinema-description{max-width:290px;margin:14px 0 16px;font-family:Georgia,'Times New Roman',serif;font-size:12px;line-height:1.45;color:#f7f7f5}
+.cinema-facts{display:flex;align-items:flex-start;gap:13px;margin:0 0 17px;color:#fff}.cinema-facts>div{display:grid;grid-template-columns:16px auto;column-gap:6px;min-width:0;padding-right:11px;border-right:1px solid #ffffff45}.cinema-facts>div:last-child{border:0;padding-right:0}.cinema-facts>div>span{grid-row:span 2;font-size:15px}.cinema-facts small{font-size:9px;color:#ffffffd6}.cinema-facts b{font-size:9px;font-weight:400;color:#fff;line-height:1.3;max-width:95px}
+.cinema-learn{display:inline-flex;align-items:center;gap:18px;padding:10px 17px;border:1px solid #ffffff95;border-radius:22px;background:#ffffff0b;color:#fff;font-size:10px;text-shadow:none;min-width:132px;justify-content:space-between}
+.cinema-dots{position:absolute;right:2%;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;align-items:center;max-height:66vh;overflow:hidden;padding:8px 6px;z-index:3}
+.cinema-dot{width:9px;height:9px;padding:0;border:1px solid #ffffffb0;border-radius:50%;background:#ffffff16;cursor:pointer;transition:all .25s}.cinema-dot.active{width:20px;height:20px;border:1px solid #fff;background:radial-gradient(circle,#fff 0 4px,transparent 5px);box-shadow:0 0 0 3px #ffffff18}
+.cinema-bottom{position:absolute;left:4.5%;bottom:29px;color:#e0e6e4;font-size:8px;letter-spacing:1.6px}.cinema-bottom b{color:#fff;font-weight:700}
+.cinema-counter{display:none}
+.cinema-arrows{position:absolute;right:2.4%;bottom:25px;display:flex;gap:8px;z-index:4}.cinema-arrows button{width:38px;height:38px;border:1px solid #ffffffa0;border-radius:50%;background:#ffffff18;color:#fff;font-size:21px;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s}.cinema-arrows button:hover{background:#ffffff40}
+.cinema-copy.is-leaving{opacity:0;transform:translateY(calc(-43% + 8px));transition:opacity .32s ease,transform .32s ease}.cinema-copy{opacity:1;transition:opacity .32s ease,transform .32s ease}
+@media(max-width:1050px){header.shell.nav{left:2%;right:2%;width:96%;padding:0 12px}.navlinks{gap:11px!important}.species-search{min-width:125px}.cinema-copy{width:min(330px,34vw)}}
+@media(max-width:760px){header.shell.nav{top:8px;left:3%;right:3%;width:94%;height:58px;padding:0 12px;border-radius:18px}.brand{font-size:15px!important}.navlinks a:not(.nav-home):not(.nav-explore){display:none}.navlinks .nav-home{display:none}.species-search{display:none}.navlinks .btn{padding:9px 10px!important}.cinema-hero{min-height:700px}.cinema-photo{background-position:64% center}.cinema-hero:before{background:linear-gradient(90deg,#111820c4 0%,#11182090 40%,#11182020 75%,transparent 100%),linear-gradient(0deg,#11182065,transparent 35%,#11182020)}.cinema-copy{left:5%;top:56%;width:min(78vw,340px);padding-right:6px}.cinema-copy h1{font-size:clamp(43px,10vw,64px);letter-spacing:-1.8px}.cinema-description{max-width:260px}.cinema-dots{right:3%;top:auto;bottom:88px;transform:none;flex-direction:row;max-height:none;max-width:62vw;overflow:hidden}.cinema-arrows{right:4%;bottom:20px}.cinema-bottom{left:5%;bottom:31px}.cinema-facts{gap:8px}.cinema-facts>div{padding-right:7px}}
+@media(prefers-reduced-motion:reduce){.cinema-photo,.cinema-dot,.cinema-copy{transition:none}}
 </style>
 </head>
 <body>
-<header class="shell nav"><a class="brand" href="#" aria-label="ANIVERA home"><span class="brandmark">A</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><nav class="navlinks"><a href="#how">How it works</a><a href="#features">Features</a><a href="#lifecycle">Lifecycle</a><a href="#about">About</a><a class="btn" href="dashboard.html">Open workspace <span>→</span></a></nav></header>
+<header class="shell nav"><a class="brand" href="#" aria-label="ANIVERA home"><span class="brandmark">♧</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><nav class="navlinks"><a class="nav-home" href="#">Home</a><a href="#species">Species</a><a href="#features">Features</a><a href="#lifecycle">Lifecycle</a><a href="#about">About</a><a href="dashboard.html">Open Workspace</a><label class="species-search"><span>⌕</span><input id="speciesSearch" type="search" placeholder="Search animals, species..." aria-label="Search animals and species"></label><a class="btn nav-explore" href="#species">▦ &nbsp; Explore All Animals <span>→</span></a></nav></header>
 <main>
-<section class="cinema-hero" aria-label="Featured ANIVERA species slideshow">
-<div class="cinema-photo visible" id="cinemaPhotoA" role="img" aria-label="Featured animal portrait"></div><div class="cinema-photo" id="cinemaPhotoB" role="img" aria-label="Featured animal portrait"></div>
+<section class="cinema-hero" id="species" aria-label="Featured ANIVERA species slideshow">
+<div class="cinema-photo visible" id="cinemaPhotoA" role="img" aria-label="Featured animal photograph"></div><div class="cinema-photo" id="cinemaPhotoB" role="img" aria-label="Featured animal photograph"></div>
 <div class="cinema-copy cinema-fade" id="cinemaCopy">
-<div class="cinema-kicker">SPECIES</div>
-<h1 id="cinemaName">Amur<br>Leopard</h1>
-<div class="cinema-status-label" id="cinemaStatusLabel">ANIMAL TYPE</div>
-<div class="cinema-status" id="cinemaStatus">Wild Mammal</div>
-<div class="cinema-scientific" id="cinemaScientific">Panthera pardus orientalis</div>
+<div class="cinema-index"><span id="cinemaIndex">05</span> / <span id="cinemaTotal">100</span><i></i></div>
+<div class="cinema-kicker"><span class="cinema-mountain">⌁</span><span id="cinemaStatusLabel">WILD MAMMAL</span></div>
+<h1 id="cinemaName">Snow<br>Leopard</h1>
+<div class="cinema-scientific" id="cinemaScientific">Panthera uncia</div>
+<p class="cinema-description" id="cinemaDescription">A majestic big cat adapted to cold, high-altitude mountains, known for its thick fur, powerful build, and exceptional climbing ability.</p>
+<div class="cinema-facts"><div><span>♧</span><small>Habitat</small><b id="cinemaHabitat">Mountain Regions</b></div><div><span>♢</span><small>Diet</small><b id="cinemaDiet">Carnivore</b></div><div><span>◇</span><small>Status</small><b id="cinemaConservation">Vulnerable (VU)</b></div></div>
+<a class="cinema-learn" id="cinemaLearn" href="dashboard.html">Learn More <span>→</span></a>
 </div>
 <div class="cinema-dots" id="cinemaDots" aria-label="Choose featured animal"></div>
 <div class="cinema-bottom">ANIVERA <b>·</b> EVERY ANIMAL. EVERY STAGE.</div>
-<div class="cinema-counter" id="cinemaCounter">01 / 50</div>
+<div class="cinema-counter" id="cinemaCounter">05 / 100</div>
+<div class="cinema-arrows"><button id="cinemaPrev" aria-label="Previous animal">←</button><button id="cinemaNext" aria-label="Next animal">→</button></div>
 </section>
 <section class="shell"><div class="proof"><div class="prooflead">One connected workspace<small>Made for the full animal journey</small></div><div class="proofitem">IDENTITY<small>Unique profiles</small></div><div class="proofitem">HEALTH<small>Care history</small></div><div class="proofitem">ROUTINES<small>Tasks & reminders</small></div><div class="proofitem">LIFECYCLE<small>Milestones</small></div></div></section>
 <section class="section gray" id="features"><div class="shell"><div class="section-head"><div class="kicker">One connected animal journey</div><h2>Care for the whole life, not just one moment.</h2><p class="desc">Bring animal identity, health history, care plans, and lifecycle milestones into a clearer shared view.</p></div><div class="feature-grid"><article class="feature"><div class="symbol">⌁</div><h3>Animal identity</h3><p>Maintain a dedicated profile with species, identifiers, location, and key details.</p></article><article class="feature"><div class="symbol">✚</div><h3>Health & care history</h3><p>Keep observations, treatments, vaccinations, and care notes together.</p></article><article class="feature"><div class="symbol">◷</div><h3>Lifecycle tracking</h3><p>Follow milestones and care tasks as an animal moves through different stages.</p></article></div></div></section>
@@ -156,6 +191,22 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
 
  const featuredAmur={...all.find(a=>a.name==="Leopard"),name:"Amur Leopard",scientificName:"Panthera pardus orientalis",imageQuery:"Amur leopard"};
  const slideshowAnimals=[featuredAmur,...all.filter(a=>a.name!=="Leopard").slice(0,99)]; // 100 featured slides total, including Amur Leopard.
+ const heroDetails={
+ "Snow Leopard":{description:"A majestic big cat adapted to cold, high-altitude mountains, known for its thick fur, powerful build, and exceptional climbing ability.",habitat:"Mountain Regions",diet:"Carnivore",status:"Vulnerable (VU)"},
+ "Amur Leopard":{description:"One of the world's rarest big cats, adapted to temperate forests and snowy landscapes of the Russian Far East.",habitat:"Temperate Forests",diet:"Carnivore",status:"Critically Endangered (CR)"},
+ "African Elephant":{description:"The largest living land animal, recognized by its trunk, broad ears, and strong family bonds.",habitat:"Savannas and Forests",diet:"Herbivore",status:"Endangered (EN)"},
+ "Bengal Tiger":{description:"A powerful striped big cat that inhabits forests, grasslands, and mangrove ecosystems across South Asia.",habitat:"Forests and Grasslands",diet:"Carnivore",status:"Endangered (EN)"},
+ "Polar Bear":{description:"A large Arctic bear with dense insulating fur and broad paws adapted for life on sea ice.",habitat:"Arctic Sea Ice",diet:"Carnivore",status:"Vulnerable (VU)"},
+ "Giant Panda":{description:"A distinctive black-and-white bear that spends much of its day feeding on bamboo in mountain forests.",habitat:"Mountain Bamboo Forests",diet:"Herbivore",status:"Vulnerable (VU)"},
+ "Mountain Gorilla":{description:"A highly social great ape living in high-altitude forests, known for close family groups and powerful builds.",habitat:"Montane Forests",diet:"Herbivore",status:"Endangered (EN)"},
+ "Black Rhinoceros":{description:"A large browsing mammal with a hooked upper lip and one or two horns.",habitat:"Savannas and Shrublands",diet:"Herbivore",status:"Critically Endangered (CR)"},
+ "Bottlenose Dolphin":{description:"An intelligent, social marine mammal known for its curved mouth and agile swimming.",habitat:"Coastal and Offshore Waters",diet:"Carnivore",status:"Least Concern (LC)"},
+ "Blue Whale":{description:"The largest animal known to have lived on Earth, feeding on tiny krill in the open ocean.",habitat:"Open Ocean",diet:"Krill",status:"Endangered (EN)"},
+ "Orca":{description:"A highly social oceanic dolphin with striking black-and-white markings and coordinated hunting behaviour.",habitat:"Oceans Worldwide",diet:"Carnivore",status:"Data Deficient (varies by population)"},
+ "Red Panda":{description:"A small tree-dwelling mammal with reddish fur, a ringed tail, and adaptations for life in cool forests.",habitat:"Himalayan Forests",diet:"Omnivore",status:"Endangered (EN)"},
+ "Komodo Dragon":{description:"The world's largest living lizard, native to a small group of Indonesian islands.",habitat:"Dry Tropical Islands",diet:"Carnivore",status:"Endangered (EN)"},
+ "West Indian Manatee":{description:"A gentle aquatic mammal that grazes on vegetation in warm coastal and freshwater habitats.",habitat:"Warm Coastal Waters",diet:"Herbivore",status:"Vulnerable (VU)"}
+ };
  const verifiedImageCache=new Map();
  const wikipediaTitle={"Amur Leopard":"Amur leopard","Bengal Tiger":"Bengal tiger","African Elephant":"African bush elephant","Snow Leopard":"Snow leopard","Mountain Gorilla":"Mountain gorilla","Black Rhinoceros":"Black rhinoceros","Bottlenose Dolphin":"Common bottlenose dolphin","Domestic Cattle":"Cattle","Water Buffalo":"Domestic water buffalo","Domestic Goat":"Domestic goat","Domestic Sheep":"Sheep","Domestic Horse":"Horse","Domestic Donkey":"Donkey","Domestic Dog":"Dog","Domestic Cat":"Cat","European Rabbit":"European rabbit","Guinea Pig":"Domestic guinea pig","Saltwater Crocodile":"Saltwater crocodile","Green Sea Turtle":"Green sea turtle","King Cobra":"King cobra","Komodo Dragon":"Komodo dragon","Green Iguana":"Green iguana","Green Anaconda":"Green anaconda","American Alligator":"American alligator","Veiled Chameleon":"Veiled chameleon","Tokay Gecko":"Tokay gecko","West Indian Manatee":"West Indian manatee","Dromedary Camel":"Dromedary","Giant Panda":"Giant panda","Red Panda":"Red panda","Gray Wolf":"Gray wolf","Red Fox":"Red fox","Arctic Fox":"Arctic fox","Polar Bear":"Polar bear","Brown Bear":"Brown bear","Red Kangaroo":"Red kangaroo","Blue Whale":"Blue whale","Humpback Whale":"Humpback whale","Orca":"Orca","Dugong":"Dugong","Harbor Seal":"Harbor seal","Sperm Whale":"Sperm whale","Alpaca":"Alpaca","Llama":"Llama","Giraffe":"Giraffe"};
  async function getSpeciesImage(animal){
@@ -195,8 +246,15 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
      copy.classList.add("is-leaving");
      window.setTimeout(()=>{
       nameEl.textContent=a.name;statusEl.textContent=a.animalType;
-      document.getElementById("cinemaStatusLabel").textContent="ANIMAL TYPE";
+      document.getElementById("cinemaStatusLabel").textContent=(a.animalType||"Wild Mammal").toUpperCase();
       scientificEl.textContent=a.scientificName;
+      document.getElementById("cinemaIndex").textContent=String(currentSlide+1).padStart(2,"0");
+      document.getElementById("cinemaTotal").textContent=String(slideshowAnimals.length);
+      const detail=heroDetails[a.name]||{description:"Discover this remarkable species and explore its natural habitat, diet, and conservation story.",habitat:a.category==="Marine"?"Oceans and coastal waters":a.category==="Livestock"?"Farms and grasslands":a.category==="Companion"?"Human homes":a.category==="Reptiles"?"Warm and temperate habitats":a.category==="Fish"?"Freshwater and marine waters":"Forests, grasslands and natural habitats",diet:"Species-specific",status:"Check local conservation data"};
+      document.getElementById("cinemaDescription").textContent=detail.description;
+      document.getElementById("cinemaHabitat").textContent=detail.habitat;
+      document.getElementById("cinemaDiet").textContent=detail.diet;
+      document.getElementById("cinemaConservation").textContent=detail.status;
       counter.textContent=String(currentSlide+1).padStart(2,"0")+" / "+String(slideshowAnimals.length).padStart(2,"0");
       renderDots();
       copy.classList.remove("is-leaving");slideBusy=false;
@@ -219,6 +277,8 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
  }
  renderDots();
  function startTimer(){if(slideTimer)clearInterval(slideTimer);slideTimer=setInterval(()=>{if(!document.hidden)paintSlide(currentSlide+1)},5000)}
+ document.getElementById("cinemaPrev").addEventListener("click",()=>{paintSlide(currentSlide-1);startTimer()});document.getElementById("cinemaNext").addEventListener("click",()=>{paintSlide(currentSlide+1);startTimer()});
+ document.getElementById("speciesSearch").addEventListener("keydown",e=>{if(e.key==="Enter"){const q=e.currentTarget.value.trim().toLowerCase();const i=slideshowAnimals.findIndex(a=>a.name.toLowerCase().includes(q)||a.scientificName.toLowerCase().includes(q));if(i>=0){paintSlide(i);startTimer()}else{e.currentTarget.setCustomValidity("No matching animal in the featured 100.");e.currentTarget.reportValidity();e.currentTarget.setCustomValidity("")}}});
  paintSlide(0,true);startTimer();
  document.addEventListener('visibilitychange',()=>{if(document.hidden){if(slideTimer)clearInterval(slideTimer)}else startTimer()});
 
