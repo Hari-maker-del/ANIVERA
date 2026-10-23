@@ -143,6 +143,49 @@ header .navlinks .nav-explore{padding:10px 16px;font-weight:700}
  .cinema-bottom{z-index:7!important;bottom:19px!important;left:5%!important}
  .cinema-arrows{z-index:7!important;bottom:12px!important;right:4%!important}
 }
+
+/* FINAL mobile overrides: placed after all desktop/reference styles so they win the cascade */
+@media (max-width:760px) {
+  header.shell.nav {top:8px!important;left:3%!important;right:3%!important;width:94%!important;height:auto!important;min-height:54px!important;padding:7px 10px!important;gap:8px!important}
+  header .brand {font-size:14px!important;gap:6px!important}
+  header .brandmark {width:29px!important;height:29px!important;font-size:18px!important}
+  header .brand small {font-size:5px!important;letter-spacing:.8px!important}
+  header .navlinks {display:flex!important;flex:1!important;gap:6px!important;justify-content:flex-end!important;font-size:9px!important}
+  header .navlinks a:not(.nav-home):not(.nav-signin):not(.nav-explore) {display:none!important}
+  header .navlinks .nav-home {display:none!important}
+  header .navlinks .nav-signin {display:inline-flex!important;padding:7px 5px!important;font-size:9px!important}
+  header .navlinks .nav-explore {display:inline-flex!important;padding:8px 9px!important;font-size:9px!important;white-space:nowrap!important}
+  header .navlinks .species-search {display:none!important}
+  .cinema-hero {height:calc(100svh - 8px)!important;min-height:720px!important;overflow:hidden!important;padding-top:0!important}
+  .cinema-hero .cinema-photo {background-size:contain!important;background-position:center 25%!important;background-repeat:no-repeat!important;background-color:#222b32!important}
+  .cinema-hero:before {background:linear-gradient(180deg,#11182022 0%,#11182000 22%,#11182022 40%,#111820c9 62%,#111820f2 100%)!important}
+  .cinema-copy {left:5%!important;top:auto!important;bottom:86px!important;transform:none!important;width:88%!important;max-width:420px!important;padding:12px 12px 12px 0!important;text-shadow:0 2px 12px #0008!important}
+  .cinema-index {margin-bottom:10px!important;font-size:9px!important}
+  .cinema-kicker {margin-bottom:7px!important;font-size:8px!important}
+  .cinema-copy h1 {font-size:clamp(38px,10vw,56px)!important;line-height:.92!important;letter-spacing:-1.4px!important;margin-bottom:7px!important}
+  .cinema-scientific {font-size:14px!important}
+  .cinema-description {font-size:11px!important;line-height:1.35!important;margin:8px 0 10px!important;max-width:340px!important}
+  .cinema-facts {gap:8px!important;margin-bottom:10px!important}
+  .cinema-facts>div {grid-template-columns:13px auto!important;column-gap:4px!important;padding-right:7px!important}
+  .cinema-facts>div>span {font-size:12px!important}
+  .cinema-facts small,.cinema-facts b {font-size:8px!important}
+  .cinema-learn {padding:8px 13px!important;min-width:118px!important;font-size:9px!important}
+  .cinema-dots {right:12px!important;top:43%!important;bottom:auto!important;transform:translateY(-50%)!important;flex-direction:column!important;max-height:35vh!important;max-width:none!important;gap:7px!important}
+  .cinema-dot {width:7px!important;height:7px!important}
+  .cinema-dot.active {width:15px!important;height:15px!important}
+  .cinema-bottom {left:5%!important;bottom:22px!important;font-size:7px!important}
+  .cinema-arrows {right:5%!important;bottom:15px!important;gap:6px!important}
+  .cinema-arrows button {width:32px!important;height:32px!important;font-size:18px!important}
+  .cinema-copy.is-leaving {transform:translateY(6px)!important}
+}
+@media (max-width:390px) {
+  header .brand small {display:none!important}
+  header .navlinks .nav-explore {font-size:8px!important;padding:8px 7px!important}
+  .cinema-copy {width:90%!important;bottom:78px!important}
+  .cinema-description {max-width:290px!important}
+  .cinema-facts {gap:5px!important}
+}
+
 </style>
 </head>
 <body>
