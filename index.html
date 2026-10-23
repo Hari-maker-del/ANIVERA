@@ -261,6 +261,33 @@ header .navlinks .nav-explore{padding:10px 16px;font-weight:700}
   .cinema-facts>div{flex:1 1 28%!important}
 }
 
+
+/* Final mobile hero tuning: preserve the animal's face and compact the glass nav */
+@media(max-width:760px){
+  header.shell.nav{top:10px!important;left:3%!important;right:3%!important;width:94%!important;height:58px!important;padding:0 12px!important;border-radius:18px!important;gap:8px!important}
+  header .brand{gap:7px!important;font-size:17px!important;white-space:nowrap!important}
+  header .brandmark{width:32px!important;height:34px!important;font-size:22px!important;flex:0 0 auto!important}
+  header .brand small{font-size:6px!important;letter-spacing:1px!important}
+  header .navlinks{gap:8px!important;white-space:nowrap!important}
+  header .navlinks a{font-size:11px!important}
+  header .navlinks .btn{font-size:10px!important;padding:9px 10px!important;gap:5px!important}
+  .cinema-hero{min-height:0!important}
+  .cinema-photo{height:48svh!important;background-size:cover!important;background-position:var(--animal-focus-x,center) var(--animal-focus-y,35%)!important}
+  .cinema-copy{margin-top:calc(44svh)!important;padding-top:12px!important}
+  .cinema-dots{top:27%!important;gap:9px!important;right:10px!important}
+  .cinema-dot{width:7px!important;height:7px!important}
+  .cinema-dot.active{width:20px!important;height:20px!important}
+}
+@media(max-width:420px){
+  header.shell.nav{height:54px!important;padding:0 10px!important;border-radius:16px!important}
+  header .brand{font-size:15px!important}
+  header .brandmark{width:29px!important;height:31px!important}
+  header .navlinks{gap:6px!important}
+  header .navlinks .btn{padding:8px 8px!important;font-size:9px!important}
+  .cinema-photo{height:46svh!important;background-position:var(--animal-focus-x,center) var(--animal-focus-y,30%)!important}
+  .cinema-copy{margin-top:calc(42svh)!important}
+}
+
 </style>
 </head>
 <body>
