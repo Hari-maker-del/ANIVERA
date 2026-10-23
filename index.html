@@ -66,10 +66,20 @@ header .navlinks .btn{display:inline-flex;padding:9px 13px;border-radius:24px;ba
 @media(max-width:1050px){header.shell.nav{left:2%;right:2%;width:96%;padding:0 12px}.navlinks{gap:11px!important}.species-search{min-width:125px}.cinema-copy{width:min(330px,34vw)}}
 @media(max-width:760px){header.shell.nav{top:8px;left:3%;right:3%;width:94%;height:58px;padding:0 12px;border-radius:18px}.brand{font-size:15px!important}.navlinks a:not(.nav-home):not(.nav-explore){display:none}.navlinks .nav-home{display:none}.species-search{display:none}.navlinks .btn{padding:9px 10px!important}.cinema-hero{min-height:700px}.cinema-photo{background-size:auto 92%;background-position:right 4%}.cinema-hero:before{background:linear-gradient(90deg,#111820c4 0%,#11182090 40%,#11182020 75%,transparent 100%),linear-gradient(0deg,#11182065,transparent 35%,#11182020)}.cinema-copy{left:5%;top:56%;width:min(78vw,340px);padding-right:6px}.cinema-copy h1{font-size:clamp(43px,10vw,64px);letter-spacing:-1.8px}.cinema-description{max-width:260px}.cinema-dots{right:3%;top:auto;bottom:88px;transform:none;flex-direction:row;max-height:none;max-width:62vw;overflow:hidden}.cinema-arrows{right:4%;bottom:20px}.cinema-bottom{left:5%;bottom:31px}.cinema-facts{gap:8px}.cinema-facts>div{padding-right:7px}}
 @media(prefers-reduced-motion:reduce){.cinema-photo,.cinema-dot,.cinema-copy{transition:none}}
+
+/* Clear public-site navigation: explore first, authenticate to enter workspace. */
+header.shell.nav{gap:18px}
+header .brandmark{font-family:Georgia,serif;font-weight:700}
+header .navlinks{gap:clamp(10px,1.65vw,23px);font-size:11px}
+header .navlinks a{white-space:nowrap}
+header .navlinks .nav-signin{padding:9px 3px;font-weight:600}
+header .navlinks .nav-explore{padding:10px 16px;font-weight:700}
+@media(max-width:1050px){header .navlinks{gap:12px!important}header .navlinks .species-search{min-width:110px;max-width:145px}}
+@media(max-width:760px){header .navlinks .nav-signin{display:inline-flex}header .navlinks .nav-explore{padding:9px 11px!important}header .navlinks .species-search{display:none}}
 </style>
 </head>
 <body>
-<header class="shell nav"><a class="brand" href="#" aria-label="ANIVERA home"><span class="brandmark">♧</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><nav class="navlinks"><a class="nav-home" href="#">Home</a><a href="#species">Species</a><a href="#features">Features</a><a href="#lifecycle">Lifecycle</a><a href="#about">About</a><a href="dashboard.html">Open Workspace</a><label class="species-search"><span>⌕</span><input id="speciesSearch" type="search" placeholder="Search animals, species..." aria-label="Search animals and species"></label><a class="btn nav-explore" href="#species">▦ &nbsp; Explore All Animals <span>→</span></a></nav></header>
+<header class="shell nav"><a class="brand" href="#" aria-label="ANIVERA home"><span class="brandmark">A</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><nav class="navlinks" aria-label="Main navigation"><a class="nav-home" href="#">Home</a><a href="#species">Animals</a><a href="#features">Features</a><a href="#about">About</a><label class="species-search"><span>⌕</span><input id="speciesSearch" type="search" placeholder="Search animals..." aria-label="Search animals"></label><a class="nav-signin" href="dashboard.html?auth=signin">Sign in</a><a class="btn nav-explore" href="dashboard.html?auth=signup">Create account <span>→</span></a></nav></header>
 <main>
 <section class="cinema-hero" id="species" aria-label="Featured ANIVERA species slideshow">
 <div class="cinema-photo visible" id="cinemaPhotoA" role="img" aria-label="Featured animal photograph"></div><div class="cinema-photo" id="cinemaPhotoB" role="img" aria-label="Featured animal photograph"></div>
