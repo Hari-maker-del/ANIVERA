@@ -95,5 +95,14 @@
     await signedIn(data.user);
   });
   document.getElementById('cloud-signout').addEventListener('click', async () => { if (client) { status('Signing out…'); await client.auth.signOut(); } });
+  const authMode = new URLSearchParams(location.search).get('auth');
+  if (authMode === 'signup') {
+    document.getElementById('cloud-signup').textContent = 'Create account';
+    status('Create your ANIVERA account with your email and a password of at least 8 characters.');
+    setTimeout(() => document.querySelector('#cloud-auth input[name="email"]')?.focus(), 250);
+  } else if (authMode === 'signin') {
+    status('Sign in to open your ANIVERA workspace and sync across devices.');
+    setTimeout(() => document.querySelector('#cloud-auth input[name="email"]')?.focus(), 250);
+  }
   init();
 })();
