@@ -190,7 +190,7 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
  }
 
  const featuredAmur={...all.find(a=>a.name==="Leopard"),name:"Amur Leopard",scientificName:"Panthera pardus orientalis",imageQuery:"Amur leopard"};
- const slideshowAnimals=[featuredAmur,...all.filter(a=>a.name!=="Leopard").slice(0,99)]; // 100 featured slides total, including Amur Leopard.
+ const slideshowAnimals=[all.find(a=>a.name==="Snow Leopard"),featuredAmur,...all.filter(a=>a.name!=="Leopard"&&a.name!=="Snow Leopard").slice(0,98)].filter(Boolean); // 100 unique featured slides; Snow Leopard opens first.
  const heroDetails={
  "Snow Leopard":{description:"A majestic big cat adapted to cold, high-altitude mountains, known for its thick fur, powerful build, and exceptional climbing ability.",habitat:"Mountain Regions",diet:"Carnivore",status:"Vulnerable (VU)"},
  "Amur Leopard":{description:"One of the world's rarest big cats, adapted to temperate forests and snowy landscapes of the Russian Far East.",habitat:"Temperate Forests",diet:"Carnivore",status:"Critically Endangered (CR)"},
