@@ -25,7 +25,7 @@ header .brand small{color:#aab0b1}
 header .brandmark{background:#fff;color:#202629;border-radius:0;width:40px;height:46px;font-family:Georgia,serif;font-size:28px}
 header .btn{background:transparent;border:0;border-bottom:1px solid #b7b9b8;border-radius:0;padding:8px 0;color:#f7f5ef}
 .cinema-hero{height:100svh;min-height:580px;position:relative;overflow:hidden;background:#202629;isolation:isolate}
-.cinema-photo{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:center 38%;transition:opacity .6s ease,background-image .5s ease}
+.cinema-photo{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:center 38%;opacity:0;transition:opacity .9s ease;will-change:opacity}.cinema-photo.visible{opacity:1}
 .cinema-hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#202629 0%,#202629ed 17%,#202629a8 36%,#20262922 65%,#20262999 100%),linear-gradient(0deg,#202629aa,transparent 35%,#10141644)}
 .cinema-copy{position:absolute;left:9.5%;top:50%;transform:translateY(-43%);width:min(440px,44vw);color:#f6f2e9}
 .cinema-kicker{font-size:9px;letter-spacing:3px;color:#aeb3b2;text-transform:uppercase;margin-bottom:16px}
@@ -41,7 +41,7 @@ header .btn{background:transparent;border:0;border-bottom:1px solid #b7b9b8;bord
 .cinema-counter{position:absolute;right:4.2%;bottom:32px;color:#a6acad;font-size:9px;letter-spacing:2px}
 .cinema-bottom{position:absolute;left:9.5%;bottom:35px;color:#aeb3b2;font-size:9px;letter-spacing:2px}
 .cinema-bottom b{color:#FB8122;font-weight:700}
-.cinema-fade{animation:cinemaFade .65s ease}
+.cinema-fade{animation:cinemaFade .65s ease}.cinema-copy.is-leaving{opacity:0;transform:translateY(calc(-43% + 8px));transition:opacity .32s ease,transform .32s ease}.cinema-copy{opacity:1;transition:opacity .32s ease,transform .32s ease}
 @keyframes cinemaFade{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .after-hero{background:#fff;color:#1D2228}
 @media(max-width:760px){header.shell.nav{padding:0 18px}.cinema-hero{min-height:650px}.cinema-photo{background-position:58% center}.cinema-hero:before{background:linear-gradient(90deg,#202629d9,#20262988 55%,#20262935),linear-gradient(0deg,#202629aa,transparent 55%,#10141655)}.cinema-copy{left:7%;top:54%;width:78vw}.cinema-copy h1{font-size:clamp(53px,14vw,76px)}.cinema-dots{right:6%;top:auto;bottom:82px;transform:none;flex-direction:row}.cinema-bottom{left:7%;bottom:31px}.cinema-counter{right:7%;bottom:31px}.navlinks a:not(.btn){display:none}}
@@ -52,7 +52,7 @@ header .btn{background:transparent;border:0;border-bottom:1px solid #b7b9b8;bord
 <header class="shell nav"><a class="brand" href="#" aria-label="ANIVERA home"><span class="brandmark">A</span><span>ANIVERA<small>ANIMAL LIFECYCLE PLATFORM</small></span></a><nav class="navlinks"><a href="#how">How it works</a><a href="#features">Features</a><a href="#lifecycle">Lifecycle</a><a href="#about">About</a><a class="btn" href="dashboard.html">Open workspace <span>→</span></a></nav></header>
 <main>
 <section class="cinema-hero" aria-label="Featured ANIVERA species slideshow">
-<div class="cinema-photo" id="cinemaPhoto" role="img" aria-label="Featured animal portrait"></div>
+<div class="cinema-photo visible" id="cinemaPhotoA" role="img" aria-label="Featured animal portrait"></div><div class="cinema-photo" id="cinemaPhotoB" role="img" aria-label="Featured animal portrait"></div>
 <div class="cinema-copy cinema-fade" id="cinemaCopy">
 <div class="cinema-kicker">SPECIES</div>
 <h1 id="cinemaName">Amur<br>Leopard</h1>
@@ -166,43 +166,26 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
   render();requestAnimationFrame(frame);
  }
 
- const slideshowNames=["Amur Tiger","Bengal Tiger","African Elephant","Lion","Snow Leopard","Jaguar","Cheetah","Giant Panda","Red Panda","Mountain Gorilla","Black Rhinoceros","Hippopotamus","Gray Wolf","Arctic Fox","Polar Bear","Brown Bear","Red Kangaroo","Koala","Blue Whale","Humpback Whale","Orca","Bottlenose Dolphin","Dugong","Harbor Seal","Domestic Cattle","Water Buffalo","Domestic Goat","Domestic Sheep","Domestic Horse","Domestic Donkey","Domestic Dog","Domestic Cat","European Rabbit","Guinea Pig","Saltwater Crocodile","Green Sea Turtle","King Cobra","Komodo Dragon","Green Iguana","Green Anaconda","Gharial","American Alligator","Veiled Chameleon","Tokay Gecko","West Indian Manatee","Sperm Whale","Dromedary Camel","Alpaca","Llama","Giraffe"];
- const slideshowAnimals=slideshowNames.map(n=>all.find(a=>a.name===n)).filter(Boolean);
- const photoByName={
- "Amur Tiger":"https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=2000&q=90",
- "Bengal Tiger":"https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=2000&q=90",
- "African Elephant":"https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2000&q=90",
- "Lion":"https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=2000&q=90",
- "Giant Panda":"https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=2000&q=90",
- "Domestic Dog":"https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=2000&q=90",
- "Domestic Cat":"https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=2000&q=90",
- "Domestic Horse":"https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=2000&q=90",
- "Giraffe":"https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=2000&q=90",
- "Red Fox":"https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=2000&q=90"
- };
- const photo=document.getElementById('cinemaPhoto'),nameEl=document.getElementById('cinemaName'),statusEl=document.getElementById('cinemaStatus'),scientificEl=document.getElementById('cinemaScientific'),dots=document.getElementById('cinemaDots'),counter=document.getElementById('cinemaCounter'),copy=document.getElementById('cinemaCopy');
- let currentSlide=0,slideTimer=null;
- function paintSlide(index){
-  if(!slideshowAnimals.length)return;
+ const slideshowNames=["Amur Leopard","Bengal Tiger","African Elephant","Lion","Snow Leopard","Jaguar","Cheetah","Giant Panda","Red Panda","Mountain Gorilla","Black Rhinoceros","Hippopotamus","Gray Wolf","Arctic Fox","Polar Bear","Brown Bear","Red Kangaroo","Koala","Blue Whale","Humpback Whale","Orca","Bottlenose Dolphin","Dugong","Harbor Seal","Domestic Cattle","Water Buffalo","Domestic Goat","Domestic Sheep","Domestic Horse","Domestic Donkey","Domestic Dog","Domestic Cat","European Rabbit","Guinea Pig","Saltwater Crocodile","Green Sea Turtle","King Cobra","Komodo Dragon","Green Iguana","Green Anaconda","Gharial","American Alligator","Veiled Chameleon","Tokay Gecko","West Indian Manatee","Sperm Whale","Dromedary Camel","Alpaca","Llama","Giraffe"];
+ const slideshowAnimals=slideshowNames.map(n=>n==="Amur Leopard"?{...all.find(a=>a.name==="Leopard"),name:"Amur Leopard",scientificName:"Panthera pardus orientalis",imageQuery:"Amur Leopard"}:all.find(a=>a.name===n)).filter(Boolean);
+ const photoByName={"Amur Leopard":"https://loremflickr.com/1800/1200/amur,leopard","Bengal Tiger":"https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=2000&q=90","African Elephant":"https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2000&q=90","Lion":"https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=2000&q=90","Giant Panda":"https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=2000&q=90","Domestic Dog":"https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=2000&q=90","Domestic Cat":"https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=2000&q=90","Domestic Horse":"https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=2000&q=90","Giraffe":"https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=2000&q=90","Red Fox":"https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=2000&q=90"};
+ const photoLayers=[document.getElementById("cinemaPhotoA"),document.getElementById("cinemaPhotoB")];
+ let visibleLayer=0,currentSlide=0,slideTimer=null,slideBusy=false;
+ const nameEl=document.getElementById("cinemaName"),statusEl=document.getElementById("cinemaStatus"),scientificEl=document.getElementById("cinemaScientific"),dots=document.getElementById("cinemaDots"),counter=document.getElementById("cinemaCounter"),copy=document.getElementById("cinemaCopy");
+ function paintSlide(index,instant=false){
+  if(!slideshowAnimals.length||slideBusy)return;
   currentSlide=(index+slideshowAnimals.length)%slideshowAnimals.length;
   const a=slideshowAnimals[currentSlide];
-  const image=photoByName[a.name]||categoryPhoto(a.category,a.animalType);
-  photo.style.opacity='.35';
+  const image=photoByName[a.name]||("https://loremflickr.com/1800/1200/"+encodeURIComponent(a.name.replace(/\\s+/g,",")));
+  const nextLayer=1-visibleLayer,target=photoLayers[nextLayer];slideBusy=true;
   const preloader=new Image();
-  preloader.onload=()=>{photo.style.backgroundImage='url("'+image+'")';photo.style.opacity='1'};
-  preloader.onerror=()=>{photo.style.backgroundImage='url("'+categoryPhoto(a.category,a.animalType)+'")';photo.style.opacity='1'};
+  preloader.onload=()=>{target.style.backgroundImage='url("'+image+'")';target.setAttribute("aria-label",a.name+" photograph");requestAnimationFrame(()=>{target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;copy.classList.add("is-leaving");window.setTimeout(()=>{nameEl.textContent=a.name;statusEl.textContent=a.animalType;document.getElementById("cinemaStatusLabel").textContent="ANIMAL TYPE";scientificEl.textContent=a.scientificName;counter.textContent=String(currentSlide+1).padStart(2,"0")+" / "+String(slideshowAnimals.length).padStart(2,"0");[...dots.children].forEach((dot,i)=>{dot.classList.toggle("active",i===currentSlide);dot.setAttribute("aria-current",i===currentSlide?"true":"false")});copy.classList.remove("is-leaving");slideBusy=false;},instant?0:320);});};
+  preloader.onerror=()=>{const safe=categoryPhoto(a.category,a.animalType);target.style.backgroundImage='url("'+safe+'")';target.classList.add("visible");photoLayers[visibleLayer].classList.remove("visible");visibleLayer=nextLayer;nameEl.textContent=a.name;statusEl.textContent=a.animalType;scientificEl.textContent=a.scientificName;counter.textContent=String(currentSlide+1).padStart(2,"0")+" / "+String(slideshowAnimals.length).padStart(2,"0");[...dots.children].forEach((dot,i)=>dot.classList.toggle("active",i===currentSlide));slideBusy=false;};
   preloader.src=image;
-  nameEl.innerHTML=esc(a.name).replace(/\s+/, '<br>');
-  statusEl.textContent=a.animalType;
-  document.getElementById('cinemaStatusLabel').textContent='ANIMAL TYPE';
-  scientificEl.textContent=a.scientificName;
-  counter.textContent=String(currentSlide+1).padStart(2,'0')+' / '+String(slideshowAnimals.length).padStart(2,'0');
-  [...dots.children].forEach((dot,i)=>{dot.classList.toggle('active',i===currentSlide);dot.setAttribute('aria-current',i===currentSlide?'true':'false')});
-  copy.classList.remove('cinema-fade');void copy.offsetWidth;copy.classList.add('cinema-fade');
  }
- slideshowAnimals.forEach((a,i)=>{const dot=document.createElement('button');dot.type='button';dot.className='cinema-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Show '+a.name);dot.addEventListener('click',()=>{paintSlide(i);startTimer()});dots.appendChild(dot)});
- function startTimer(){if(slideTimer)clearInterval(slideTimer);slideTimer=setInterval(()=>paintSlide(currentSlide+1),3000)}
- paintSlide(0);startTimer();
+ slideshowAnimals.forEach((a,i)=>{const dot=document.createElement("button");dot.type="button";dot.className="cinema-dot"+(i===0?" active":"");dot.setAttribute("aria-label","Show "+a.name);dot.addEventListener("click",()=>{paintSlide(i);startTimer()});dots.appendChild(dot)});
+ function startTimer(){if(slideTimer)clearInterval(slideTimer);slideTimer=setInterval(()=>{if(!document.hidden)paintSlide(currentSlide+1)},3000)}
+ paintSlide(0,true);startTimer();
  document.addEventListener('visibilitychange',()=>{if(document.hidden){if(slideTimer)clearInterval(slideTimer)}else startTimer()});
 
  window.ANIVERA_SPECIES_VALIDATION={total:all.length,left:left.length,right:right.length,duplicateNames:all.length-new Set(all.map(a=>a.name.trim().toLowerCase())).size,duplicateScientific:all.length-new Set(all.map(a=>a.scientificName.trim().toLowerCase())).size,birds:all.filter(a=>/bird|avian|aves|parrot|eagle|owl|chicken|duck|penguin/i.test(a.name+' '+a.animalType+' '+a.category)).length};
