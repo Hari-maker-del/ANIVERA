@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffffff"><meta name="description" content="ANIVERA connects animal identity, health monitoring, care plans and lifecycle records in one animal-care workspace.">
+<meta name="theme-color" content="#1D2228"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="ANIVERA"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icons/anivera-192.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icons/anivera-192.svg"><meta name="description" content="ANIVERA connects animal identity, health monitoring, care plans and lifecycle records in one animal-care workspace.">
 <title>ANIVERA — Every Animal. Every Stage of Life.</title>
 <link rel="preconnect" href="https://images.unsplash.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -404,4 +404,4 @@ document.getElementById('animalModalClose').addEventListener('click',closeAnimal
 
  window.ANIVERA_SPECIES_VALIDATION={total:all.length,left:left.length,right:right.length,duplicateNames:all.length-new Set(all.map(a=>a.name.trim().toLowerCase())).size,duplicateScientific:all.length-new Set(all.map(a=>a.scientificName.trim().toLowerCase())).size,birds:all.filter(a=>/bird|avian|aves|parrot|eagle|owl|chicken|duck|penguin/i.test(a.name+' '+a.animalType+' '+a.category)).length};
 })();
-</script></body></html>
+</script><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(err=>console.warn("ANIVERA offline setup unavailable",err)));}</script></body></html>
