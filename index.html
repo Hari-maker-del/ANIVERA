@@ -288,6 +288,16 @@ header .navlinks .nav-explore{padding:10px 16px;font-weight:700}
   .cinema-copy{margin-top:calc(42svh)!important}
 }
 
+
+/* Keep the animal's head inside the mobile image window. */
+@media(max-width:760px){
+  .cinema-photo{background-position:var(--animal-focus-x,center) 0%!important}
+}
+@media(max-width:420px){
+  .cinema-photo{background-position:var(--animal-focus-x,center) 0%!important}
+  header.shell.nav{background:rgba(29,34,40,.58)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important}
+}
+
 </style>
 </head>
 <body>
