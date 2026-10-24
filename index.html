@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANIVERA — Universal Animal Lifecycle Platform | Every Animal. Every Stage of Life.</title>
+  <meta name="description" content="Discover, understand, and care for the animal kingdom through one intelligent lifecycle platform — from wildlife and marine life to livestock and companion animals." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
+</head>
+<body id="top">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#top" class="brand-link" aria-label="ANIVERA Home — Universal Animal Lifecycle Platform">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="36" height="36" rx="8" fill="#1D2228" stroke="#FB8122" stroke-width="2.5"/>
+          <path d="M20 9L30 29H24.6L22.5 24.4H17.5L15.4 29H10L20 9ZM20 15.2L18.3 20.4H21.7L20 15.2Z" fill="#FB8122"/>
+          <circle cx="20" cy="32.5" r="1.8" fill="#FFFFFF"/>
+        </svg>
+        <div class="brand-text-group">
+          <span class="brand-wordmark">ANIVERA</span>
+          <span class="brand-sub">Animal Lifecycle Platform</span>
+        </div>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary Navigation">
+        <a href="#top" class="nav-link">Home</a>
+        <a href="#animal-explorer" class="nav-link">Species (142)</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="nav-search-wrap" role="search">
+          <input type="search" id="nav-species-search" class="nav-search-input" placeholder="Search 142 species..." aria-label="Search species catalogue" autocomplete="off" />
+          <div id="nav-search-results" class="nav-search-results" hidden></div>
+        </div>
+        <button type="button" id="nav-sign-in-btn" class="btn btn-outline btn-sm" aria-haspopup="dialog">Sign In</button>
+        <button type="button" id="nav-sign-up-btn" class="btn btn-primary btn-sm" aria-haspopup="dialog">Create Account</button>
+        <a href="#lifecycle-workspace" id="header-open-workspace-btn" class="btn btn-outline btn-sm">Open Workspace</a>
+        <button type="button" id="mobile-menu-btn" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Toggle navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="#top" class="mobile-nav-link">Home</a></li>
+        <li><a href="#animal-explorer" class="mobile-nav-link">Species Explorer (142)</a></li>
+        <li><a href="#how-it-works" class="mobile-nav-link">How It Works</a></li>
+        <li><a href="#features" class="mobile-nav-link">Features</a></li>
+        <li><a href="#animal-categories" class="mobile-nav-link">3D Galleries</a></li>
+        <li><a href="#about" class="mobile-nav-link">About ANIVERA</a></li>
+      </ul>
+      <div style="display:flex; flex-direction:column; gap:8px; padding: 12px 0;">
+        <button type="button" id="mobile-sign-in-btn" class="btn btn-outline" style="width: 100%;">Sign In</button>
+        <button type="button" id="mobile-sign-up-btn" class="btn btn-primary" style="width: 100%;">Create Account</button>
+        <a href="#lifecycle-workspace" id="mobile-open-workspace-btn" class="btn btn-charcoal" style="width: 100%; text-align: center;">Open Workspace</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- 1. CINEMATIC FULL-SCREEN BLACK WILDLIFE HERO SLIDESHOW -->
+    <section id="cinematic-hero" class="cinematic-hero-section" aria-label="ANIVERA 142-Species Cinematic Wildlife Experience">
+      <div class="container">
+        <div class="cinematic-hero-grid">
+          <!-- LEFT COLUMN: EDITORIAL SPECIES PROFILE -->
+          <div class="cinematic-hero-info">
+            <div class="hero-slide-tracker">
+              <span id="hero-slide-num" class="hero-slide-num">01 / 142</span>
+              <span class="hero-divider">•</span>
+              <span id="hero-category-label" class="hero-category-label">WILD MAMMALS &amp; WILDLIFE</span>
+            </div>
+
+            <h1 id="hero-common-name" class="hero-common-name">Snow Leopard</h1>
+            <p id="hero-scientific-name" class="hero-scientific-name">Panthera uncia</p>
+            <p id="hero-description" class="hero-description">
+              An elusive apex predator inhabiting rugged alpine and subalpine crags across 12 Central Asian nations, adapted to freezing mountain heights with dense smoky-gray rosetted fur, broad snowshoe paws, and a long heavy balancing tail.
+            </p>
+
+            <div class="hero-specs-grid">
+              <div class="hero-spec-item">
+                <span class="spec-label">HABITAT</span>
+                <span id="hero-habitat" class="spec-value">High mountain ranges of Central &amp; South Asia</span>
+              </div>
+              <div class="hero-spec-item">
+                <span class="spec-label">DIET</span>
+                <span id="hero-diet" class="spec-value">Carnivore (blue sheep, ibex, marmots)</span>
+              </div>
+              <div class="hero-spec-item">
+                <span class="spec-label">CONSERVATION</span>
+                <span id="hero-conservation" class="spec-badge">Vulnerable (IUCN)</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <button type="button" id="hero-learn-more-btn" class="btn btn-primary">
+                Learn More &rarr;
+              </button>
+              <a href="#animal-explorer" class="btn btn-outline">
+                Explore 142 Species
+              </a>
+              <a href="#lifecycle-workspace" class="btn btn-charcoal">
+                Open Workspace
+              </a>
+            </div>
+
+            <div class="hero-controls-bar">
+              <button type="button" id="hero-prev-btn" class="hero-nav-arrow" aria-label="Previous animal species">&larr;</button>
+              <button type="button" id="hero-next-btn" class="hero-nav-arrow" aria-label="Next animal species">&rarr;</button>
+              <button type="button" id="hero-play-pause-btn" class="hero-play-btn" aria-label="Toggle slideshow auto-rotation">Pause</button>
+              <div class="hero-progress-container" aria-hidden="true">
+                <div id="hero-progress-bar" class="hero-progress-bar"></div>
+              </div>
+              <span class="hero-timer-label">5s Auto</span>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: SEAMLESS BLACK-STAGE ANIMAL PHOTOGRAPH -->
+          <div class="cinematic-hero-visual">
+            <div class="cinematic-hero-stage">
+              <img id="cinematic-hero-img-front" class="cinematic-hero-img is-active" src="public/assets/species/snow-leopard.webp" alt="Snow Leopard (Panthera uncia) in natural habitat" />
+              <img id="cinematic-hero-img-back" class="cinematic-hero-img" alt="Next animal species" />
+              <div class="hero-stage-vignette"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PLATFORM OVERVIEW SECTION -->
+    <section id="platform-overview" class="section-block" aria-labelledby="hero-main-heading" style="background:#111418; color:#FFFFFF; border-bottom: 1px solid rgba(255,255,255,0.08);">
+      <div class="container">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+          <span class="hero-eyebrow" style="color: #FB8122;">Universal Animal Lifecycle Platform</span>
+          <h2 id="hero-main-heading" class="section-title" style="color:#FFFFFF; font-size: clamp(2rem, 3.8vw, 2.8rem); margin-bottom: 16px;">
+            Every animal. Every stage. Better care.
+          </h2>
+          <p class="hero-copy" style="color: #E1E2E2; font-size: 1.15rem; line-height: 1.7; margin-bottom: 28px;">
+            “Discover, understand, and care for the animal kingdom through one intelligent lifecycle platform — from wildlife and marine life to livestock and companion animals.”
+          </p>
+          <div class="hero-cta-grid" role="group" aria-label="Hero Navigation Actions" style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+            <a href="#how-it-works" class="btn btn-primary">Explore ANIVERA</a>
+            <a href="#features" class="btn btn-charcoal">Discover ANIVERA</a>
+            <a href="#animal-explorer" class="btn btn-outline">Animal Explorer</a>
+            <a href="#animal-categories" class="btn btn-outline">Animal Categories</a>
+            <a href="#lifecycle-workspace" class="btn btn-outline">Lifecycle Workspace</a>
+            <a href="#about" class="btn btn-outline">About ANIVERA</a>
+          </div>
+          <div class="hero-boundary-note" style="margin-top: 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: #E1E2E2;">
+            <strong>Universal Non-Avian Coverage:</strong> Supports wild mammals, livestock, companion animals, marine mammals, fish, reptiles, amphibians, and invertebrates. Avian species belong exclusively to the separate <strong>WINGLY</strong> platform.
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- SECTION: HOW ANIVERA WORKS -->
+    <section id="how-it-works" class="section-block" aria-labelledby="heading-how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Platform Architecture</span>
+          <h2 id="heading-how-it-works" class="section-title">How ANIVERA Works</h2>
+          <p class="section-desc">
+            ANIVERA connects verified taxonomic reference profiles with longitudinal individual animal care records across four operational stages.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="info-card">
+            <span class="info-card-step">01</span>
+            <h3>Verify Taxonomic Identity</h3>
+            <p>Anchor every animal record to a validated non-avian species profile with scientific nomenclature, habitat baselines, and biometric or tag identifiers.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-card-step">02</span>
+            <h3>Log Clinical &amp; Health History</h3>
+            <p>Maintain chronological veterinary exams, immunizations, water or enclosure parameters, diagnostics, and treatment protocols in one structured ledger.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-card-step">03</span>
+            <h3>Execute Care Routines &amp; Tasks</h3>
+            <p>Schedule species-appropriate nutrition rations, habitat maintenance, enrichment, and preventive tasks with due dates and completion tracking.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-card-step">04</span>
+            <h3>Track Lifecycle Milestones</h3>
+            <p>Document every developmental transition—from birth, hatching, or metamorphosis through juvenile growth, adult care, and senior management.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ANIMAL PROFILES, HEALTH HISTORY, CARE ROUTINES & LIFECYCLE MILESTONES -->
+    <section id="animal-identity" class="section-block alt-bg" aria-labelledby="heading-core-pillars">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Connected Lifecycle Modules</span>
+          <h2 id="heading-core-pillars" class="section-title">Built for Every Stage of Non-Avian Animal Care</h2>
+          <p class="section-desc">
+            From conservation biologists tracking wild megafauna to agricultural managers, marine sanctuaries, herpetologists, and companion caretakers.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="info-card">
+            <span class="section-eyebrow">01 • Identity &amp; Profiles</span>
+            <h3>Animal Profiles and Identification</h3>
+            <p>Standardized identity records adapt to the identification method appropriate for each taxonomic group:</p>
+            <ul class="info-list">
+              <li><strong>Wild Mammals:</strong> Camera-trap coat pattern biometrics, ear notches, and GPS/VHF collar IDs.</li>
+              <li><strong>Livestock &amp; Companion:</strong> ISO 11784/11785 microchips, RFID/EID ear tags, and pedigree registries.</li>
+              <li><strong>Marine &amp; Aquatic:</strong> Ventral fluke photography, dorsal fin notch catalogs, PIT tags, and broodstock IDs.</li>
+              <li><strong>Reptiles, Amphibians &amp; Invertebrates:</strong> Carapace scute codes, morphotype patterns, and instar/molt logs.</li>
+            </ul>
+          </article>
+
+          <article id="health-care-history" class="info-card">
+            <span class="section-eyebrow">02 • Clinical Ledger</span>
+            <h3>Health and Care History</h3>
+            <p>Capture species-relevant clinical observations without forcing disparate animals into a single rigid clinic template:</p>
+            <ul class="info-list">
+              <li><strong>Preventive Medicine:</strong> Core vaccinations, parasite FAMACHA/fecal scoring, and quarantine PCR screens.</li>
+              <li><strong>Environmental &amp; Water Quality:</strong> Salinity, dissolved oxygen, pH, UVB Ferguson zones, and humidity gradients.</li>
+              <li><strong>Dental &amp; Morphological Checks:</strong> Elephant molar progression, equine floating, elodont incisor wear, and ecdysis completeness.</li>
+              <li><strong>Diagnostic Continuity:</strong> Full chronological history preserved across transfers between sanctuaries, pastures, or households.</li>
+            </ul>
+          </article>
+
+          <article id="care-plans-routines" class="info-card">
+            <span class="section-eyebrow">03 • Operational Protocols</span>
+            <h3>Care Routines and Tasks</h3>
+            <p>Translate biological requirements into daily, weekly, and seasonal care tasks with status tracking and due dates:</p>
+            <ul class="info-list">
+              <li><strong>Nutrition &amp; Foraging:</strong> Ruminant silage ratios, obligate carnivore taurine balances, gut-loaded insect schedules, and browse provisioning.</li>
+              <li><strong>Habitat &amp; Husbandry:</strong> Rotational grazing moves, biofilter testing, reverse-osmosis misting, and burrow substrate renewal.</li>
+              <li><strong>Behavioral Enrichment:</strong> Extractive foraging puzzles, pack social rank observation, and thermal basking gradients.</li>
+            </ul>
+          </article>
+
+          <article id="lifecycle-milestones" class="info-card">
+            <span class="section-eyebrow">04 • Developmental Timeline</span>
+            <h3>Lifecycle Milestones</h3>
+            <p>Monitor critical biological transitions tailored to each animal's life history strategy:</p>
+            <ul class="info-list">
+              <li><strong>Neonatal &amp; Early Stage:</strong> Colostrum intake, marsupial pouch emergence, larval instars, and amphibian metamorphosis.</li>
+              <li><strong>Juvenile &amp; Subadult:</strong> Weaning weights, smoltification, territory dispersal, and forest-school climbing milestones.</li>
+              <li><strong>Adult &amp; Senior Care:</strong> Reproductive estrus/calving logs, annual shearing or brumation cycles, and geriatric mobility support.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ANIMAL CATEGORY EXPLORATION -->
+    <section id="animal-categories" class="section-block" aria-labelledby="heading-categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Taxonomic Coverage</span>
+          <h2 id="heading-categories" class="section-title">Explore Non-Avian Animal Categories</h2>
+          <p class="section-desc">
+            Select any category below to filter the 142-species ANIVERA catalogue. All avian records are excluded and managed separately in WINGLY.
+          </p>
+        </div>
+
+        <div id="category-cards-grid" class="grid-4" role="group" aria-label="Animal Category Filters"></div>
+      </div>
+    </section>
+
+    <!-- SECTION: UNIVERSAL ANIMAL EXPLORER (142 SPECIES) -->
+    <section id="animal-explorer" class="section-block alt-bg" aria-labelledby="heading-explorer">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Verified Species Catalogue</span>
+          <h2 id="heading-explorer" class="section-title">ANIVERA Animal Explorer (142 Non-Avian Species)</h2>
+          <p class="section-desc">
+            Search and inspect all 142 validated species across the Left (Wildlife) and Right (Livestock, Companion, Marine, Fish, Reptiles, Amphibians, Invertebrates) galleries. Species with locally bundled verified photographs (28) are badged; remaining catalogue records use ANIVERA's honest taxonomic plate without cross-species photo substitution.
+          </p>
+        </div>
+
+        <div class="explorer-controls" role="search" aria-label="Filter Species Catalogue">
+          <div>
+            <label for="explorer-search-input" style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:4px;">Search Species, Scientific Name, Habitat, or ID</label>
+            <input type="search" id="explorer-search-input" class="input-field" placeholder="e.g., Elephant, Panthera, Orca, Axolotl, ANV-SP-001..." />
+          </div>
+          <div>
+            <label for="explorer-category-select" style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:4px;">Animal Category</label>
+            <select id="explorer-category-select" class="select-field">
+              <option value="all">All 8 Non-Avian Categories (142)</option>
+              <option value="Wild Mammals & Wildlife">Wild Mammals &amp; Wildlife (71)</option>
+              <option value="Livestock & Farm Animals">Livestock &amp; Farm Animals (12)</option>
+              <option value="Marine Mammals">Marine Mammals (11)</option>
+              <option value="Fish">Fish (10)</option>
+              <option value="Reptiles">Reptiles (10)</option>
+              <option value="Amphibians">Amphibians (10)</option>
+              <option value="Companion Animals">Companion Animals (9)</option>
+              <option value="Invertebrates">Invertebrates (9)</option>
+            </select>
+          </div>
+          <div>
+            <label for="explorer-side-select" style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:4px;">Carousel Gallery</label>
+            <select id="explorer-side-select" class="select-field">
+              <option value="all">Both Galleries (142)</option>
+              <option value="left">Left Gallery • Wildlife (71)</option>
+              <option value="right">Right Gallery • Managed/Marine/Exo (71)</option>
+            </select>
+          </div>
+          <div>
+            <label for="explorer-photo-select" style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:4px;">Media Status</label>
+            <select id="explorer-photo-select" class="select-field">
+              <option value="all">All Catalogue Records (142)</option>
+              <option value="verified">Verified Local Photographs (28)</option>
+            </select>
+          </div>
+          <div style="display:flex; align-items:flex-end;">
+            <button type="button" id="explorer-reset-btn" class="btn btn-outline" style="width:100%;">Reset Filters</button>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+          <p id="explorer-results-summary" style="font-size:0.9rem; font-weight:700; color:#1D2228;" aria-live="polite">
+            Showing 28 of 142 species
+          </p>
+          <div style="display:flex; gap:8px;">
+            <button type="button" id="explorer-toggle-all-btn" class="btn btn-outline btn-sm">
+              Show All Matching Species
+            </button>
+          </div>
+        </div>
+
+        <div id="explorer-grid" class="explorer-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SECTION: PLATFORM FEATURES -->
+    <section id="features" class="section-block" aria-labelledby="heading-features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Platform Features</span>
+          <h2 id="heading-features" class="section-title">Platform Features Implemented in ANIVERA</h2>
+          <p class="section-desc">
+            Every feature listed below is implemented, interactive, and verified in this application.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="info-card">
+            <h3>Dual Independent 3D Carousels</h3>
+            <p>Two hardware-accelerated 3D cylindrical galleries rotating in opposite directions via delta-time <code>requestAnimationFrame</code> loops. Hovering never stops rotation; clicking a card pauses only that carousel while opening the species dialog.</p>
+          </article>
+          <article class="info-card">
+            <h3>Validated 142-Species Catalogue</h3>
+            <p>Automated integrity checks enforce unique species IDs, unique common and scientific names, complete habitat/diet/lifespan/lifecycle metadata, 28 verified species photographs, and strict exclusion of avian species.</p>
+          </article>
+          <article class="info-card">
+            <h3>Connected Lifecycle Workspace</h3>
+            <p>Create, view, edit, search, and filter individual animal profiles, log clinical health records with treatment notes, manage care tasks with status &amp; due dates, and record chronological lifecycle milestones.</p>
+          </article>
+          <article class="info-card">
+            <h3>Honest Media &amp; Fallback Handling</h3>
+            <p>Zero cross-species photo misrepresentation. If an external image fails to load or is unbundled offline, ANIVERA automatically renders a clean taxonomic fallback plate rather than a broken icon or unrelated animal.</p>
+          </article>
+          <article class="info-card">
+            <h3>Accessibility &amp; Reduced Motion</h3>
+            <p>Full keyboard navigation, ARIA dialog semantics with focus trapping and focus restoration, high-contrast typography, and one-click or OS-level <code>prefers-reduced-motion</code> static grid mode.</p>
+          </article>
+          <article class="info-card">
+            <h3>Supabase Schema &amp; Owner-Scoped RLS</h3>
+            <p>Configured for Supabase project <code>qbwulpofftxfddlykcxg</code> with 5 relational tables, full authentication lifecycle, owner-scoped Row-Level Security isolation, and honest offline persistence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE ANIMAL LIFECYCLE WORKSPACE / DASHBOARD -->
+    <section id="lifecycle-workspace" class="section-block alt-bg" aria-labelledby="heading-workspace">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Connected Application Workspace</span>
+          <h2 id="heading-workspace" class="section-title">ANIVERA Animal Lifecycle Workspace &amp; Dashboard</h2>
+          <p class="section-desc">
+            Manage owner-scoped animal profiles, clinical health records, care tasks, and chronological lifecycle milestones. Send any species directly from the 3D carousels or Animal Explorer into your workspace.
+          </p>
+        </div>
+
+        <div class="workspace-shell">
+          <div class="workspace-topbar">
+            <div>
+              <h3 style="font-size:1.15rem; font-weight:800;">Lifecycle Operations Console</h3>
+              <p id="ws-persistence-indicator" style="font-size:0.8rem; color:#E1E2E2;">
+                Supabase Project: qbwulpofftxfddlykcxg • Owner-Scoped RLS Persistence Active
+              </p>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" id="ws-snapshot-btn" class="btn btn-primary btn-sm">Save Snapshot</button>
+              <button type="button" id="ws-export-json-btn" class="btn btn-outline btn-sm">Export Workspace JSON</button>
+              <button type="button" id="ws-reset-demo-btn" class="btn btn-outline btn-sm">Restore Default Seed</button>
+            </div>
+          </div>
+
+          <!-- Authenticated User & RLS Bar -->
+          <div class="ws-auth-bar">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="status-dot" id="ws-auth-dot"></span>
+              <span id="ws-auth-user-summary" style="font-size:0.85rem; font-weight:700; color:#1D2228;">
+                Signed in as Dr. Aravind Menon (researcher@anivera.org) • Owner ID: usr-anv-primary-001
+              </span>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" id="ws-switch-user-btn" class="btn btn-outline btn-sm">
+                Switch User / Test RLS Isolation
+              </button>
+              <button type="button" id="ws-open-auth-tab-btn" class="btn btn-outline btn-sm">
+                Auth &amp; Supabase Settings
+              </button>
+              <button type="button" id="ws-signout-btn" class="btn btn-charcoal btn-sm">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Workspace Metrics -->
+          <div style="padding: 20px 24px 0;">
+            <div class="ws-stats-row">
+              <div class="ws-stat-box">
+                <div class="ws-stat-label">Owner Animal Profiles</div>
+                <div id="stat-profiles-count" class="ws-stat-value">0</div>
+              </div>
+              <div class="ws-stat-box">
+                <div class="ws-stat-label">Health &amp; Clinical Records</div>
+                <div id="stat-health-count" class="ws-stat-value">0</div>
+              </div>
+              <div class="ws-stat-box">
+                <div class="ws-stat-label">Care Tasks (Pending / Total)</div>
+                <div id="stat-careplans-count" class="ws-stat-value">0</div>
+              </div>
+              <div class="ws-stat-box">
+                <div class="ws-stat-label">Lifecycle Milestones</div>
+                <div id="stat-reminders-count" class="ws-stat-value">0</div>
+              </div>
+            </div>
+
+            <div id="ws-feedback-banner" class="ws-banner" role="status" aria-live="polite"></div>
+          </div>
+
+          <!-- Workspace Navigation Tabs -->
+          <div class="workspace-tabs" role="tablist" aria-label="Workspace Modules">
+            <button type="button" class="ws-tab-btn active" role="tab" aria-selected="true" aria-controls="ws-panel-profiles" id="tab-btn-profiles" data-ws-tab="profiles">
+              1. Animal Profiles
+            </button>
+            <button type="button" class="ws-tab-btn" role="tab" aria-selected="false" aria-controls="ws-panel-health" id="tab-btn-health" data-ws-tab="health">
+              2. Health Records
+            </button>
+            <button type="button" class="ws-tab-btn" role="tab" aria-selected="false" aria-controls="ws-panel-tasks" id="tab-btn-tasks" data-ws-tab="tasks">
+              3. Care Plans &amp; Tasks
+            </button>
+            <button type="button" class="ws-tab-btn" role="tab" aria-selected="false" aria-controls="ws-panel-events" id="tab-btn-events" data-ws-tab="events">
+              4. Lifecycle Events
+            </button>
+            <button type="button" class="ws-tab-btn" role="tab" aria-selected="false" aria-controls="ws-panel-db" id="tab-btn-db" data-ws-tab="db">
+              5. Supabase, Auth &amp; RLS Verification
+            </button>
+          </div>
+
+          <div class="workspace-body">
+            <!-- PANEL 1: ANIMAL PROFILES -->
+            <div id="ws-panel-profiles" class="ws-panel active" role="tabpanel" aria-labelledby="tab-btn-profiles">
+              <div class="ws-layout-split">
+                <form id="ws-profile-form" class="ws-form-card" novalidate>
+                  <h4 id="ws-profile-form-title" style="font-size:1rem; font-weight:800; margin-bottom:12px;">Create / Edit Animal Profile</h4>
+                  <input type="hidden" id="prof-edit-id" value="" />
+                  <div class="form-group">
+                    <label for="prof-name">Individual Name or Identifier *</label>
+                    <input type="text" id="prof-name" class="input-field" placeholder="e.g., Amboseli Matriarch Kibo" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="prof-species">Species (Common &amp; Scientific Name) *</label>
+                    <input type="text" id="prof-species" class="input-field" placeholder="e.g., African Bush Elephant (Loxodonta africana)" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="prof-category">Non-Avian Category *</label>
+                    <select id="prof-category" class="select-field" required>
+                      <option value="Wild Mammals & Wildlife">Wild Mammals &amp; Wildlife</option>
+                      <option value="Livestock & Farm Animals">Livestock &amp; Farm Animals</option>
+                      <option value="Companion Animals">Companion Animals</option>
+                      <option value="Marine Mammals">Marine Mammals</option>
+                      <option value="Fish">Fish</option>
+                      <option value="Reptiles">Reptiles</option>
+                      <option value="Amphibians">Amphibians</option>
+                      <option value="Invertebrates">Invertebrates</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="prof-stage">Lifecycle Stage *</label>
+                    <select id="prof-stage" class="select-field" required>
+                      <option value="Neonatal / Larval">Neonatal / Larval</option>
+                      <option value="Juvenile / Subadult">Juvenile / Subadult</option>
+                      <option value="Adult">Adult</option>
+                      <option value="Breeding / Conservation">Breeding / Conservation</option>
+                      <option value="Senior / Geriatric">Senior / Geriatric</option>
+                      <option value="Rehabilitation">Rehabilitation</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="prof-tag">Tag / Microchip / Biometric ID *</label>
+                    <input type="text" id="prof-tag" class="input-field" placeholder="e.g., RFID-KE-99412 or ISO-98102000" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="prof-notes">Habitat &amp; Care Notes</label>
+                    <textarea id="prof-notes" class="textarea-field" placeholder="Enclosure, pasture, or conservation corridor details..."></textarea>
+                  </div>
+                  <div style="display:flex; gap:8px;">
+                    <button type="submit" id="prof-submit-btn" class="btn btn-primary" style="flex:1;">Save Animal Profile</button>
+                    <button type="button" id="prof-cancel-edit-btn" class="btn btn-outline" style="display:none;">Cancel</button>
+                  </div>
+                </form>
+
+                <div>
+                  <div style="display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:10px; margin-bottom:14px;">
+                    <input type="search" id="ws-profile-search" class="input-field" placeholder="Search profiles by name, species, or tag..." aria-label="Search workspace animal profiles" />
+                    <select id="ws-profile-cat-filter" class="select-field" aria-label="Filter workspace profiles by category">
+                      <option value="all">All Categories</option>
+                      <option value="Wild Mammals & Wildlife">Wild Mammals &amp; Wildlife</option>
+                      <option value="Livestock & Farm Animals">Livestock &amp; Farm Animals</option>
+                      <option value="Companion Animals">Companion Animals</option>
+                      <option value="Marine Mammals">Marine Mammals</option>
+                      <option value="Fish">Fish</option>
+                      <option value="Reptiles">Reptiles</option>
+                      <option value="Amphibians">Amphibians</option>
+                      <option value="Invertebrates">Invertebrates</option>
+                    </select>
+                    <select id="ws-profile-stage-filter" class="select-field" aria-label="Filter workspace profiles by stage">
+                      <option value="all">All Stages</option>
+                      <option value="Neonatal / Larval">Neonatal / Larval</option>
+                      <option value="Juvenile / Subadult">Juvenile / Subadult</option>
+                      <option value="Adult">Adult</option>
+                      <option value="Breeding / Conservation">Breeding / Conservation</option>
+                      <option value="Senior / Geriatric">Senior / Geriatric</option>
+                      <option value="Rehabilitation">Rehabilitation</option>
+                    </select>
+                  </div>
+
+                  <!-- Individual Animal Dossier Inspector Drawer -->
+                  <div id="ws-animal-dossier-card" class="info-card" style="display:none; margin-bottom:16px; border-color:#FB8122; background:#FFF5ED;"></div>
+
+                  <div id="ws-profiles-list" class="ws-record-list" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 2: HEALTH RECORDS -->
+            <div id="ws-panel-health" class="ws-panel" role="tabpanel" aria-labelledby="tab-btn-health">
+              <div style="margin-bottom:14px; padding:10px 14px; background:#FFF5ED; border:1px solid #FCD2B1; border-radius:6px; font-size:0.82rem; color:#1D2228;">
+                <strong>Veterinary Care Notice:</strong> Health records in ANIVERA store clinical observations and historical treatments recorded by caretakers or clinicians and are not a substitute for professional veterinary diagnosis or medical advice.
+              </div>
+              <div class="ws-layout-split">
+                <form id="ws-health-form" class="ws-form-card" novalidate>
+                  <h4 id="ws-health-form-title" style="font-size:1rem; font-weight:800; margin-bottom:12px;">Log Health or Clinical Record</h4>
+                  <input type="hidden" id="health-edit-id" value="" />
+                  <div class="form-group">
+                    <label for="health-animal-select">Select Animal Profile *</label>
+                    <select id="health-animal-select" class="select-field" required></select>
+                  </div>
+                  <div class="form-group">
+                    <label for="health-type">Record Type *</label>
+                    <select id="health-type" class="select-field" required>
+                      <option value="Vaccination / Immunization">Vaccination / Immunization</option>
+                      <option value="Clinical Examination">Clinical Examination</option>
+                      <option value="Diagnostic / PCR / Blood Panel">Diagnostic / PCR / Blood Panel</option>
+                      <option value="Dental / Hoof / Ecdysis Check">Dental / Hoof / Ecdysis Check</option>
+                      <option value="Water / Habitat Parameter Log">Water / Habitat Parameter Log</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="health-date">Record Date *</label>
+                    <input type="date" id="health-date" class="input-field" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="health-vet">Clinician / Biologist / Caretaker *</label>
+                    <input type="text" id="health-vet" class="input-field" placeholder="e.g., Dr. A. Nair, DVM" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="health-treatment">Recorded Treatment / Protocol</label>
+                    <input type="text" id="health-treatment" class="input-field" placeholder="e.g., Booster vaccine, hoof trim, trace mineral dose..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="health-summary">Clinical Observations &amp; Notes *</label>
+                    <textarea id="health-summary" class="textarea-field" placeholder="Weight, temperature, parameters, or clinical observation..." required></textarea>
+                  </div>
+                  <div style="display:flex; gap:8px;">
+                    <button type="submit" class="btn btn-primary" style="flex:1;">Save Health Record</button>
+                    <button type="button" id="health-cancel-edit-btn" class="btn btn-outline" style="display:none;">Cancel</button>
+                  </div>
+                </form>
+
+                <div>
+                  <div style="margin-bottom:12px;">
+                    <select id="ws-health-animal-filter" class="select-field" aria-label="Filter health records by animal">
+                      <option value="all">All Animals (Historical Health Ledger)</option>
+                    </select>
+                  </div>
+                  <div id="ws-health-list" class="ws-record-list" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 3: CARE PLANS & TASKS -->
+            <div id="ws-panel-tasks" class="ws-panel" role="tabpanel" aria-labelledby="tab-btn-tasks">
+              <div class="ws-layout-split">
+                <form id="ws-task-form" class="ws-form-card" novalidate>
+                  <h4 id="ws-task-form-title" style="font-size:1rem; font-weight:800; margin-bottom:12px;">Create / Edit Care Task &amp; Plan</h4>
+                  <input type="hidden" id="task-edit-id" value="" />
+                  <div class="form-group">
+                    <label for="task-animal-select">Select Animal Profile *</label>
+                    <select id="task-animal-select" class="select-field" required></select>
+                  </div>
+                  <div class="form-group">
+                    <label for="task-title">Care Task or Routine Title *</label>
+                    <input type="text" id="task-title" class="input-field" placeholder="e.g., Daily Ruminant Forage & Mineral Block Protocol" required />
+                  </div>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                    <div class="form-group">
+                      <label for="task-frequency">Frequency *</label>
+                      <select id="task-frequency" class="select-field" required>
+                        <option value="Twice Daily">Twice Daily</option>
+                        <option value="Daily">Daily</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Bi-Weekly">Bi-Weekly</option>
+                        <option value="Monthly / Seasonal">Monthly / Seasonal</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="task-due">Due Date *</label>
+                      <input type="date" id="task-due" class="input-field" required />
+                    </div>
+                  </div>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                    <div class="form-group">
+                      <label for="task-priority">Priority *</label>
+                      <select id="task-priority" class="select-field" required>
+                        <option value="High">High</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Routine">Routine</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="task-status">Status *</label>
+                      <select id="task-status" class="select-field" required>
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="task-instructions">Protocol Instructions *</label>
+                    <textarea id="task-instructions" class="textarea-field" placeholder="Specify ration weights, temperature/humidity ranges, or enrichment steps..." required></textarea>
+                  </div>
+                  <div style="display:flex; gap:8px;">
+                    <button type="submit" class="btn btn-primary" style="flex:1;">Save Care Task</button>
+                    <button type="button" id="task-cancel-edit-btn" class="btn btn-outline" style="display:none;">Cancel</button>
+                  </div>
+                </form>
+
+                <div>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:12px;">
+                    <select id="ws-task-status-filter" class="select-field" aria-label="Filter care tasks by status">
+                      <option value="all">All Tasks (Upcoming &amp; Completed)</option>
+                      <option value="upcoming">Upcoming / Active Tasks Only</option>
+                      <option value="completed">Completed Tasks Only</option>
+                    </select>
+                    <select id="ws-task-animal-filter" class="select-field" aria-label="Filter care tasks by animal">
+                      <option value="all">All Animals</option>
+                    </select>
+                  </div>
+                  <div id="ws-tasks-list" class="ws-record-list" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 4: LIFECYCLE EVENTS -->
+            <div id="ws-panel-events" class="ws-panel" role="tabpanel" aria-labelledby="tab-btn-events">
+              <div class="ws-layout-split">
+                <form id="ws-event-form" class="ws-form-card" novalidate>
+                  <h4 id="ws-event-form-title" style="font-size:1rem; font-weight:800; margin-bottom:12px;">Record / Edit Lifecycle Milestone</h4>
+                  <input type="hidden" id="ev-edit-id" value="" />
+                  <div class="form-group">
+                    <label for="ev-animal-select">Select Animal Profile *</label>
+                    <select id="ev-animal-select" class="select-field" required></select>
+                  </div>
+                  <div class="form-group">
+                    <label for="ev-milestone">Milestone Type *</label>
+                    <select id="ev-milestone" class="select-field" required>
+                      <option value="Birth / Hatching / Eclosion">Birth / Hatching / Eclosion</option>
+                      <option value="Biometric / Tag Registration">Biometric / Tag Registration</option>
+                      <option value="Weaning / Metamorphosis Transition">Weaning / Metamorphosis Transition</option>
+                      <option value="Habitat / Corridor Transfer">Habitat / Corridor Transfer</option>
+                      <option value="Breeding / Conservation Milestone">Breeding / Conservation Milestone</option>
+                      <option value="Senior / Geriatric Care Transition">Senior / Geriatric Care Transition</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="ev-date">Event Date *</label>
+                    <input type="date" id="ev-date" class="input-field" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="ev-details">Milestone Outcome &amp; Notes *</label>
+                    <textarea id="ev-details" class="textarea-field" placeholder="Verified measurements, location coordinates, or transition notes..." required></textarea>
+                  </div>
+                  <div style="display:flex; gap:8px;">
+                    <button type="submit" class="btn btn-primary" style="flex:1;">Save Lifecycle Event</button>
+                    <button type="button" id="ev-cancel-edit-btn" class="btn btn-outline" style="display:none;">Cancel</button>
+                  </div>
+                </form>
+
+                <div>
+                  <div style="margin-bottom:12px;">
+                    <select id="ws-event-animal-filter" class="select-field" aria-label="Filter chronological lifecycle events by animal">
+                      <option value="all">All Animals (Chronological Lifecycle History)</option>
+                    </select>
+                  </div>
+                  <div id="ws-events-list" class="ws-record-list" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 5: SUPABASE, AUTH & RLS VERIFICATION -->
+            <div id="ws-panel-db" class="ws-panel" role="tabpanel" aria-labelledby="tab-btn-db">
+              <div class="grid-2">
+                <div class="info-card">
+                  <h3>Supabase Project &amp; Owner-Scoped RLS Architecture</h3>
+                  <p>Configured for ANIVERA's dedicated Supabase project with zero hardcoded service-role secrets and strict owner-scoped Row-Level Security (<code>auth.uid() = owner_id</code>).</p>
+                  <ul class="info-list">
+                    <li><strong>Project ID:</strong> <code>qbwulpofftxfddlykcxg</code></li>
+                    <li><strong>Project URL:</strong> <code>https://qbwulpofftxfddlykcxg.supabase.co</code></li>
+                    <li><strong>Relational Tables:</strong> <code>animal_profiles</code>, <code>health_records</code>, <code>care_tasks</code>, <code>lifecycle_events</code>, <code>workspace_snapshots</code>.</li>
+                    <li><strong>Connection Status:</strong> <span id="db-endpoint-status">Owner-Scoped Local RLS Persistence Active (Honest Offline Mode)</span>.</li>
+                  </ul>
+
+                  <div style="margin-top:14px; padding-top:14px; border-top:1px solid #E1E2E2;">
+                    <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:8px;">Real 10-Step Persistence &amp; RLS Verification</h4>
+                    <p style="font-size:0.82rem; color:#4A525D; margin-bottom:10px;">
+                      Executes the 10-step persistence and authorization workflow (sign-in, profile create, reload persistence, profile edit, health/task linkage, and cross-user RLS access denial).
+                    </p>
+                    <button type="button" id="run-rls-audit-btn" class="btn btn-primary btn-sm">
+                      Run 10-Step Persistence &amp; RLS Test
+                    </button>
+                    <pre id="rls-audit-output" style="margin-top:10px; padding:10px; background:#F8F9FA; border:1px solid #E1E2E2; border-radius:6px; font-size:0.74rem; white-space:pre-wrap; display:none;"></pre>
+                  </div>
+                </div>
+
+                <div style="display:flex; flex-direction:column; gap:18px;">
+                  <form id="ws-auth-form" class="ws-form-card" novalidate>
+                    <h4 style="font-size:1rem; font-weight:800; margin-bottom:10px;">Authentication &amp; Session Management</h4>
+                    <p style="font-size:0.78rem; color:#4A525D; margin-bottom:12px;">
+                      Demo accounts: <code>researcher@anivera.org</code> / <code>AniveraCare#2026</code> (Primary) or <code>sanctuary@anivera.org</code> / <code>Sanctuary#2026</code> (Secondary RLS User).
+                    </p>
+                    <div class="form-group">
+                      <label for="auth-email-input">Account Email *</label>
+                      <input type="email" id="auth-email-input" class="input-field" value="researcher@anivera.org" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="auth-password-input">Password *</label>
+                      <input type="password" id="auth-password-input" class="input-field" value="AniveraCare#2026" required />
+                    </div>
+                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                      <button type="submit" class="btn btn-primary btn-sm">Sign In</button>
+                      <button type="button" id="auth-signup-btn" class="btn btn-charcoal btn-sm">Sign Up New User</button>
+                      <button type="button" id="auth-expire-btn" class="btn btn-outline btn-sm">Simulate Expired Session</button>
+                    </div>
+                  </form>
+
+                  <form id="ws-db-config-form" class="ws-form-card" novalidate>
+                    <h4 style="font-size:1rem; font-weight:800; margin-bottom:10px;">Supabase Cloud Endpoint Probe</h4>
+                    <div class="form-group">
+                      <label for="db-url-input">Supabase Project URL</label>
+                      <input type="url" id="db-url-input" class="input-field" value="https://qbwulpofftxfddlykcxg.supabase.co" />
+                    </div>
+                    <div class="form-group">
+                      <label for="db-anon-key-input">Public Browser Anon Key (Optional — Never use service_role)</label>
+                      <input type="password" id="db-anon-key-input" class="input-field" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." />
+                    </div>
+                    <button type="submit" class="btn btn-charcoal btn-sm">Verify Supabase Connection</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ABOUT ANIVERA -->
+    <section id="about" class="section-block" aria-labelledby="heading-about">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <span class="section-eyebrow">About ANIVERA</span>
+            <h2 id="heading-about" class="section-title">One Connected Platform for the Non-Avian Animal Kingdom</h2>
+            <p class="section-desc" style="margin-bottom: 16px;">
+              ANIVERA is engineered as a universal animal lifecycle management platform uniting taxonomic accuracy with day-to-day health, care, and milestone tracking across terrestrial wildlife, farm livestock, companion animals, marine mammals, fish, reptiles, amphibians, and invertebrates.
+            </p>
+            <p class="section-desc">
+              <strong>Clear Product Boundary:</strong> ANIVERA is neither a cattle-only nor a pet-only tool. All non-avian animal groups are supported here, while avian species (birds) are dedicated to the separate <strong>WINGLY</strong> platform.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>Catalogue &amp; Technical Audit Summary</h3>
+            <ul class="info-list">
+              <li><strong>142 Distinct Non-Avian Species:</strong> 71 in the Left Wildlife Gallery and 71 in the Right Managed, Marine &amp; Cold-Blooded Gallery.</li>
+              <li><strong>28 Locally Bundled Verified Photographs:</strong> Species-matched high-resolution photographs across Cohort 1 and Cohort 2 of both 3D rings.</li>
+              <li><strong>Zero Avian Contamination:</strong> Automated taxonomic validator blocks Class <code>Aves</code> across both catalogue and workspace forms.</li>
+              <li><strong>Brand System Compliance:</strong> Strictly built on ANIVERA Orange (<code>#FB8122</code>), Charcoal (<code>#1D2228</code>), White (<code>#FFFFFF</code>), and Silver Gray (<code>#E1E2E2</code>).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FINAL CTA -->
+    <section id="final-cta" class="section-block alt-bg" aria-labelledby="heading-final-cta">
+      <div class="container" style="text-align: center; max-width: 780px;">
+        <span class="section-eyebrow">Start Managing Lifecycles</span>
+        <h2 id="heading-final-cta" class="section-title">Every Animal. Every Stage of Life.</h2>
+        <p class="section-desc" style="margin-bottom: 24px;">
+          Explore the 142-species non-avian catalogue or open the ANIVERA Lifecycle Workspace to manage animal identities, health histories, care routines, and developmental milestones.
+        </p>
+        <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+          <a href="#lifecycle-workspace" class="btn btn-primary">Launch Lifecycle Workspace</a>
+          <a href="#animal-explorer" class="btn btn-charcoal">Browse 142 Species Catalogue</a>
+          <a href="#top" class="btn btn-outline">Return to 3D Galleries</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span style="font-size:1.25rem; font-weight:800; letter-spacing:0.08em; color:#FB8122;">ANIVERA</span>
+          </div>
+          <p style="font-size:0.875rem; color:#E1E2E2; max-width:380px;">
+            Universal Animal Lifecycle Platform — bringing animal identity, health records, care routines, and lifecycle milestones into one connected system for non-avian species.
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#FB8122; margin-bottom:12px;">Platform</h3>
+          <ul class="footer-links">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#features">Platform Features</a></li>
+            <li><a href="#animal-categories">Animal Categories</a></li>
+            <li><a href="#animal-explorer">Animal Explorer (142)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#FB8122; margin-bottom:12px;">Lifecycle Modules</h3>
+          <ul class="footer-links">
+            <li><a href="#animal-identity">Identity &amp; Profiles</a></li>
+            <li><a href="#health-care-history">Health &amp; Care History</a></li>
+            <li><a href="#care-plans-routines">Care Routines &amp; Tasks</a></li>
+            <li><a href="#lifecycle-milestones">Lifecycle Milestones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#FB8122; margin-bottom:12px;">Workspace</h3>
+          <ul class="footer-links">
+            <li><a href="#lifecycle-workspace">Open Lifecycle Workspace</a></li>
+            <li><a href="#about">About &amp; WINGLY Boundary</a></li>
+            <li><a href="#top">Back to Top</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(225,226,226,0.2); padding-top: 20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.8rem; color:#E1E2E2;">
+        <span>&copy; 2026 ANIVERA Platform. Every Animal. Every Stage of Life.</span>
+        <span>Non-Avian Taxonomic Integrity Verified • Birds Managed on WINGLY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ACCESSIBLE SPECIES DETAIL MODAL -->
+  <div id="species-modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-common-name" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-header">
+        <div>
+          <span id="modal-category-badge" class="hero-eyebrow" style="margin-bottom:6px;">Category</span>
+          <h2 id="modal-common-name" style="font-size:1.5rem; font-weight:800; color:#1D2228;">Species Name</h2>
+          <p id="modal-scientific-name" style="font-size:0.95rem; font-style:italic; color:#4A525D;">Scientific Name</p>
+        </div>
+        <button type="button" id="modal-close-btn" class="btn btn-outline btn-sm" aria-label="Close species profile dialog">
+          Close (Esc) &times;
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-hero-grid">
+          <div>
+            <div id="modal-photo-container" class="modal-photo-frame"></div>
+            <p id="modal-image-attribution" style="font-size:0.72rem; color:#4A525D; margin-top:6px;"></p>
+          </div>
+          <div class="modal-meta-table">
+            <div class="modal-meta-cell">
+              <div class="modal-meta-label">Species Identifier</div>
+              <div id="modal-species-id" class="modal-meta-val">-</div>
+            </div>
+            <div class="modal-meta-cell">
+              <div class="modal-meta-label">Taxonomic Class</div>
+              <div id="modal-taxonomic-class" class="modal-meta-val">-</div>
+            </div>
+            <div class="modal-meta-cell">
+              <div class="modal-meta-label">Animal Type</div>
+              <div id="modal-animal-type" class="modal-meta-val">-</div>
+            </div>
+            <div class="modal-meta-cell">
+              <div class="modal-meta-label">Conservation / Status</div>
+              <div id="modal-conservation" class="modal-meta-val">-</div>
+            </div>
+            <div class="modal-meta-cell">
+              <div class="modal-meta-label">Verified Lifespan</div>
+              <div id="modal-lifespan" class="modal-meta-val">-</div>
+            </div>
+            <div class="modal-meta-cell">
+              <div class="modal-meta-label">Carousel Gallery</div>
+              <div id="modal-gallery-side" class="modal-meta-val">-</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div class="info-card" style="padding:16px;">
+            <h3 style="font-size:0.95rem;">Factual Species Description</h3>
+            <p id="modal-description"></p>
+          </div>
+          <div class="grid-2">
+            <div class="info-card" style="padding:16px;">
+              <h3 style="font-size:0.95rem;">Verified Habitat &amp; Distribution</h3>
+              <p id="modal-habitat"></p>
+            </div>
+            <div class="info-card" style="padding:16px;">
+              <h3 style="font-size:0.95rem;">Verified Diet &amp; Nutrition</h3>
+              <p id="modal-diet"></p>
+            </div>
+          </div>
+          <div class="info-card" style="padding:16px;">
+            <h3 style="font-size:0.95rem;">Lifecycle Characteristics</h3>
+            <p id="modal-lifecycle-characteristics"></p>
+          </div>
+          <div class="info-card" style="padding:16px; border-color:#FB8122; background:#FFF5ED;">
+            <h3 style="font-size:0.95rem;">Relevant Care &amp; Lifecycle Management Information</h3>
+            <p id="modal-lifecycle-care" style="color:#1D2228;"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <span id="modal-carousel-resume-note" style="font-size:0.8rem; font-weight:600; color:#4A525D;">
+          Closing this dialog automatically resumes the paused carousel.
+        </span>
+        <div style="display:flex; gap:10px;">
+          <button type="button" id="modal-send-to-workspace-btn" class="btn btn-primary">
+            Register Species in Lifecycle Workspace
+          </button>
+          <button type="button" id="modal-footer-close-btn" class="btn btn-charcoal">
+            Close Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- GLASSMORPHISM SIGN IN MODAL -->
+  <div id="signin-modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="signin-modal-title" aria-hidden="true">
+    <div class="modal-dialog auth-modal-dialog" role="document">
+      <div class="auth-modal-header">
+        <div>
+          <h2 id="signin-modal-title" style="font-size:1.3rem; font-weight:700; color:#FFFFFF;">Sign In to ANIVERA</h2>
+          <p style="font-size:0.8rem; color:#9EA7B0;">Access your owner-scoped animal lifecycle records</p>
+        </div>
+        <button type="button" id="signin-close-btn" class="btn btn-outline btn-sm" aria-label="Close sign in dialog">&times;</button>
+      </div>
+      <div class="auth-modal-body">
+        <form id="nav-signin-form">
+          <div class="auth-form-group">
+            <label for="nav-signin-email" class="auth-form-label">Email Address</label>
+            <input type="email" id="nav-signin-email" class="auth-form-input" required placeholder="researcher@anivera.org" />
+          </div>
+          <div class="auth-form-group">
+            <label for="nav-signin-password" class="auth-form-label">Password</label>
+            <input type="password" id="nav-signin-password" class="auth-form-input" required placeholder="••••••••••••" />
+          </div>
+          <div id="signin-error-alert" style="display:none; padding:8px 12px; margin-bottom:12px; border-radius:6px; background:rgba(235,87,87,0.15); border:1px solid #eb5757; color:#ff8080; font-size:0.8rem;"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Sign In &rarr;</button>
+          
+          <div class="demo-account-hint">
+            <strong>Quick Demo Accounts:</strong><br/>
+            <span>Primary: <code>researcher@anivera.org</code></span>
+            <button type="button" class="demo-quick-btn" id="demo-fill-researcher">Fill Primary</button>
+            <br/>
+            <span>Secondary: <code>sanctuary@anivera.org</code></span>
+            <button type="button" class="demo-quick-btn" id="demo-fill-sanctuary">Fill Secondary</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLASSMORPHISM CREATE ACCOUNT MODAL -->
+  <div id="signup-modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="signup-modal-title" aria-hidden="true">
+    <div class="modal-dialog auth-modal-dialog" role="document">
+      <div class="auth-modal-header">
+        <div>
+          <h2 id="signup-modal-title" style="font-size:1.3rem; font-weight:700; color:#FFFFFF;">Create ANIVERA Account</h2>
+          <p style="font-size:0.8rem; color:#9EA7B0;">Start tracking animal identity, health &amp; lifecycle care</p>
+        </div>
+        <button type="button" id="signup-close-btn" class="btn btn-outline btn-sm" aria-label="Close create account dialog">&times;</button>
+      </div>
+      <div class="auth-modal-body">
+        <form id="nav-signup-form">
+          <div class="auth-form-group">
+            <label for="nav-signup-name" class="auth-form-label">Full Name</label>
+            <input type="text" id="nav-signup-name" class="auth-form-input" required placeholder="Dr. Jane Goodall" />
+          </div>
+          <div class="auth-form-group">
+            <label for="nav-signup-org" class="auth-form-label">Organization / Sanctuary / Care Unit</label>
+            <input type="text" id="nav-signup-org" class="auth-form-input" required placeholder="Wildlife Research Center" />
+          </div>
+          <div class="auth-form-group">
+            <label for="nav-signup-email" class="auth-form-label">Email Address</label>
+            <input type="email" id="nav-signup-email" class="auth-form-input" required placeholder="jane@sanctuary.org" />
+          </div>
+          <div class="auth-form-group">
+            <label for="nav-signup-password" class="auth-form-label">Password</label>
+            <input type="password" id="nav-signup-password" class="auth-form-input" required minlength="6" placeholder="Create secure password" />
+          </div>
+          <div id="signup-error-alert" style="display:none; padding:8px 12px; margin-bottom:12px; border-radius:6px; background:rgba(235,87,87,0.15); border:1px solid #eb5757; color:#ff8080; font-size:0.8rem;"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Register &amp; Open Workspace &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<script id="anivera-species-data" type="application/json">__SPECIES_DATA_PLACEHOLDER__</script>
+  <script src="animals-data.js"></script>
+  <script src="cloud-sync.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

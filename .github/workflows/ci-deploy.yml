@@ -1,0 +1,28 @@
+name: ANIVERA CI & Vercel Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate 142-Species Non-Avian Catalogue & Image Assets
+        run: npm run validate
+
+      - name: Build Production Bundle
+        run: npm run build
+
+      - name: Run Automated Unit & Integration Test Suite
+        run: npm test
