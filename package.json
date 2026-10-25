@@ -1,0 +1,25 @@
+{
+  "name": "anivera-platform",
+  "version": "2.4.0",
+  "private": true,
+  "description": "ANIVERA — Universal Animal Lifecycle Platform (Every Animal. Every Stage of Life.)",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-catalogue.mjs",
+    "test": "node scripts/test-suite.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "npx serve dist"
+  },
+  "keywords": [
+    "anivera",
+    "animal-lifecycle",
+    "wildlife",
+    "livestock",
+    "companion-animals",
+    "marine-mammals",
+    "herpetology",
+    "aquaculture"
+  ],
+  "author": "ANIVERA Engineering",
+  "license": "MIT"
+}

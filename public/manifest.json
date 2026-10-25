@@ -1,0 +1,26 @@
+{
+  "name": "ANIVERA — Universal Animal Lifecycle Platform",
+  "short_name": "ANIVERA",
+  "description": "Discover, understand, and care for the animal kingdom through one intelligent lifecycle platform — from wildlife and marine life to livestock and companion animals.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='36' fill='%231D2228' stroke='%23FB8122' stroke-width='10'/%3E%3Cpath d='M96 38L146 142H118L108 118H84L74 142H46L96 38ZM96 70L87 98H105L96 70Z' fill='%23FB8122'/%3E%3Ccircle cx='96' cy='158' r='9' fill='%23FFFFFF'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%231D2228' stroke='%23FB8122' stroke-width='24'/%3E%3Cpath d='M256 100L390 380H315L288 316H224L197 380H122L256 100ZM256 186L232 262H280L256 186Z' fill='%23FB8122'/%3E%3Ccircle cx='256' cy='424' r='24' fill='%23FFFFFF'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
