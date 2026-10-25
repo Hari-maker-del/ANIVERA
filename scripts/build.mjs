@@ -11,11 +11,13 @@ const cloudSyncContent = fs.readFileSync(path.resolve('cloud-sync.js'), 'utf8');
 const jsContent = fs.readFileSync(path.resolve('app.js'), 'utf8');
 const rawCatalogue = JSON.parse(fs.readFileSync(path.resolve('src/data/speciesCatalogue.json'), 'utf8'));
 
-fs.mkdirSync(path.resolve('public/assets/animals'), { recursive: true });
+// Keep only the two asset locations used by the built app and service worker.
+// Catalogue URLs resolve through dist/public/assets/species; the service worker
+// precaches ./assets/species. Remove legacy generated copies from older builds.
+fs.rmSync(path.resolve('dist/assets/animals'), { recursive: true, force: true });
+fs.rmSync(path.resolve('dist/public/assets/animals'), { recursive: true, force: true });
 fs.mkdirSync(path.resolve('dist/assets/species'), { recursive: true });
-fs.mkdirSync(path.resolve('dist/assets/animals'), { recursive: true });
 fs.mkdirSync(path.resolve('dist/public/assets/species'), { recursive: true });
-fs.mkdirSync(path.resolve('dist/public/assets/animals'), { recursive: true });
 
 const staticCatalogue = [];
 
@@ -28,11 +30,8 @@ for (const sp of rawCatalogue) {
   if (sp.imageVerified && relPath && fs.existsSync(path.resolve(relPath))) {
     const buf = fs.readFileSync(path.resolve(relPath));
     const baseName = path.basename(relPath);
-    fs.writeFileSync(path.resolve('public/assets/animals', baseName), buf);
     fs.writeFileSync(path.resolve('dist/assets/species', baseName), buf);
-    fs.writeFileSync(path.resolve('dist/assets/animals', baseName), buf);
     fs.writeFileSync(path.resolve('dist/public/assets/species', baseName), buf);
-    fs.writeFileSync(path.resolve('dist/public/assets/animals', baseName), buf);
   }
 
   staticCatalogue.push(staticCopy);
