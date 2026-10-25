@@ -2020,6 +2020,16 @@
   var nextBtn = document.getElementById("hero-next-btn");
   var playPauseBtn = document.getElementById("hero-play-pause-btn");
   var progressBar = document.getElementById("hero-progress-bar");
+  var heroInfo = document.querySelector(".cinematic-hero-info");
+
+  function getSpeciesDescription(sp) {
+    var description = (sp && typeof sp.description === "string") ? sp.description.trim() : "";
+    if (description) return description;
+    var name = (sp && (sp.name || sp.commonName)) || "This species";
+    var type = (sp && sp.animalType) || (sp && sp.taxonomicClass) || "animal";
+    var habitat = (sp && sp.habitat) || "its natural habitat";
+    return name + " is a " + type + " adapted to life in " + habitat + ". Explore its habitat, diet, conservation status, and lifecycle profile to learn more.";
+  }
 
   function preloadImage(idx) {
     if (idx < 0) idx = heroCatalogue.length - 1;
@@ -2037,10 +2047,10 @@
     if (catEl) catEl.textContent = (sp.category || "WILDLIFE").toUpperCase();
     if (nameEl) nameEl.textContent = sp.name || sp.commonName;
     if (sciEl) sciEl.textContent = sp.scientificName;
-    if (descEl) descEl.textContent = sp.description;
-    if (habEl) habEl.textContent = sp.habitat;
-    if (dietEl) dietEl.textContent = sp.diet;
-    if (statusEl) statusEl.textContent = sp.conservationStatus;
+    if (descEl) descEl.textContent = getSpeciesDescription(sp);
+    if (habEl) habEl.textContent = sp.habitat || "Habitat information is being verified.";
+    if (dietEl) dietEl.textContent = sp.diet || "Diet information is being verified.";
+    if (statusEl) statusEl.textContent = sp.conservationStatus || "Not assessed";
     if (learnBtn) learnBtn.setAttribute("data-species-id", sp.id);
   }
 
@@ -2081,22 +2091,21 @@
 
     isTransitioning = true;
     pauseTimer();
+    if (heroInfo) heroInfo.classList.add("is-transitioning");
 
-    // Preload next image before swapping
+    // Preload next image before swapping. If a photo is unavailable, the
+    // slideshow still advances and shows the species description and metadata.
     var loader = new Image();
     loader.onload = function () {
-      backImg.src = nextSp.imageUrl;
-      backImg.alt = (nextSp.name || nextSp.commonName) + " (" + nextSp.scientificName + ")";
+      backImg.src = nextSp.imageUrl || nextSp.imageSource || "";
+      backImg.alt = (nextSp.name || nextSp.commonName || "Animal") + " (" + (nextSp.scientificName || "scientific name unavailable") + ")";
 
-      // Update text in lockstep with image
+      // Keep each species description synchronized with its image transition.
       updateSlideText(nextSp, targetIdx + 1);
-
-      // Smooth cross-fade
       backImg.classList.add("is-active");
       frontImg.classList.remove("is-active");
 
-      setTimeout(function () {
-        // Swap front and back layer roles
+      window.setTimeout(function () {
         frontImg.src = backImg.src;
         frontImg.alt = backImg.alt;
         frontImg.classList.add("is-active");
@@ -2104,23 +2113,24 @@
 
         currentIndex = targetIdx;
         isTransitioning = false;
+        if (heroInfo) heroInfo.classList.remove("is-transitioning");
 
-        // Preload next 2 species
         preloadImage(currentIndex + 1);
         preloadImage(currentIndex + 2);
-
-        if (isPlaying) {
-          startTimer();
-        }
+        if (isPlaying) startTimer();
       }, 750);
     };
 
     loader.onerror = function () {
+      // Do not freeze the slideshow when a single image cannot be loaded.
+      updateSlideText(nextSp, targetIdx + 1);
+      currentIndex = targetIdx;
       isTransitioning = false;
+      if (heroInfo) heroInfo.classList.remove("is-transitioning");
       if (isPlaying) startTimer();
     };
 
-    loader.src = nextSp.imageUrl;
+    loader.src = nextSp.imageUrl || nextSp.imageSource || "";
   }
 
   // Hook Up Controls
