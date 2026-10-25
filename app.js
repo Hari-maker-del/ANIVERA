@@ -2020,6 +2020,7 @@
   var nextBtn = document.getElementById("hero-next-btn");
   var playPauseBtn = document.getElementById("hero-play-pause-btn");
   var progressBar = document.getElementById("hero-progress-bar");
+  var heroTextElements = [slideNumEl, catEl, nameEl, sciEl, descEl, habEl, dietEl, statusEl].filter(Boolean);
 
   function preloadImage(idx) {
     if (idx < 0) idx = heroCatalogue.length - 1;
@@ -2088,12 +2089,17 @@
       backImg.src = nextSp.imageUrl;
       backImg.alt = (nextSp.name || nextSp.commonName) + " (" + nextSp.scientificName + ")";
 
-      // Update text in lockstep with image
-      updateSlideText(nextSp, targetIdx + 1);
+      // Fade the profile copy out, then update it halfway through the image cross-fade.
+      heroTextElements.forEach(function (el) { el.classList.add("hero-text-fading"); });
 
       // Smooth 5-second cross-fade
       backImg.classList.add("is-active");
       frontImg.classList.remove("is-active");
+
+      setTimeout(function () {
+        updateSlideText(nextSp, targetIdx + 1);
+        heroTextElements.forEach(function (el) { el.classList.remove("hero-text-fading"); });
+      }, 2500);
 
       setTimeout(function () {
         // Swap front and back layer roles
