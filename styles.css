@@ -1469,6 +1469,20 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   z-index: 3;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.cinematic-hero-info.is-transitioning {
+  opacity: 0.22;
+  transform: translateY(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-hero-info {
+    transition: none;
+  }
 }
 
 .hero-slide-tracker {
