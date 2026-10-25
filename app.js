@@ -2091,7 +2091,7 @@
       // Update text in lockstep with image
       updateSlideText(nextSp, targetIdx + 1);
 
-      // Smooth cross-fade
+      // Smooth 5-second cross-fade
       backImg.classList.add("is-active");
       frontImg.classList.remove("is-active");
 
@@ -2112,7 +2112,7 @@
         if (isPlaying) {
           startTimer();
         }
-      }, 750);
+      }, 5000);
     };
 
     loader.onerror = function () {

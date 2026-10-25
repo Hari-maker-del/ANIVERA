@@ -1677,7 +1677,7 @@ body.modal-open {
   object-fit: contain;
   object-position: right center;
   opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 5s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
 
