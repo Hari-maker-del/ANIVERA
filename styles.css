@@ -1843,3 +1843,8 @@ body.modal-open {
 .brand-link { flex: 0 0 auto; }
 .brand-logo-image { display:block; width:104px; height:80px; object-fit:contain; border-radius:4px; background:#050505; }
 @media (max-width:768px) { .header-inner { min-height:72px; } .brand-logo-image { width:82px; height:64px; } }
+
+/* Force logo dimensions on narrow mobile browsers */
+.header-inner .brand-link { display:inline-flex !important; width:auto !important; max-width:92px !important; flex:0 0 auto !important; overflow:hidden; }
+.header-inner .brand-logo-image { width:82px !important; height:64px !important; max-width:82px !important; max-height:64px !important; flex:0 0 82px !important; display:block !important; object-fit:contain !important; }
+@media (min-width:769px) { .header-inner .brand-link { max-width:120px !important; } .header-inner .brand-logo-image { width:104px !important; height:80px !important; max-width:104px !important; max-height:80px !important; flex-basis:104px !important; } }
