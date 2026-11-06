@@ -1,10 +1,10 @@
 /**
  * ANIVERA — Production Service Worker (sw.js)
- * Version: 2.5.0
+ * Version: 2.6.0
  * Handles offline shell caching, immutable species asset caching, and network-first auth isolation.
  */
 
-const CACHE_NAME = 'anivera-shell-v2.5.0';
+const CACHE_NAME = 'anivera-shell-v2.6.0';
 
 const PRECACHE_URLS = [
   './',
@@ -14,7 +14,7 @@ const PRECACHE_URLS = [
   './app.js',
   './cloud-sync.js',
   './animals-data.js',
-  './manifest.json',
+  './manifest.json',\n  './brand/anivera-logo.svg',
   './assets/species/snow-leopard.webp',
   './assets/species/bengal-tiger.webp',
   './assets/species/polar-bear.webp',
