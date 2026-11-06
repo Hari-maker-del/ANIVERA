@@ -2011,3 +2011,12 @@ body.modal-open {
   .cinematic-hero-img, .cinematic-hero-info, .hero-common-name,
   .hero-scientific-name, .hero-description { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+
+/* ANIVERA: reduce logo's visible mobile footprint; preserve the SVG proportions */
+@media (max-width: 700px) {
+  .header-inner { min-height: 66px !important; padding-top: 4px !important; padding-bottom: 4px !important; }
+  .header-inner .brand-link { width: 84px !important; max-width: 84px !important; height: 66px !important; overflow: hidden !important; }
+  .header-inner .brand-logo-image { width: 84px !important; height: 66px !important; max-width: 84px !important; max-height: 66px !important; flex: 0 0 84px !important; object-fit: contain !important; }
+  .header-inner .header-actions { gap: 8px !important; }
+}
