@@ -1988,3 +1988,26 @@ body.modal-open {
   #nav-sign-up-btn { padding: 8px 9px !important; font-size: .72rem !important; }
   .mobile-menu-toggle { width: 38px !important; min-width: 38px !important; height: 38px !important; min-height: 38px !important; }
 }
+
+
+/* ANIVERA — final narrow-phone polish (header + compact detail cards) */
+@media (max-width: 700px) {
+  .site-header { background: #000 !important; }
+  .header-inner { min-height: 58px !important; padding-top: 6px !important; padding-bottom: 6px !important; gap: 8px !important; }
+  .brand-link { gap: 6px !important; }
+  .brand-mark { width: 28px !important; height: 28px !important; max-width: 28px !important; object-fit: contain !important; }
+  .brand-wordmark { font-size: .9rem !important; }
+  .brand-sub { font-size: .42rem !important; }
+  .header-actions { gap: 6px !important; }
+  .header-actions .btn-primary { min-height: 36px !important; padding: 7px 10px !important; font-size: .74rem !important; }
+  .mobile-menu-toggle { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; }
+  .cinematic-hero-section { padding-top: 4px !important; }
+  .cinematic-hero-visual { height: clamp(190px, 50vw, 245px) !important; margin-bottom: 0 !important; }
+  .cinematic-hero-grid { row-gap: 4px !important; }
+  .cinematic-hero-info { margin-top: 0 !important; padding-top: 0 !important; }
+  .hero-specs-grid { grid-template-columns: 1fr !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-hero-img, .cinematic-hero-info, .hero-common-name,
+  .hero-scientific-name, .hero-description { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
