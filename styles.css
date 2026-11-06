@@ -1836,3 +1836,10 @@ body.modal-open {
   background: #FB8122;
   color: #FFFFFF;
 }
+
+
+/* ANIVERA brand lockup in the site header */
+.header-inner { min-height: 88px; }
+.brand-link { flex: 0 0 auto; }
+.brand-logo-image { display:block; width:104px; height:80px; object-fit:contain; border-radius:4px; background:#050505; }
+@media (max-width:768px) { .header-inner { min-height:72px; } .brand-logo-image { width:82px; height:64px; } }
