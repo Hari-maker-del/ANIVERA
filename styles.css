@@ -1848,3 +1848,143 @@ body.modal-open {
 .header-inner .brand-link { display:inline-flex !important; width:auto !important; max-width:132px !important; flex:0 0 auto !important; overflow:hidden; }
 .header-inner .brand-logo-image { width:118px !important; height:92px !important; max-width:118px !important; max-height:92px !important; flex:0 0 118px !important; display:block !important; object-fit:contain !important; }
 @media (min-width:769px) { .header-inner .brand-link { max-width:120px !important; } .header-inner .brand-logo-image { width:118px !important; height:92px !important; max-width:118px !important; max-height:92px !important; flex-basis:118px !important; } }
+
+
+/* ANIVERA mobile polish — production responsive pass */
+@media (max-width: 640px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+  body { background: #000 !important; }
+  .site-header {
+    background: rgba(0,0,0,.96) !important;
+    border-bottom: 1px solid rgba(255,255,255,.10) !important;
+    box-shadow: 0 6px 22px rgba(0,0,0,.3) !important;
+  }
+  .header-inner {
+    min-height: 66px !important;
+    height: auto !important;
+    padding: 7px 12px !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+  .brand-link {
+    min-width: 0 !important;
+    max-width: 76px !important;
+    flex: 0 1 76px !important;
+    overflow: hidden !important;
+  }
+  .brand-logo-image {
+    width: 72px !important;
+    height: 58px !important;
+    max-width: 72px !important;
+    max-height: 58px !important;
+    flex: 0 0 72px !important;
+    object-fit: contain !important;
+  }
+  .brand-wordmark { font-size: .9rem !important; letter-spacing: .05em !important; }
+  .brand-sub { display: none !important; }
+  .header-actions { gap: 7px !important; flex-shrink: 0 !important; }
+  #nav-sign-up-btn {
+    min-height: 40px !important;
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    font-size: .78rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  #header-open-workspace-btn { display: none !important; }
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    background: #101010 !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 9px !important;
+  }
+  .mobile-nav-drawer {
+    background: #050505 !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
+    border-bottom: 1px solid rgba(255,255,255,.12) !important;
+    padding: 14px 16px 18px !important;
+  }
+  .mobile-nav-list { gap: 4px !important; }
+  .mobile-nav-link { padding: 12px 6px !important; color: #f1f1f1 !important; }
+
+  .cinematic-hero-section {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 8px 0 24px !important;
+    align-items: flex-start !important;
+  }
+  .cinematic-hero-section > .container { padding-left: 16px !important; padding-right: 16px !important; }
+  .cinematic-hero-grid {
+    grid-template-columns: minmax(0,1fr) !important;
+    gap: 6px !important;
+    align-items: start !important;
+  }
+  .cinematic-hero-visual {
+    height: clamp(220px, 62vw, 285px) !important;
+    min-height: 220px !important;
+    max-height: 285px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    order: -1 !important;
+  }
+  .cinematic-hero-stage {
+    border-radius: 0 !important;
+    background: #000 !important;
+    overflow: hidden !important;
+  }
+  .cinematic-hero-img {
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+  .hero-stage-vignette {
+    background: linear-gradient(to top,#000 0%,rgba(0,0,0,.12) 18%,transparent 42%) !important;
+  }
+  .cinematic-hero-info { padding-top: 2px !important; }
+  .hero-slide-tracker {
+    gap: 7px !important;
+    flex-wrap: wrap !important;
+    font-size: .72rem !important;
+    letter-spacing: .09em !important;
+    line-height: 1.35 !important;
+    margin: 4px 0 10px !important;
+  }
+  .hero-common-name {
+    font-size: clamp(2rem, 8vw, 2.55rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 5px !important;
+    overflow-wrap: anywhere !important;
+  }
+  .hero-scientific-name {
+    font-size: 1.05rem !important;
+    margin-bottom: 14px !important;
+  }
+  .hero-description {
+    font-size: .98rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 18px !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
+  .hero-specs-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 8px !important; }
+  .hero-actions { gap: 10px !important; margin-bottom: 20px !important; }
+  .hero-actions .btn { min-height: 44px !important; }
+  .hero-controls-bar { gap: 8px !important; padding-top: 12px !important; }
+  .hero-nav-arrow { width: 38px !important; height: 38px !important; }
+}
+@media (max-width: 380px) {
+  .header-inner { padding-inline: 8px !important; }
+  .brand-link { max-width: 62px !important; flex-basis: 62px !important; }
+  .brand-logo-image { width: 60px !important; height: 50px !important; max-width: 60px !important; max-height: 50px !important; flex-basis: 60px !important; }
+  #nav-sign-up-btn { padding: 8px 9px !important; font-size: .72rem !important; }
+  .mobile-menu-toggle { width: 38px !important; min-width: 38px !important; height: 38px !important; min-height: 38px !important; }
+}
