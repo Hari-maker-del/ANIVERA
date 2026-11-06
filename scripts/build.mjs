@@ -46,6 +46,10 @@ const distIndex = htmlTemplate
   .replace('<script src="app.js"></script>', `<script>\n${jsContent}\n</script>`);
 
 fs.mkdirSync(path.resolve('dist'), { recursive: true });
+fs.mkdirSync(path.resolve('dist/brand'), { recursive: true });
+if (fs.existsSync(path.resolve('public/brand/anivera-logo.svg'))) {
+  fs.copyFileSync(path.resolve('public/brand/anivera-logo.svg'), path.resolve('dist/brand/anivera-logo.svg'));
+}
 fs.writeFileSync(path.resolve('dist/index.html'), distIndex, 'utf8');
 fs.writeFileSync(path.resolve('dist/dashboard.html'), dashboardTemplate, 'utf8');
 fs.writeFileSync(path.resolve('dist/styles.css'), cssContent, 'utf8');
