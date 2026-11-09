@@ -2195,15 +2195,8 @@
     }
   });
 
-  // Check prefers-reduced-motion
-  try {
-    var mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mql && mql.matches) {
-      isPlaying = false;
-      if (playPauseBtn) playPauseBtn.textContent = "Play";
-      pauseTimer();
-    }
-  } catch (err) {}
+  // Respect reduced-motion preferences for animation styling, but keep the
+  // wildlife showcase rotating automatically (the hero has no playback UI).
 
   // Initial setup: ensure Snow Leopard is displayed and start timer
   if (heroCatalogue.length) {
