@@ -2072,55 +2072,51 @@
   }
 
   function goToSlide(targetIdx) {
-    if (isTransitioning) return;
-    if (targetIdx < 0) targetIdx = heroCatalogue.length - 1;
-    if (targetIdx >= heroCatalogue.length) targetIdx = 0;
-
+    if (isTransitioning || !heroCatalogue.length) return;
+    targetIdx = ((targetIdx % heroCatalogue.length) + heroCatalogue.length) % heroCatalogue.length;
     var nextSp = heroCatalogue[targetIdx];
-    if (!nextSp || !frontImg || !backImg) return;
+    if (!nextSp || !frontImg || !backImg || !nextSp.imageUrl) {
+      currentIndex = targetIdx;
+      if (nextSp) updateSlideText(nextSp, targetIdx + 1);
+      if (isPlaying) startTimer();
+      return;
+    }
 
     isTransitioning = true;
     pauseTimer();
-
-    // Preload next image before swapping
-    var loader = new Image();
-    loader.onload = function () {
-      backImg.src = nextSp.imageUrl;
+    // Assign directly to the back layer. Its onload event guarantees we only
+    // fade in after the image is actually ready.
+    backImg.classList.remove("is-active");
+    backImg.onload = function () {
+      backImg.onload = null;
       backImg.alt = (nextSp.name || nextSp.commonName) + " (" + nextSp.scientificName + ")";
-
-      // Update text in lockstep with image
       updateSlideText(nextSp, targetIdx + 1);
-
-      // Smooth 1.8-second cross-fade
-      backImg.classList.add("is-active");
-      frontImg.classList.remove("is-active");
-
+      requestAnimationFrame(function () {
+        backImg.classList.add("is-active");
+        frontImg.classList.remove("is-active");
+      });
       setTimeout(function () {
-        // Swap front and back layer roles
         frontImg.src = backImg.src;
         frontImg.alt = backImg.alt;
         frontImg.classList.add("is-active");
         backImg.classList.remove("is-active");
-
         currentIndex = targetIdx;
         isTransitioning = false;
-
-        // Preload next 2 species
         preloadImage(currentIndex + 1);
         preloadImage(currentIndex + 2);
-
-        if (isPlaying) {
-          startTimer();
-        }
+        if (isPlaying) startTimer();
       }, 1800);
     };
-
-    loader.onerror = function () {
+    backImg.onerror = function () {
+      backImg.onerror = null;
       isTransitioning = false;
+      currentIndex = targetIdx;
+      updateSlideText(nextSp, targetIdx + 1);
       if (isPlaying) startTimer();
     };
-
-    loader.src = nextSp.imageUrl;
+    backImg.src = nextSp.imageUrl;
+    // Cached images may not fire onload after handler registration in some browsers.
+    if (backImg.complete && backImg.naturalWidth > 0) backImg.onload();
   }
 
   // Hook Up Controls
