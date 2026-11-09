@@ -2020,3 +2020,35 @@ body.modal-open {
   .header-inner .brand-logo-image { width: 84px !important; height: 66px !important; max-width: 84px !important; max-height: 66px !important; flex: 0 0 84px !important; object-fit: contain !important; }
   .header-inner .header-actions { gap: 8px !important; }
 }
+
+
+/* Reference-inspired ANIVERA floating glass navbar */
+.site-header {
+  position: fixed; top: 10px; left: 0; right: 0; z-index: 1000;
+  background: transparent; border: 0; pointer-events: none;
+}
+.site-header .header-inner {
+  width: min(calc(100% - 40px), 1240px); min-height: 56px; margin: 0 auto;
+  padding: 0 18px; border: 1px solid rgba(255,255,255,.12); border-radius: 16px;
+  background: rgba(17,17,18,.78); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px rgba(0,0,0,.22); pointer-events: auto;
+}
+.site-header .brand-link { transform: scale(.68); transform-origin: left center; }
+.site-header .primary-nav { gap: 34px; }
+.site-header .nav-link { color: rgba(255,255,255,.76); font-size: 12px; font-weight: 500; border: 0; }
+.site-header .nav-link:hover, .site-header .nav-link:focus-visible { color: #fff; }
+.site-header .header-get-started {
+  background: #FB8122; color: #161616; border: 0; border-radius: 999px;
+  min-height: 34px; padding: 8px 16px; font-size: 12px; font-weight: 700;
+}
+.site-header .header-get-started:hover { background: #ff9a4d; transform: translateY(-1px); }
+.site-header .mobile-menu-toggle { color: #fff; }
+.site-header .mobile-nav-drawer { pointer-events: auto; }
+@media (max-width: 760px) {
+ .site-header { top: 8px; }
+ .site-header .header-inner { width: calc(100% - 20px); min-height: 52px; padding: 0 10px; gap: 8px; }
+ .site-header .brand-link { transform: scale(.54); width: 135px; margin-right: -35px; }
+ .site-header .primary-nav { display: none; }
+ .site-header .header-get-started { padding: 7px 12px; font-size: 11px; }
+ .site-header .mobile-menu-toggle { display: inline-flex; }
+}
