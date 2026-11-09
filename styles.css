@@ -2052,3 +2052,10 @@ body.modal-open {
  .site-header .header-get-started { padding: 7px 12px; font-size: 11px; }
  .site-header .mobile-menu-toggle { display: inline-flex; }
 }
+
+
+/* ANIVERA hero cleanup: remove numeric slide counter, hero CTAs, and carousel controls */
+.hero-slide-num,
+.hero-divider { display: none !important; }
+.hero-actions,
+.hero-controls-bar { display: none !important; }
