@@ -1999,7 +1999,7 @@
 
   var currentIndex = 0;
   var isPlaying = true;
-  var slideDuration = 5000; // 5.0 seconds per slide as specified
+  var slideDuration = 3000; // 3.0 seconds per slide
   var slideTimer = null;
   var progressStartTime = 0;
   var progressRafId = null;
