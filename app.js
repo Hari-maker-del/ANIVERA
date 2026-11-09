@@ -1999,7 +1999,7 @@
 
   var currentIndex = 0;
   var isPlaying = true;
-  var slideDuration = 3000; // 3.0 seconds per slide
+  var slideDuration = 1200; // 1.2s wait + 1.8s crossfade = ~3s total per image
   var slideTimer = null;
   var progressStartTime = 0;
   var progressRafId = null;
