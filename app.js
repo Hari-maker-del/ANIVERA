@@ -1997,7 +1997,7 @@
   var heroCatalogue = snowLeopard ? [snowLeopard].concat(others) : SPECIES_CATALOGUE.slice();
   var currentIndex = 0;
   var requestedIndex = 0;
-  var isPlaying = true;
+  var isPlaying = false;
   var slideInterval = 3000;
   var imageFadeDuration = 1050;
   var nameFadeDuration = 750;
@@ -2177,8 +2177,7 @@
     if (incoming.complete && incoming.naturalWidth > 0) incoming.onload();
   }
 
-  if (prevBtn) prevBtn.addEventListener("click", function () { goToSlide(requestedIndex - 1, false); });
-  if (nextBtn) nextBtn.addEventListener("click", function () { goToSlide(requestedIndex + 1, false); });
+  // Arrow controls are bound after the public API is exposed below, in capture phase.
   if (playPauseBtn) {
     playPauseBtn.addEventListener("click", function () {
       isPlaying = !isPlaying;
@@ -2231,6 +2230,36 @@
     pause: function () { isPlaying = false; pauseTimer(); },
     play: function () { isPlaying = true; startTimer(); }
   };
+
+  // Bind vertical navigation explicitly after the slideshow API is ready.
+  function bindVerticalNavigation() {
+    var previous = document.getElementById("hero-prev-btn");
+    var next = document.getElementById("hero-next-btn");
+    if (previous && !previous.dataset.heroBound) {
+      previous.dataset.heroBound = "true";
+      previous.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        isPlaying = false;
+        pauseTimer();
+        goToSlide(currentIndex - 1, false);
+      }, true);
+    }
+    if (next && !next.dataset.heroBound) {
+      next.dataset.heroBound = "true";
+      next.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        isPlaying = false;
+        pauseTimer();
+        goToSlide(currentIndex + 1, false);
+      }, true);
+    }
+  }
+  bindVerticalNavigation();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindVerticalNavigation, { once: true });
+  }
 })();
 // =============================================================================
 // 10. REAL-TIME NAVIGATION SEARCH
