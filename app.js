@@ -2113,6 +2113,7 @@
     }
 
     var nextSp = heroCatalogue[targetIdx];
+    var slideDirection = targetIdx === normalizeIndex(currentIndex - 1) ? "down" : "up";
     if (!nextSp || !nextSp.imageUrl) {
       currentIndex = requestedIndex = targetIdx;
       updateSlideText(nextSp, targetIdx + 1);
@@ -2122,7 +2123,9 @@
 
     var incoming = backImg;
     var outgoing = frontImg;
-    incoming.classList.remove("is-active");
+    incoming.classList.remove("is-active", "hero-slide-from-top", "hero-slide-from-bottom");
+    outgoing.classList.remove("hero-slide-leave-up", "hero-slide-leave-down");
+    incoming.classList.add(slideDirection === "up" ? "hero-slide-from-bottom" : "hero-slide-from-top");
     incoming.onload = function () {
       if (token !== transitionToken) return;
       incoming.onload = null;
@@ -2139,6 +2142,8 @@
 
       requestAnimationFrame(function () {
         if (token !== transitionToken) return;
+        outgoing.classList.add(slideDirection === "up" ? "hero-slide-leave-up" : "hero-slide-leave-down");
+        incoming.classList.remove("hero-slide-from-top", "hero-slide-from-bottom");
         incoming.classList.add("is-active");
         outgoing.classList.remove("is-active");
       });
@@ -2148,6 +2153,8 @@
         // Keep both DOM image layers alive; swap their roles without copying src.
         frontImg = incoming;
         backImg = outgoing;
+        outgoing.classList.remove("hero-slide-leave-up", "hero-slide-leave-down");
+        incoming.classList.remove("hero-slide-from-top", "hero-slide-from-bottom");
         currentIndex = requestedIndex = targetIdx;
         preloadImage(currentIndex + 1);
         preloadImage(currentIndex - 1);
