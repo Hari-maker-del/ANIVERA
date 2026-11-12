@@ -2563,3 +2563,29 @@ body.modal-open {
   letter-spacing:.015em!important;
   text-transform:none!important;
 }
+
+
+/* Keep the paw between the first and remaining words of the animal name. */
+#cinematic-hero .hero-animal-heading {
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  gap:0!important;
+}
+#cinematic-hero .hero-common-name {
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  column-gap:.22em!important;
+  row-gap:0!important;
+}
+#cinematic-hero .hero-animal-paw {
+  display:inline-block!important;
+  flex:0 0 .42em!important;
+  width:.42em!important;
+  height:.42em!important;
+  margin:0!important;
+  color:#FB8122!important;
+  opacity:.95!important;
+  vertical-align:middle!important;
+}
