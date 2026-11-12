@@ -533,7 +533,73 @@
   <script id="anivera-species-data" type="application/json">__SPECIES_DATA_PLACEHOLDER__</script>
   <script src="animals-data.js"></script>
   <script src="cloud-sync.js"></script>
-  <script src="app.js?v=anivera-manual-vertical-nav-20261112-3" ></script>
+  <script src="app.js?v=anivera-manual-vertical-nav-20261112-4" ></script>
+  <script>
+  /* Standalone hero navigation fallback: independent of app.js slideshow internals. */
+  (function () {
+    var data = window.ANIVERA_ANIMALS_DATA || [];
+    var featured = data.findIndex(function (item) { return item.id === "ANV-SP-003"; });
+    var catalogue = featured >= 0 ? [data[featured]].concat(data.filter(function (item, i) { return i !== featured; })) : data.slice();
+    var index = 0;
+    var busy = false;
+    var front = document.getElementById("cinematic-hero-img-front");
+    var back = document.getElementById("cinematic-hero-img-back");
+    var name = document.getElementById("hero-common-name");
+    var sci = document.getElementById("hero-scientific-name");
+    var desc = document.getElementById("hero-description");
+    var category = document.getElementById("hero-category-label");
+    var counter = document.getElementById("hero-slide-num");
+    function show(target, direction) {
+      if (!catalogue.length || !front || busy) return;
+      index = (target + catalogue.length) % catalogue.length;
+      var item = catalogue[index];
+      busy = true;
+      var imageUrl = item.imageUrl || item.imageSource;
+      var incoming = new Image();
+      incoming.onload = function () {
+        front.classList.remove("hero-manual-up", "hero-manual-down");
+        void front.offsetWidth;
+        front.src = imageUrl;
+        front.alt = (item.name || item.commonName || "Animal") + " (" + (item.scientificName || "") + ")";
+        front.classList.add(direction === "up" ? "hero-manual-up" : "hero-manual-down");
+        if (name) name.textContent = item.name || item.commonName || "";
+        if (sci) sci.textContent = item.scientificName || "";
+        if (desc) desc.textContent = item.description || "";
+        if (category) category.textContent = (item.category || "WILDLIFE").toUpperCase();
+        if (counter) counter.textContent = String(index + 1).padStart(2, "0") + " / " + catalogue.length;
+        if (back) { back.removeAttribute("src"); back.classList.remove("is-active"); }
+        window.setTimeout(function () {
+          front.classList.remove("hero-manual-up", "hero-manual-down");
+          busy = false;
+        }, 760);
+      };
+      incoming.onerror = function () { busy = false; };
+      incoming.src = imageUrl;
+      if (incoming.complete && incoming.naturalWidth) incoming.onload();
+    }
+    function bind() {
+      var up = document.getElementById("hero-prev-btn");
+      var down = document.getElementById("hero-next-btn");
+      if (up && !up.dataset.manualFallbackBound) {
+        up.dataset.manualFallbackBound = "1";
+        up.addEventListener("click", function (event) {
+          event.preventDefault(); event.stopImmediatePropagation();
+          show(index - 1, "down");
+        }, true);
+      }
+      if (down && !down.dataset.manualFallbackBound) {
+        down.dataset.manualFallbackBound = "1";
+        down.addEventListener("click", function (event) {
+          event.preventDefault(); event.stopImmediatePropagation();
+          show(index + 1, "up");
+        }, true);
+      }
+    }
+    bind();
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bind, { once: true });
+    window.__ANIVERA_MANUAL_NAV__ = { next: function () { show(index + 1, "up"); }, previous: function () { show(index - 1, "down"); } };
+  })();
+  </script>
   <script src="loading-experience.js"></script>
 </body>
 </html>
