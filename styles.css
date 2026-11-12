@@ -2554,3 +2554,12 @@ body.modal-open {
 @media(max-width:900px) {
  .site-header .header-nav-link {font-size:.72rem!important;letter-spacing:.025em!important}
 }
+
+
+/* Match the animal title to the premium Cinzel header typography */
+#cinematic-hero .hero-common-name {
+  font-family:'Cinzel',Georgia,serif!important;
+  font-weight:500!important;
+  letter-spacing:.015em!important;
+  text-transform:none!important;
+}
