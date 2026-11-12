@@ -2443,3 +2443,48 @@
     });
   }
 })();
+
+
+// =============================================================================
+// ANIVERA — CINEMATIC LANDING-PAGE SECTION TRANSITIONS
+// =============================================================================
+(function initAniveraSectionTransitions() {
+  "use strict";
+  function activate() {
+    var sections = Array.prototype.slice.call(
+      document.querySelectorAll("main > section:not(#cinematic-hero)")
+    );
+    if (!sections.length) return;
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      sections.forEach(function (section) { section.classList.add("anivera-revealed"); });
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      sections.forEach(function (section) { section.classList.add("anivera-revealed"); });
+      return;
+    }
+
+    sections.forEach(function (section) {
+      section.classList.add("anivera-reveal-pending");
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.remove("anivera-reveal-pending");
+        entry.target.classList.add("anivera-revealed");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+
+    sections.forEach(function (section) { observer.observe(section); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", activate, { once: true });
+  } else {
+    activate();
+  }
+})();
