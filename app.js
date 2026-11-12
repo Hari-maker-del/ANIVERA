@@ -2227,6 +2227,8 @@
     getCurrentIndex: function () { return currentIndex; },
     getCurrentSpecies: function () { return heroCatalogue[currentIndex]; },
     goToSlide: goToSlide,
+    next: function () { isPlaying = false; pauseTimer(); goToSlide(currentIndex + 1, false); },
+    previous: function () { isPlaying = false; pauseTimer(); goToSlide(currentIndex - 1, false); },
     pause: function () { isPlaying = false; pauseTimer(); },
     play: function () { isPlaying = true; startTimer(); }
   };
