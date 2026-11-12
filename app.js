@@ -2092,6 +2092,17 @@
   function goToSlide(targetIdx, automatic) {
     if (!heroCatalogue.length || !frontImg || !backImg) return;
     targetIdx = normalizeIndex(targetIdx);
+
+    // If a transition is interrupted, keep whichever layer is currently visible
+    // as the outgoing layer before starting the latest requested transition.
+    if (backImg.classList.contains("is-active")) {
+      var layerSwap = frontImg;
+      frontImg = backImg;
+      backImg = layerSwap;
+    }
+    frontImg.classList.add("is-active");
+    backImg.classList.remove("is-active");
+
     var token = ++transitionToken;
     requestedIndex = targetIdx;
     pauseTimer();
