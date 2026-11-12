@@ -2162,3 +2162,58 @@ body.modal-open {
 @media (prefers-reduced-motion: reduce) {
   #cinematic-hero .cinematic-hero-img { transition-duration: .01ms !important; }
 }
+
+
+/* ANIVERA — cinematic landing-page section transitions */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  main > section:not(#cinematic-hero) {
+    position: relative;
+    isolation: isolate;
+  }
+  main > section:not(#cinematic-hero)::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    width: min(78%, 980px);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, rgba(251,129,34,.42), transparent);
+    opacity: .55;
+    pointer-events: none;
+  }
+  main > section:not(#cinematic-hero) .container {
+    transition: opacity .85s ease, transform .85s cubic-bezier(.2,.65,.25,1), filter .85s ease;
+  }
+  main > section:not(#cinematic-hero).anivera-reveal-pending .container {
+    opacity: 0;
+    transform: translate3d(0, 34px, 0);
+    filter: blur(5px);
+  }
+  main > section:not(#cinematic-hero).anivera-revealed .container {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+  #cinematic-hero .cinematic-hero-info {
+    animation: aniveraHeroTextIn 1.15s cubic-bezier(.2,.7,.2,1) both;
+  }
+  #cinematic-hero .cinematic-hero-visual {
+    animation: aniveraHeroImageIn 1.4s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes aniveraHeroTextIn {
+    from { opacity: 0; transform: translate3d(-22px, 14px, 0); filter: blur(7px); }
+    to { opacity: 1; transform: translate3d(0,0,0); filter: blur(0); }
+  }
+  @keyframes aniveraHeroImageIn {
+    from { opacity: 0; transform: translate3d(22px, 0, 0) scale(.975); }
+    to { opacity: 1; }
+  }
+  .site-header { transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  main > section .container { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
