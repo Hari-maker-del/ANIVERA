@@ -1,4 +1,4 @@
-export const ANIVERA_ANIMALS_DATA = [
+window.ANIVERA_ANIMALS_DATA = [
   {
     "id": "ANV-SP-001",
     "commonName": "African Bush Elephant",
