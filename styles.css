@@ -2667,3 +2667,47 @@ body.modal-open {
   #cinematic-hero .cinematic-hero-info {left:22px!important;right:22px!important;bottom:30px!important;max-width:none!important}
   #cinematic-hero .hero-description {max-width:92%!important}
 }
+
+
+/* Cinematic two-layer hero slideshow transition. */
+#cinematic-hero .cinematic-hero-stage { isolation:isolate!important; }
+#cinematic-hero .cinematic-hero-img {
+  opacity:0!important;
+  transform:scale(1)!important;
+  transform-origin:center center!important;
+  object-fit:cover!important;
+  transition:opacity 1050ms ease-in-out, transform 1050ms ease-in-out!important;
+  will-change:opacity,transform;
+  backface-visibility:hidden;
+}
+#cinematic-hero .cinematic-hero-img.is-active {
+  opacity:1!important;
+  transform:scale(1.035)!important;
+}
+#cinematic-hero .hero-common-name {
+  transition:opacity 375ms ease, transform 375ms ease!important;
+  will-change:opacity,transform;
+}
+#cinematic-hero .hero-common-name.hero-name-exit {
+  opacity:0!important;
+  transform:translateY(8px)!important;
+}
+#cinematic-hero .hero-common-name.hero-name-enter {
+  animation:aniveraHeroNameIn 375ms ease both!important;
+}
+@keyframes aniveraHeroNameIn {
+  from {opacity:0;transform:translateY(8px)}
+  to {opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce) {
+  #cinematic-hero .cinematic-hero-img {
+    transition:opacity 80ms linear!important;
+    transform:none!important;
+  }
+  #cinematic-hero .cinematic-hero-img.is-active {transform:none!important}
+  #cinematic-hero .hero-common-name {
+    transition:opacity 80ms linear!important;
+    animation:none!important;
+    transform:none!important;
+  }
+}
