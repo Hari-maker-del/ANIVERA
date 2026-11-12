@@ -516,7 +516,69 @@
       </div>
     </div>
   </div>
-<script id="anivera-species-data" type="application/json">__SPECIES_DATA_PLACEHOLDER__</script>
+
+  <!-- TEMPORARY LANDING-PAGE TRANSITION DIAGNOSTIC -->
+  <aside id="anivera-motion-check" aria-live="polite">
+    <button id="anivera-motion-check-toggle" type="button">Test transitions</button>
+    <div id="anivera-motion-check-panel" hidden>
+      <strong>ANIVERA Motion Check</strong>
+      <p id="anivera-motion-check-result">Ready to test.</p>
+      <button id="anivera-motion-check-run" type="button">Run visual test</button>
+      <button id="anivera-motion-check-close" type="button" aria-label="Close">Close</button>
+    </div>
+  </aside>
+  <script>
+  (function () {
+    var toggle = document.getElementById("anivera-motion-check-toggle");
+    var panel = document.getElementById("anivera-motion-check-panel");
+    var result = document.getElementById("anivera-motion-check-result");
+    var run = document.getElementById("anivera-motion-check-run");
+    var close = document.getElementById("anivera-motion-check-close");
+    if (!toggle || !panel || !result || !run || !close) return;
+    toggle.addEventListener("click", function () { panel.hidden = !panel.hidden; });
+    close.addEventListener("click", function () { panel.hidden = true; });
+    run.addEventListener("click", function () {
+      var sections = Array.prototype.slice.call(document.querySelectorAll("main > section:not(#cinematic-hero)"));
+      var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var cssLoaded = !!document.querySelector('link[href*="styles.css"]') && getComputedStyle(document.documentElement).scrollBehavior === "smooth";
+      var animated = sections.filter(function (s) {
+        return getComputedStyle(s.querySelector(".container") || s).transitionDuration.split(",").some(function (v) { return parseFloat(v) > 0; });
+      }).length;
+      if (!sections.length) {
+        result.textContent = "FAIL: No landing-page sections were found.";
+        return;
+      }
+      var target = sections[0];
+      target.classList.remove("anivera-revealed");
+      target.classList.add("anivera-reveal-pending");
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          var before = getComputedStyle(target.querySelector(".container") || target).opacity;
+          target.classList.remove("anivera-reveal-pending");
+          target.classList.add("anivera-revealed");
+          result.textContent = (cssLoaded ? "CSS: detected" : "CSS: check styles.css") +
+            " | Sections: " + sections.length +
+            " | Transition styles: " + animated + "/" + sections.length +
+            " | Reduced motion: " + (reduced ? "ON (animations intentionally minimized)" : "OFF") +
+            " | Test opacity before reveal: " + before +
+            ". Watch the first section below this panel for the reveal.";
+          target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+        });
+      });
+    });
+  })();
+  </script>
+  <style>
+    #anivera-motion-check { position:fixed; z-index:99999; right:16px; bottom:16px; font:13px/1.5 Arial,sans-serif; color:#f7f4ef; }
+    #anivera-motion-check-toggle, #anivera-motion-check-panel button { border:1px solid rgba(251,129,34,.65); border-radius:999px; background:#171717; color:#fff; padding:10px 15px; cursor:pointer; }
+    #anivera-motion-check-toggle { background:#FB8122; color:#151515; font-weight:700; box-shadow:0 5px 24px #0009; }
+    #anivera-motion-check-panel { width:min(340px, calc(100vw - 32px)); margin-top:9px; padding:16px; border:1px solid #FB8122; border-radius:12px; background:rgba(12,12,12,.96); box-shadow:0 12px 40px #000b; }
+    #anivera-motion-check-panel p { color:#ddd; margin:10px 0 14px; }
+    #anivera-motion-check-panel button { margin-right:6px; }
+    #anivera-motion-check-panel[hidden] { display:none; }
+  </style>
+
+  <script id="anivera-species-data" type="application/json">__SPECIES_DATA_PLACEHOLDER__</script>
   <script src="animals-data.js"></script>
   <script src="cloud-sync.js"></script>
   <script src="app.js?v=713f13b" ></script>
