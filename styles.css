@@ -2321,3 +2321,88 @@ body.modal-open {
  #cinematic-hero .cinematic-hero-info{left:22px!important;bottom:70px!important;max-width:90vw!important}
  #cinematic-hero .hero-common-name{font-size:clamp(3rem,13vw,5rem)!important}
 }
+
+
+/* Refine hero scale and remove the header's boxed bar treatment */
+.site-header {
+  position:absolute!important;top:0!important;left:0!important;right:0!important;
+  width:100%!important;margin:0!important;padding:0!important;
+  background:transparent!important;background-color:transparent!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+.site-header::before,.site-header::after {display:none!important;content:none!important}
+.site-header .header-inner {
+  width:100%!important;max-width:1600px!important;min-height:100px!important;
+  margin:0 auto!important;padding:0 clamp(24px,5vw,76px)!important;
+  background:transparent!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;
+}
+.site-header .brand-link {background:transparent!important}
+.site-header .brand-logo-image {width:92px!important;height:76px!important;object-fit:contain}
+.site-header .animal-name-nav {
+  display:flex!important;justify-content:center!important;align-items:center!important;
+  flex:1!important;overflow:visible!important;
+}
+.animal-name-link {
+  display:inline-flex!important;align-items:center!important;gap:10px!important;
+  color:rgba(255,255,255,.92)!important;background:transparent!important;
+  border:0!important;border-radius:0!important;padding:12px 8px!important;
+  font-family:'Playfair Display',Georgia,serif!important;font-size:1.04rem!important;
+  letter-spacing:.01em!important;white-space:nowrap!important;cursor:pointer;
+}
+.animal-name-link svg {width:22px!important;height:22px!important;opacity:.92!important}
+.animal-name-link:hover {color:#fff!important;opacity:.78}
+#cinematic-hero.cinematic-hero-section {
+  height:100svh!important;min-height:620px!important;padding:0!important;
+  overflow:hidden!important;background:#000!important;
+}
+#cinematic-hero .cinematic-hero-grid {height:100svh!important;min-height:620px!important}
+#cinematic-hero .cinematic-hero-visual {
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  padding:105px clamp(24px,5vw,76px) 30px 34%!important;
+}
+#cinematic-hero .cinematic-hero-stage {
+  position:relative!important;width:100%!important;height:100%!important;
+  max-width:1050px!important;max-height:760px!important;margin-left:auto!important;
+  overflow:visible!important;background:transparent!important;border-radius:0!important;
+}
+#cinematic-hero .cinematic-hero-img {
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  max-width:100%!important;max-height:100%!important;object-fit:contain!important;
+  object-position:center right!important;transform:scale(.91)!important;
+}
+#cinematic-hero .hero-stage-vignette {
+  position:absolute!important;inset:0!important;pointer-events:none!important;
+  background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.52) 13%,transparent 55%),
+    linear-gradient(0deg,rgba(0,0,0,.24),transparent 30%)!important;
+}
+#cinematic-hero .cinematic-hero-info {
+  left:clamp(34px,8.5vw,140px)!important;
+  bottom:clamp(72px,14vh,145px)!important;
+  max-width:46vw!important;
+}
+#cinematic-hero .hero-common-name {
+  font-size:clamp(3.2rem,7vw,7.2rem)!important;
+  line-height:1.02!important;max-width:650px!important;
+}
+@media(max-width:800px) {
+ .site-header .header-inner {min-height:82px!important;padding:0 20px!important}
+ .site-header .brand-logo-image {width:76px!important;height:64px!important}
+ .animal-name-link {font-size:.9rem!important}
+ #cinematic-hero .cinematic-hero-visual {padding:90px 12px 20px 16%!important}
+ #cinematic-hero .cinematic-hero-stage {max-height:64vh!important}
+ #cinematic-hero .cinematic-hero-info {left:24px!important;bottom:70px!important;max-width:70vw!important}
+ #cinematic-hero .hero-common-name {font-size:clamp(2.8rem,10vw,5rem)!important}
+}
+@media(max-width:520px) {
+ .site-header .header-inner {padding:0 14px!important}
+ .animal-name-link {font-size:.82rem!important;gap:7px!important}
+ .animal-name-link svg {width:18px!important;height:18px!important}
+ #cinematic-hero .cinematic-hero-visual {padding:95px 0 90px 0!important;justify-content:center!important}
+ #cinematic-hero .cinematic-hero-stage {width:100%!important;height:65vh!important;max-height:65vh!important}
+ #cinematic-hero .cinematic-hero-img {object-position:center!important;transform:scale(.96)!important}
+ #cinematic-hero .cinematic-hero-info {left:22px!important;bottom:52px!important;max-width:90vw!important}
+ #cinematic-hero .hero-common-name {font-size:clamp(2.7rem,13vw,4.2rem)!important}
+}
