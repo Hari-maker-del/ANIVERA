@@ -2711,3 +2711,34 @@ body.modal-open {
     transform:none!important;
   }
 }
+
+
+/* ANIVERA vertical editorial slide: next travels upward, previous travels downward. */
+#cinematic-hero .cinematic-hero-img {
+  opacity:1!important;
+  transform:translate3d(0,100%,0) scale(1.035)!important;
+  transition:transform 900ms cubic-bezier(.22,.75,.2,1)!important;
+  will-change:transform;
+}
+#cinematic-hero .cinematic-hero-img.is-active {
+  opacity:1!important;
+  transform:translate3d(0,0,0) scale(1.035)!important;
+}
+#cinematic-hero .cinematic-hero-img.hero-slide-from-top {
+  transform:translate3d(0,-100%,0) scale(1.035)!important;
+}
+#cinematic-hero .cinematic-hero-img.hero-slide-from-bottom {
+  transform:translate3d(0,100%,0) scale(1.035)!important;
+}
+#cinematic-hero .cinematic-hero-img.hero-slide-leave-up {
+  transform:translate3d(0,-100%,0) scale(1.035)!important;
+}
+#cinematic-hero .cinematic-hero-img.hero-slide-leave-down {
+  transform:translate3d(0,100%,0) scale(1.035)!important;
+}
+@media(prefers-reduced-motion:reduce) {
+  #cinematic-hero .cinematic-hero-img {
+    transition:none!important;
+    transform:translate3d(0,0,0)!important;
+  }
+}
