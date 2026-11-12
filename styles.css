@@ -2502,3 +2502,36 @@ body.modal-open {
     left:22px!important;right:22px!important;bottom:42px!important;max-width:none!important;
   }
 }
+
+
+/* Restore clean transparent header navigation buttons */
+.site-header .animal-name-nav {
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:clamp(18px,2.6vw,42px)!important;flex:1!important;
+}
+.site-header .header-nav-link {
+  display:inline-flex!important;align-items:center!important;
+  padding:10px 2px!important;color:rgba(255,255,255,.88)!important;
+  background:transparent!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;text-decoration:none!important;
+  font-family:'Inter',Arial,sans-serif!important;font-size:.88rem!important;
+  font-weight:500!important;letter-spacing:.015em!important;white-space:nowrap!important;
+  transition:color .2s ease,opacity .2s ease!important;
+}
+.site-header .header-nav-link:hover {color:#fff!important;opacity:.72}
+.site-header .header-actions {display:flex!important;align-items:center!important;gap:18px!important}
+.site-header .header-get-started {
+  display:inline-flex!important;align-items:center!important;
+  padding:10px 2px!important;color:#fff!important;background:transparent!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  font-family:'Inter',Arial,sans-serif!important;font-size:.9rem!important;
+}
+@media(max-width:900px) {
+ .site-header .animal-name-nav {gap:14px!important}
+ .site-header .header-nav-link {font-size:.78rem!important}
+}
+@media(max-width:700px) {
+ .site-header .animal-name-nav {display:none!important}
+ .site-header .header-get-started {display:none!important}
+ .site-header .mobile-menu-toggle {display:inline-flex!important}
+}
