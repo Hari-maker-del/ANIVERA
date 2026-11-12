@@ -2042,6 +2042,9 @@
       if (firstPart && restPart) {
         firstPart.textContent = animalName.shift() || "";
         restPart.textContent = animalName.join(" ");
+        nameEl.textContent = (sp.name || sp.commonName);
+      } else {
+        nameEl.textContent = sp.name || sp.commonName;
       } else {
         nameEl.textContent = sp.name || sp.commonName;
       }
