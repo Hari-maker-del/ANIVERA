@@ -2589,3 +2589,81 @@ body.modal-open {
   opacity:.95!important;
   vertical-align:middle!important;
 }
+
+
+/* Complete the left editorial column so the hero feels intentionally composed. */
+#cinematic-hero .cinematic-hero-info {
+  left:clamp(34px,8vw,130px)!important;
+  right:auto!important;
+  top:50%!important;
+  bottom:auto!important;
+  transform:translateY(-50%)!important;
+  width:min(38vw,560px)!important;
+  max-width:38vw!important;
+  z-index:5!important;
+}
+#cinematic-hero .hero-slide-tracker {
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:11px!important;
+  margin:0 0 28px!important;
+  color:rgba(255,255,255,.62)!important;
+  font-family:'Cinzel',Georgia,serif!important;
+  font-size:.72rem!important;
+  letter-spacing:.16em!important;
+}
+#cinematic-hero .hero-animal-heading {
+  margin:0 0 15px!important;
+}
+#cinematic-hero .hero-common-name {
+  font-size:clamp(2.7rem,4.1vw,5rem)!important;
+  line-height:1.12!important;
+  color:#f7f5f0!important;
+  text-shadow:0 8px 35px rgba(0,0,0,.35)!important;
+}
+#cinematic-hero .hero-scientific-name {
+  display:block!important;
+  margin:0 0 24px!important;
+  color:#FB8122!important;
+  font-family:'Playfair Display',Georgia,serif!important;
+  font-size:clamp(1rem,1.35vw,1.3rem)!important;
+  font-style:italic!important;
+  letter-spacing:.035em!important;
+}
+#cinematic-hero .hero-description {
+  display:block!important;
+  max-width:480px!important;
+  margin:0 0 30px!important;
+  color:rgba(242,240,235,.78)!important;
+  font-size:clamp(.94rem,1.05vw,1.08rem)!important;
+  line-height:1.85!important;
+  font-weight:300!important;
+}
+#cinematic-hero .hero-actions {
+  display:flex!important;
+  margin:0!important;
+}
+#cinematic-hero .hero-actions .btn {
+  min-height:46px!important;
+  padding:0 23px!important;
+  border-radius:2px!important;
+  font-family:'Cinzel',Georgia,serif!important;
+  font-size:.72rem!important;
+  letter-spacing:.09em!important;
+}
+#cinematic-hero .hero-specs-grid,
+#cinematic-hero .hero-controls-bar {display:none!important}
+@media(max-width:800px) {
+  #cinematic-hero .cinematic-hero-info {
+    left:24px!important;right:24px!important;top:auto!important;bottom:42px!important;
+    width:auto!important;max-width:75vw!important;transform:none!important;
+  }
+  #cinematic-hero .hero-slide-tracker {margin-bottom:13px!important;font-size:.62rem!important}
+  #cinematic-hero .hero-common-name {font-size:clamp(2.2rem,7vw,3.7rem)!important}
+  #cinematic-hero .hero-scientific-name {margin-bottom:12px!important;font-size:1rem!important}
+  #cinematic-hero .hero-description {font-size:.88rem!important;line-height:1.55!important;margin-bottom:17px!important;max-width:100%!important}
+}
+@media(max-width:520px) {
+  #cinematic-hero .cinematic-hero-info {left:22px!important;right:22px!important;bottom:30px!important;max-width:none!important}
+  #cinematic-hero .hero-description {max-width:92%!important}
+}
