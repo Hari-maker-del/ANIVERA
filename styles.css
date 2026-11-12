@@ -2217,3 +2217,12 @@ body.modal-open {
   html { scroll-behavior: auto; }
   main > section .container { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
+
+
+/* Hero animal photography: reliable, visible cross-fade */
+#cinematic-hero .cinematic-hero-img {
+  transition: opacity 1.4s cubic-bezier(.22,.61,.36,1) !important;
+  will-change: opacity;
+}
+#cinematic-hero .cinematic-hero-img:not(.is-active) { opacity: 0 !important; }
+#cinematic-hero .cinematic-hero-img.is-active { opacity: 1 !important; }
