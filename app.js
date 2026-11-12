@@ -2202,14 +2202,6 @@
     startTimer();
   }
 
-  // Snow Leopard is the featured animal in the transparent header.
-  var snowLeopardNav = document.getElementById("snow-leopard-nav");
-  if (snowLeopardNav) {
-    snowLeopardNav.addEventListener("click", function () {
-      goToSlide(0);
-    });
-  }
-
   // Expose hero controller to QA and global scope
   window.__ANIVERA_HERO__ = {
     getCatalogue: function () { return heroCatalogue; },
