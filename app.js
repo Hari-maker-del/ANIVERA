@@ -2202,6 +2202,23 @@
     startTimer();
   }
 
+  // Minimal header: featured animal names paired with paw-print marks
+  var animalNav = document.getElementById("animal-name-nav");
+  if (animalNav && heroCatalogue.length) {
+    var navSpecies = heroCatalogue.slice(0, 7);
+    animalNav.innerHTML = navSpecies.map(function (sp, idx) {
+      var label = sp.name || sp.commonName;
+      return '<button type="button" class="animal-name-link" data-animal-index="' + idx + '" aria-label="Show ' + escapeHtml(label) + '">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="15.5" rx="5.1" ry="4.2"/><ellipse cx="5.3" cy="8.5" rx="2" ry="2.7"/><ellipse cx="10.1" cy="5.5" rx="2" ry="2.7"/><ellipse cx="15.1" cy="5.5" rx="2" ry="2.7"/><ellipse cx="18.8" cy="8.5" rx="2" ry="2.7"/></svg>' +
+        '<span>' + escapeHtml(label) + '</span></button>';
+    }).join("");
+    animalNav.querySelectorAll("[data-animal-index]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        goToSlide(Number(button.getAttribute("data-animal-index")));
+      });
+    });
+  }
+
   // Expose hero controller to QA and global scope
   window.__ANIVERA_HERO__ = {
     getCatalogue: function () { return heroCatalogue; },
