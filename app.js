@@ -1999,7 +1999,7 @@
 
   var currentIndex = 0;
   var isPlaying = true;
-  var slideDuration = 5000; // Hold each animal for 5 seconds before the next crossfade
+  var slideDuration = 1800; // 1.8s hold + 1.2s crossfade = 3 seconds per animal
   var slideTimer = null;
   var progressStartTime = 0;
   var progressRafId = null;
@@ -2105,7 +2105,7 @@
         preloadImage(currentIndex + 1);
         preloadImage(currentIndex + 2);
         if (isPlaying) startTimer();
-      }, 1450);
+      }, 1200);
     };
     backImg.onerror = function () {
       backImg.onerror = null;
