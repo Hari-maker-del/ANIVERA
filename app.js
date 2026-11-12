@@ -2035,7 +2035,17 @@
     var numStr = (slideNum < 10 ? "0" : "") + slideNum + " / " + heroCatalogue.length;
     if (slideNumEl) slideNumEl.textContent = numStr;
     if (catEl) catEl.textContent = (sp.category || "WILDLIFE").toUpperCase();
-    if (nameEl) nameEl.textContent = sp.name || sp.commonName;
+    if (nameEl) {
+      var animalName = (sp.name || sp.commonName || "").trim().split(/\\s+/);
+      var firstPart = document.getElementById("hero-name-first");
+      var restPart = document.getElementById("hero-name-rest");
+      if (firstPart && restPart) {
+        firstPart.textContent = animalName.shift() || "";
+        restPart.textContent = animalName.join(" ");
+      } else {
+        nameEl.textContent = sp.name || sp.commonName;
+      }
+    }
     if (sciEl) sciEl.textContent = sp.scientificName;
     if (descEl) descEl.textContent = sp.description;
     if (habEl) habEl.textContent = sp.habitat;
