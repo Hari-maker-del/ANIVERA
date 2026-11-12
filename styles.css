@@ -2535,3 +2535,22 @@ body.modal-open {
  .site-header .header-get-started {display:none!important}
  .site-header .mobile-menu-toggle {display:inline-flex!important}
 }
+
+
+/* Premium editorial typography for the transparent header */
+.site-header .header-nav-link,
+.site-header .header-get-started {
+  font-family:'Cinzel',Georgia,serif!important;
+  font-weight:500!important;
+  letter-spacing:.055em!important;
+  font-size:.82rem!important;
+  text-transform:none!important;
+}
+.site-header .header-nav-link:hover,
+.site-header .header-get-started:hover {
+  color:#FB8122!important;
+  opacity:1!important;
+}
+@media(max-width:900px) {
+ .site-header .header-nav-link {font-size:.72rem!important;letter-spacing:.025em!important}
+}
