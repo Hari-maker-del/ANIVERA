@@ -2232,3 +2232,92 @@ body.modal-open {
 #cinematic-hero .cinematic-hero-img{transition:opacity 1.2s ease-in-out!important;will-change:opacity}
 #cinematic-hero .cinematic-hero-img:not(.is-active){opacity:0!important}
 #cinematic-hero .cinematic-hero-img.is-active{opacity:1!important}
+
+
+/* ANIVERA editorial wildlife landing — clean animal-name navigation */
+.site-header {
+  position: absolute !important; inset: 0 0 auto 0 !important;
+  background: linear-gradient(180deg,rgba(0,0,0,.72),transparent) !important;
+  border: 0 !important; z-index: 1000;
+}
+.site-header .header-inner { min-height: 104px !important; }
+.site-header .brand-link { flex: 0 0 auto; }
+.site-header .brand-logo-image { width: 104px !important; height: 82px !important; }
+.site-header .primary-nav.animal-name-nav {
+  display:flex !important; flex:1; justify-content:center; align-items:center;
+  gap:clamp(12px,2vw,30px); overflow-x:auto; scrollbar-width:none;
+}
+.animal-name-nav::-webkit-scrollbar { display:none; }
+.animal-name-link {
+  display:inline-flex; align-items:center; gap:7px; flex:0 0 auto;
+  color:rgba(255,255,255,.86); text-decoration:none; white-space:nowrap;
+  font-family:'Playfair Display',Georgia,serif; font-size:clamp(.82rem,1vw,1rem);
+  letter-spacing:.015em; background:none; border:0; padding:10px 0; cursor:pointer;
+  transition:color .25s ease;
+}
+.animal-name-link:hover,.animal-name-link:focus-visible { color:#fff; }
+.animal-name-link svg { width:15px;height:15px;opacity:.72; }
+.site-header .header-get-started {
+  background:transparent!important;border:0!important;color:#fff!important;
+  font:500 .9rem 'Inter',sans-serif!important;padding:10px 4px!important;
+  cursor:pointer;white-space:nowrap;
+}
+#cinematic-hero.cinematic-hero-section {
+  min-height:100svh!important; height:100svh!important; padding:0!important;
+  display:flex!important; align-items:stretch!important; background:#000!important;
+  overflow:hidden;
+}
+#cinematic-hero > .container { max-width:none!important;width:100%!important;padding:0!important; }
+#cinematic-hero .cinematic-hero-grid {
+  display:block!important;position:relative!important;width:100%;height:100svh;
+}
+#cinematic-hero .cinematic-hero-visual {
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  z-index:0;animation:none!important;
+}
+#cinematic-hero .cinematic-hero-stage {
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  border-radius:0!important;background:#000!important;overflow:hidden;
+}
+#cinematic-hero .cinematic-hero-img {
+  width:100%!important;height:100%!important;left:0!important;top:0!important;
+  object-fit:cover!important;object-position:center 42%!important;
+  transition:opacity 1.2s ease-in-out!important;
+}
+#cinematic-hero .hero-stage-vignette {
+  background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.22) 48%,transparent 78%),
+  linear-gradient(0deg,rgba(0,0,0,.55),transparent 40%)!important;
+}
+#cinematic-hero .cinematic-hero-info {
+  position:absolute!important;z-index:2;left:clamp(28px,8vw,130px)!important;
+  bottom:clamp(70px,13vh,150px)!important;max-width:min(780px,80vw)!important;
+  margin:0!important;animation:aniveraTitleIn 1s ease both;
+}
+#cinematic-hero .hero-slide-tracker,
+#cinematic-hero .hero-scientific-name,
+#cinematic-hero .hero-description,
+#cinematic-hero .hero-specs-grid,
+#cinematic-hero .hero-actions,
+#cinematic-hero .hero-controls-bar { display:none!important; }
+#cinematic-hero .hero-common-name {
+  color:#fff!important;font-family:'Playfair Display',Georgia,serif!important;
+  font-size:clamp(3.5rem,9vw,9rem)!important;font-weight:500!important;
+  line-height:.98!important;letter-spacing:-.045em!important;margin:0!important;
+  text-shadow:0 5px 35px rgba(0,0,0,.38);
+}
+@keyframes aniveraTitleIn { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
+@media(max-width:900px) {
+ .site-header .header-inner{min-height:82px!important}
+ .site-header .primary-nav.animal-name-nav{justify-content:flex-start;gap:16px}
+ .site-header .brand-logo-image{width:82px!important;height:68px!important}
+ .site-header .header-get-started{display:none}
+}
+@media(max-width:640px) {
+ .site-header .header-inner{padding:0 14px!important;gap:8px}
+ .site-header .primary-nav.animal-name-nav{gap:13px}
+ .animal-name-link{font-size:.78rem}
+ .animal-name-link svg{width:12px;height:12px}
+ #cinematic-hero .cinematic-hero-img{object-position:58% center!important}
+ #cinematic-hero .cinematic-hero-info{left:22px!important;bottom:70px!important;max-width:90vw!important}
+ #cinematic-hero .hero-common-name{font-size:clamp(3rem,13vw,5rem)!important}
+}
