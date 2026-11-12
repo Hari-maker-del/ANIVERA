@@ -2467,3 +2467,38 @@ body.modal-open {
  #cinematic-hero .cinematic-hero-info {left:22px!important;right:22px!important;bottom:42px!important;max-width:none!important}
  #cinematic-hero .hero-common-name {font-size:clamp(2.4rem,10vw,3.6rem)!important}
 }
+
+
+/* Corrected composition: title and paw on the LEFT, animal on the RIGHT */
+#cinematic-hero .cinematic-hero-visual {
+  inset:0 0 0 auto!important;left:auto!important;right:0!important;
+  width:70%!important;padding:100px clamp(18px,3vw,48px) 26px 0!important;
+  justify-content:flex-end!important;
+}
+#cinematic-hero .cinematic-hero-stage {
+  margin-left:auto!important;margin-right:0!important;
+}
+#cinematic-hero .hero-stage-vignette {
+  background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.48) 18%,transparent 58%),
+    linear-gradient(0deg,rgba(0,0,0,.25),transparent 28%)!important;
+}
+#cinematic-hero .cinematic-hero-info {
+  left:clamp(34px,8vw,130px)!important;right:auto!important;
+  top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;
+  max-width:32vw!important;
+}
+@media(max-width:800px) {
+  #cinematic-hero .cinematic-hero-visual {
+    inset:0!important;left:0!important;right:0!important;width:100%!important;
+    padding:95px 0 120px!important;justify-content:center!important;
+  }
+  #cinematic-hero .cinematic-hero-info {
+    left:24px!important;right:24px!important;top:auto!important;
+    bottom:48px!important;transform:none!important;max-width:75vw!important;
+  }
+}
+@media(max-width:520px) {
+  #cinematic-hero .cinematic-hero-info {
+    left:22px!important;right:22px!important;bottom:42px!important;max-width:none!important;
+  }
+}
