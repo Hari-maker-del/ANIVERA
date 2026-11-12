@@ -1989,7 +1989,7 @@
 // =============================================================================
 // 9. CINEMATIC WILDLIFE HERO SLIDESHOW & NAVIGATION SEARCH (ANIVERA V2.5)
 // =============================================================================
-((function initCinematicWildlifeHero() {
+(function initCinematicWildlifeHero() {
   "use strict";
 
   var snowLeopard = SPECIES_CATALOGUE.filter(function (s) { return s.id === "ANV-SP-003"; })[0];
