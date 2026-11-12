@@ -2742,3 +2742,67 @@ body.modal-open {
     transform:translate3d(0,0,0)!important;
   }
 }
+
+
+/* Minimal vertical browsing controls, placed over the animal image. */
+#cinematic-hero .cinematic-hero-stage {
+  position:relative!important;
+}
+#cinematic-hero .hero-vertical-nav {
+  position:absolute!important;
+  z-index:12!important;
+  top:50%!important;
+  right:clamp(16px,2.2vw,34px)!important;
+  transform:translateY(-50%)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:12px!important;
+  padding:10px 7px!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  border-radius:30px!important;
+  background:rgba(8,8,8,.34)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+}
+#cinematic-hero .hero-vertical-nav-btn {
+  display:grid!important;
+  place-items:center!important;
+  width:38px!important;
+  height:38px!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  border-radius:50%!important;
+  color:#f7f5f0!important;
+  background:rgba(255,255,255,.045)!important;
+  font-family:Arial,sans-serif!important;
+  font-size:22px!important;
+  line-height:1!important;
+  cursor:pointer!important;
+  transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease!important;
+}
+#cinematic-hero .hero-vertical-nav-btn:hover,
+#cinematic-hero .hero-vertical-nav-btn:focus-visible {
+  color:#080808!important;
+  background:#FB8122!important;
+  border-color:#FB8122!important;
+  transform:scale(1.08)!important;
+  outline:none!important;
+}
+#cinematic-hero .hero-vertical-nav-line {
+  display:block!important;
+  width:1px!important;
+  height:22px!important;
+  background:linear-gradient(to bottom,transparent,rgba(251,129,34,.85),transparent)!important;
+}
+@media(max-width:800px) {
+  #cinematic-hero .hero-vertical-nav {
+    right:12px!important;
+    gap:8px!important;
+    padding:7px 5px!important;
+  }
+  #cinematic-hero .hero-vertical-nav-btn {
+    width:32px!important;height:32px!important;font-size:19px!important;
+  }
+  #cinematic-hero .hero-vertical-nav-line {height:15px!important}
+}
