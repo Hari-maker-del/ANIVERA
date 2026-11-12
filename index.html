@@ -133,8 +133,7 @@
             </div>
 
             <div class="hero-controls-bar">
-              <button type="button" id="hero-prev-btn" class="hero-nav-arrow" aria-label="Previous animal species">&larr;</button>
-              <button type="button" id="hero-next-btn" class="hero-nav-arrow" aria-label="Next animal species">&rarr;</button>
+              <button type="button" id="hero-play-pause-btn" class="hero-play-btn" aria-label="Toggle slideshow auto-rotation">Pause</button>
               <button type="button" id="hero-play-pause-btn" class="hero-play-btn" aria-label="Toggle slideshow auto-rotation">Pause</button>
               <div class="hero-progress-container" aria-hidden="true">
                 <div id="hero-progress-bar" class="hero-progress-bar"></div>
@@ -149,6 +148,15 @@
               <img id="cinematic-hero-img-front" class="cinematic-hero-img is-active" src="public/assets/species/snow-leopard.webp" alt="Snow Leopard (Panthera uncia) in natural habitat" />
               <img id="cinematic-hero-img-back" class="cinematic-hero-img" alt="Next animal species" />
               <div class="hero-stage-vignette"></div>
+              <div class="hero-vertical-nav" role="group" aria-label="Browse animal species">
+                <button type="button" id="hero-prev-btn" class="hero-vertical-nav-btn" aria-label="Previous animal species" title="Previous animal">
+                  <span aria-hidden="true">↑</span>
+                </button>
+                <span class="hero-vertical-nav-line" aria-hidden="true"></span>
+                <button type="button" id="hero-next-btn" class="hero-vertical-nav-btn" aria-label="Next animal species" title="Next animal">
+                  <span aria-hidden="true">↓</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
