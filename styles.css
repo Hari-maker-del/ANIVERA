@@ -2851,3 +2851,20 @@ body.modal-open {
   pointer-events:auto!important;
   cursor:pointer!important;
 }
+
+
+/* Independent manual slide animation fallback. */
+#cinematic-hero .cinematic-hero-img.hero-manual-up {
+  animation: aniveraManualSlideUp 720ms cubic-bezier(.22,.75,.2,1) both!important;
+}
+#cinematic-hero .cinematic-hero-img.hero-manual-down {
+  animation: aniveraManualSlideDown 720ms cubic-bezier(.22,.75,.2,1) both!important;
+}
+@keyframes aniveraManualSlideUp {
+  from { transform:translate3d(0,100%,0) scale(1.035); }
+  to { transform:translate3d(0,0,0) scale(1.035); }
+}
+@keyframes aniveraManualSlideDown {
+  from { transform:translate3d(0,-100%,0) scale(1.035); }
+  to { transform:translate3d(0,0,0) scale(1.035); }
+}
