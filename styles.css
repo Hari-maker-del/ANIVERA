@@ -2406,3 +2406,64 @@ body.modal-open {
  #cinematic-hero .cinematic-hero-info {left:22px!important;bottom:52px!important;max-width:90vw!important}
  #cinematic-hero .hero-common-name {font-size:clamp(2.7rem,13vw,4.2rem)!important}
 }
+
+
+/* Final hero composition: one animal title, beside the photograph */
+.site-header .animal-name-nav {display:none!important}
+#cinematic-hero .cinematic-hero-visual {
+  inset:0 auto 0 0!important;width:70%!important;
+  padding:100px 0 26px clamp(18px,3vw,48px)!important;
+  justify-content:flex-start!important;
+}
+#cinematic-hero .cinematic-hero-stage {
+  width:100%!important;max-width:1100px!important;height:100%!important;
+  max-height:780px!important;margin:0!important;
+}
+#cinematic-hero .cinematic-hero-img {
+  object-fit:contain!important;object-position:center!important;
+  transform:scale(.94)!important;
+}
+#cinematic-hero .hero-stage-vignette {
+  background:linear-gradient(90deg,transparent 68%,rgba(0,0,0,.58) 100%),
+    linear-gradient(0deg,rgba(0,0,0,.25),transparent 28%)!important;
+}
+#cinematic-hero .cinematic-hero-info {
+  left:auto!important;right:clamp(34px,6vw,100px)!important;
+  bottom:auto!important;top:50%!important;transform:translateY(-50%)!important;
+  max-width:32vw!important;text-align:left!important;
+  animation:aniveraTitleIn 1s ease both;
+}
+#cinematic-hero .hero-animal-heading {
+  display:flex!important;flex-direction:column!important;
+  align-items:flex-start!important;gap:18px!important;
+}
+#cinematic-hero .hero-animal-paw {
+  display:block!important;width:38px!important;height:38px!important;
+  color:#FB8122!important;opacity:.95!important;
+}
+#cinematic-hero .hero-common-name {
+  font-family:'Playfair Display',Georgia,serif!important;
+  font-size:clamp(2.8rem,4.6vw,5.7rem)!important;
+  line-height:1.02!important;letter-spacing:-.035em!important;
+  max-width:100%!important;margin:0!important;
+}
+@media(max-width:800px) {
+ #cinematic-hero .cinematic-hero-visual {
+   width:100%!important;padding:95px 0 120px!important;
+   justify-content:center!important;
+ }
+ #cinematic-hero .cinematic-hero-stage {width:100%!important;height:68vh!important;max-height:68vh!important}
+ #cinematic-hero .cinematic-hero-info {
+   right:24px!important;top:auto!important;bottom:48px!important;
+   transform:none!important;max-width:75vw!important;
+ }
+ #cinematic-hero .hero-animal-heading {flex-direction:row!important;align-items:center!important;gap:12px!important}
+ #cinematic-hero .hero-animal-paw {width:24px!important;height:24px!important}
+ #cinematic-hero .hero-common-name {font-size:clamp(2.3rem,8vw,4rem)!important}
+}
+@media(max-width:520px) {
+ #cinematic-hero .cinematic-hero-visual {padding:90px 0 105px!important}
+ #cinematic-hero .cinematic-hero-stage {height:65vh!important;max-height:65vh!important}
+ #cinematic-hero .cinematic-hero-info {left:22px!important;right:22px!important;bottom:42px!important;max-width:none!important}
+ #cinematic-hero .hero-common-name {font-size:clamp(2.4rem,10vw,3.6rem)!important}
+}
