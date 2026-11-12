@@ -149,11 +149,11 @@
               <img id="cinematic-hero-img-back" class="cinematic-hero-img" alt="Next animal species" />
               <div class="hero-stage-vignette"></div>
               <div class="hero-vertical-nav" role="group" aria-label="Browse animal species">
-                <button type="button" id="hero-prev-btn" class="hero-vertical-nav-btn" aria-label="Previous animal species" title="Previous animal">
+                <button type="button" id="hero-prev-btn" class="hero-vertical-nav-btn" aria-label="Previous animal species" title="Previous animal" onclick="if(window.__ANIVERA_HERO__) window.__ANIVERA_HERO__.previous()">
                   <span aria-hidden="true">↑</span>
                 </button>
                 <span class="hero-vertical-nav-line" aria-hidden="true"></span>
-                <button type="button" id="hero-next-btn" class="hero-vertical-nav-btn" aria-label="Next animal species" title="Next animal">
+                <button type="button" id="hero-next-btn" class="hero-vertical-nav-btn" aria-label="Next animal species" title="Next animal" onclick="if(window.__ANIVERA_HERO__) window.__ANIVERA_HERO__.next()">
                   <span aria-hidden="true">↓</span>
                 </button>
               </div>
@@ -533,7 +533,7 @@
   <script id="anivera-species-data" type="application/json">__SPECIES_DATA_PLACEHOLDER__</script>
   <script src="animals-data.js"></script>
   <script src="cloud-sync.js"></script>
-  <script src="app.js?v=anivera-manual-vertical-nav-20261112-2" ></script>
+  <script src="app.js?v=anivera-manual-vertical-nav-20261112-3" ></script>
   <script src="loading-experience.js"></script>
 </body>
 </html>
