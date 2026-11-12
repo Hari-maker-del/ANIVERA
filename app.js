@@ -1992,18 +1992,20 @@
 (function initCinematicWildlifeHero() {
   "use strict";
 
-  // Build ordered catalogue starting strictly with Snow Leopard (ANV-SP-003)
   var snowLeopard = SPECIES_CATALOGUE.filter(function (s) { return s.id === "ANV-SP-003"; })[0];
   var others = SPECIES_CATALOGUE.filter(function (s) { return s.id !== "ANV-SP-003"; });
   var heroCatalogue = snowLeopard ? [snowLeopard].concat(others) : SPECIES_CATALOGUE.slice();
-
   var currentIndex = 0;
+  var requestedIndex = 0;
   var isPlaying = true;
-  var slideDuration = 1800; // 1.8s hold + 1.2s crossfade = 3 seconds per animal
+  var slideInterval = 3000;
+  var imageFadeDuration = 1050;
+  var nameFadeDuration = 750;
   var slideTimer = null;
   var progressStartTime = 0;
   var progressRafId = null;
-  var isTransitioning = false;
+  var transitionToken = 0;
+  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var frontImg = document.getElementById("cinematic-hero-img-front");
   var backImg = document.getElementById("cinematic-hero-img-back");
@@ -2020,194 +2022,182 @@
   var nextBtn = document.getElementById("hero-next-btn");
   var playPauseBtn = document.getElementById("hero-play-pause-btn");
   var progressBar = document.getElementById("hero-progress-bar");
+  var heroSection = document.getElementById("cinematic-hero");
+
+  function normalizeIndex(idx) {
+    return ((idx % heroCatalogue.length) + heroCatalogue.length) % heroCatalogue.length;
+  }
 
   function preloadImage(idx) {
-    if (idx < 0) idx = heroCatalogue.length - 1;
-    if (idx >= heroCatalogue.length) idx = 0;
-    var sp = heroCatalogue[idx];
+    if (!heroCatalogue.length) return;
+    var sp = heroCatalogue[normalizeIndex(idx)];
     if (sp && sp.imageUrl) {
-      var img = new Image();
-      img.src = sp.imageUrl;
+      var image = new Image();
+      image.decoding = "async";
+      image.src = sp.imageUrl;
     }
   }
 
   function updateSlideText(sp, slideNum) {
-    var numStr = (slideNum < 10 ? "0" : "") + slideNum + " / " + heroCatalogue.length;
-    if (slideNumEl) slideNumEl.textContent = numStr;
+    if (slideNumEl) slideNumEl.textContent = (slideNum < 10 ? "0" : "") + slideNum + " / " + heroCatalogue.length;
     if (catEl) catEl.textContent = (sp.category || "WILDLIFE").toUpperCase();
-    if (nameEl) {
-      var animalName = (sp.name || sp.commonName || "").trim().split(/\\s+/);
-      var firstPart = document.getElementById("hero-name-first");
-      var restPart = document.getElementById("hero-name-rest");
-      if (firstPart && restPart) {
-        firstPart.textContent = animalName.shift() || "";
-        restPart.textContent = animalName.join(" ");
-        nameEl.textContent = (sp.name || sp.commonName);
-      } else {
-        nameEl.textContent = sp.name || sp.commonName;
-      } else {
-        nameEl.textContent = sp.name || sp.commonName;
-      }
-    }
-    if (sciEl) sciEl.textContent = sp.scientificName;
-    if (descEl) descEl.textContent = sp.description;
-    if (habEl) habEl.textContent = sp.habitat;
-    if (dietEl) dietEl.textContent = sp.diet;
-    if (statusEl) statusEl.textContent = sp.conservationStatus;
+    if (nameEl) nameEl.textContent = sp.name || sp.commonName || "";
+    if (sciEl) sciEl.textContent = sp.scientificName || "";
+    if (descEl) descEl.textContent = sp.description || "";
+    if (habEl) habEl.textContent = sp.habitat || "";
+    if (dietEl) dietEl.textContent = sp.diet || "";
+    if (statusEl) statusEl.textContent = sp.conservationStatus || "";
     if (learnBtn) learnBtn.setAttribute("data-species-id", sp.id);
   }
 
   function updateProgressBar() {
     if (!isPlaying || !progressBar) return;
     var elapsed = Date.now() - progressStartTime;
-    var pct = Math.min(100, (elapsed / slideDuration) * 100);
-    progressBar.style.width = pct + "%";
-    if (pct < 100) {
-      progressRafId = requestAnimationFrame(updateProgressBar);
-    }
-  }
-
-  function startTimer() {
-    clearTimeout(slideTimer);
-    if (progressRafId) cancelAnimationFrame(progressRafId);
-    if (!isPlaying) return;
-    progressStartTime = Date.now();
-    updateProgressBar();
-    slideTimer = setTimeout(function () {
-      goToSlide(currentIndex + 1);
-    }, slideDuration);
+    progressBar.style.width = Math.min(100, (elapsed / slideInterval) * 100) + "%";
+    if (elapsed < slideInterval) progressRafId = requestAnimationFrame(updateProgressBar);
   }
 
   function pauseTimer() {
     clearTimeout(slideTimer);
     if (progressRafId) cancelAnimationFrame(progressRafId);
+    progressRafId = null;
     if (progressBar) progressBar.style.width = "0%";
   }
 
-  function goToSlide(targetIdx) {
-    if (isTransitioning || !heroCatalogue.length) return;
-    targetIdx = ((targetIdx % heroCatalogue.length) + heroCatalogue.length) % heroCatalogue.length;
-    var nextSp = heroCatalogue[targetIdx];
-    if (!nextSp || !frontImg || !backImg || !nextSp.imageUrl) {
-      currentIndex = targetIdx;
-      if (nextSp) updateSlideText(nextSp, targetIdx + 1);
+  function startTimer() {
+    pauseTimer();
+    if (!isPlaying || document.hidden || !heroCatalogue.length) return;
+    progressStartTime = Date.now();
+    updateProgressBar();
+    // The transition occupies the final 1,050ms of each 3-second cycle.
+    slideTimer = setTimeout(function () {
+      goToSlide(requestedIndex + 1, true);
+    }, Math.max(0, slideInterval - imageFadeDuration));
+  }
+
+  function setNameTransitionOut() {
+    if (!nameEl) return;
+    nameEl.classList.remove("hero-name-enter", "hero-name-exit");
+    void nameEl.offsetWidth;
+    nameEl.classList.add("hero-name-exit");
+  }
+
+  function setNameTransitionIn() {
+    if (!nameEl) return;
+    nameEl.classList.remove("hero-name-exit", "hero-name-enter");
+    void nameEl.offsetWidth;
+    nameEl.classList.add("hero-name-enter");
+  }
+
+  function goToSlide(targetIdx, automatic) {
+    if (!heroCatalogue.length || !frontImg || !backImg) return;
+    targetIdx = normalizeIndex(targetIdx);
+    var token = ++transitionToken;
+    requestedIndex = targetIdx;
+    pauseTimer();
+
+    if (targetIdx === currentIndex) {
       if (isPlaying) startTimer();
       return;
     }
 
-    isTransitioning = true;
-    pauseTimer();
-    // Assign directly to the back layer. Its onload event guarantees we only
-    // fade in after the image is actually ready.
-    backImg.classList.remove("is-active");
-    backImg.onload = function () {
-      backImg.onload = null;
-      backImg.alt = (nextSp.name || nextSp.commonName) + " (" + nextSp.scientificName + ")";
-      updateSlideText(nextSp, targetIdx + 1);
-      requestAnimationFrame(function () {
-        backImg.classList.add("is-active");
-        frontImg.classList.remove("is-active");
-      });
-      setTimeout(function () {
-        frontImg.src = backImg.src;
-        frontImg.alt = backImg.alt;
-        frontImg.classList.add("is-active");
-        backImg.classList.remove("is-active");
-        currentIndex = targetIdx;
-        isTransitioning = false;
-        preloadImage(currentIndex + 1);
-        preloadImage(currentIndex + 2);
-        if (isPlaying) startTimer();
-      }, 1200);
-    };
-    backImg.onerror = function () {
-      backImg.onerror = null;
-      isTransitioning = false;
-      currentIndex = targetIdx;
+    var nextSp = heroCatalogue[targetIdx];
+    if (!nextSp || !nextSp.imageUrl) {
+      currentIndex = requestedIndex = targetIdx;
       updateSlideText(nextSp, targetIdx + 1);
       if (isPlaying) startTimer();
+      return;
+    }
+
+    var incoming = backImg;
+    var outgoing = frontImg;
+    incoming.classList.remove("is-active");
+    incoming.onload = function () {
+      if (token !== transitionToken) return;
+      incoming.onload = null;
+      incoming.onerror = null;
+      incoming.alt = (nextSp.name || nextSp.commonName) + " (" + (nextSp.scientificName || "") + ")";
+      setNameTransitionOut();
+
+      var nameSwapDelay = reducedMotion ? 0 : nameFadeDuration / 2;
+      setTimeout(function () {
+        if (token !== transitionToken) return;
+        updateSlideText(nextSp, targetIdx + 1);
+        setNameTransitionIn();
+      }, nameSwapDelay);
+
+      requestAnimationFrame(function () {
+        if (token !== transitionToken) return;
+        incoming.classList.add("is-active");
+        outgoing.classList.remove("is-active");
+      });
+
+      setTimeout(function () {
+        if (token !== transitionToken) return;
+        // Keep both DOM image layers alive; swap their roles without copying src.
+        frontImg = incoming;
+        backImg = outgoing;
+        currentIndex = requestedIndex = targetIdx;
+        preloadImage(currentIndex + 1);
+        preloadImage(currentIndex - 1);
+        if (isPlaying) startTimer();
+      }, reducedMotion ? 80 : imageFadeDuration);
     };
-    backImg.src = nextSp.imageUrl;
-    // Cached images may not fire onload after handler registration in some browsers.
-    if (backImg.complete && backImg.naturalWidth > 0) backImg.onload();
+    incoming.onerror = function () {
+      if (token !== transitionToken) return;
+      incoming.onload = null;
+      incoming.onerror = null;
+      currentIndex = requestedIndex = targetIdx;
+      updateSlideText(nextSp, targetIdx + 1);
+      incoming.classList.add("is-active");
+      outgoing.classList.remove("is-active");
+      frontImg = incoming;
+      backImg = outgoing;
+      if (isPlaying) startTimer();
+    };
+    incoming.src = nextSp.imageUrl;
+    if (incoming.complete && incoming.naturalWidth > 0) incoming.onload();
   }
 
-  // Hook Up Controls
-  if (prevBtn) {
-    prevBtn.addEventListener("click", function () {
-      goToSlide(currentIndex - 1);
-    });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener("click", function () {
-      goToSlide(currentIndex + 1);
-    });
-  }
+  if (prevBtn) prevBtn.addEventListener("click", function () { goToSlide(requestedIndex - 1, false); });
+  if (nextBtn) nextBtn.addEventListener("click", function () { goToSlide(requestedIndex + 1, false); });
   if (playPauseBtn) {
     playPauseBtn.addEventListener("click", function () {
       isPlaying = !isPlaying;
       playPauseBtn.textContent = isPlaying ? "Pause" : "Play";
-      if (isPlaying) {
-        startTimer();
-      } else {
-        pauseTimer();
-      }
+      if (isPlaying) startTimer(); else pauseTimer();
     });
   }
   if (learnBtn) {
     learnBtn.addEventListener("click", function () {
       var spId = learnBtn.getAttribute("data-species-id") || heroCatalogue[currentIndex].id;
-      if (window.__ANIVERA_QA__ && window.__ANIVERA_QA__.openSpeciesModal) {
-        window.__ANIVERA_QA__.openSpeciesModal(spId);
-      }
+      if (window.__ANIVERA_QA__ && window.__ANIVERA_QA__.openSpeciesModal) window.__ANIVERA_QA__.openSpeciesModal(spId);
     });
   }
 
-  // Keyboard navigation
   window.addEventListener("keydown", function (e) {
-    if (document.activeElement && (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA")) {
-      return;
-    }
-    if (e.key === "ArrowLeft") {
-      goToSlide(currentIndex - 1);
-    } else if (e.key === "ArrowRight") {
-      goToSlide(currentIndex + 1);
-    }
+    if (document.activeElement && /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+    if (e.key === "ArrowLeft") goToSlide(requestedIndex - 1, false);
+    else if (e.key === "ArrowRight") goToSlide(requestedIndex + 1, false);
   });
 
-  // Touch Swipe on Hero
-  var heroSection = document.getElementById("cinematic-hero");
   if (heroSection) {
     var touchStartX = 0;
     heroSection.addEventListener("touchstart", function (e) {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchStartX = e.changedTouches[0].clientX;
-      }
+      if (e.changedTouches && e.changedTouches[0]) touchStartX = e.changedTouches[0].clientX;
     }, { passive: true });
     heroSection.addEventListener("touchend", function (e) {
-      if (e.changedTouches && e.changedTouches[0]) {
-        var diffX = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(diffX) > 50) {
-          if (diffX < 0) goToSlide(currentIndex + 1);
-          else goToSlide(currentIndex - 1);
-        }
-      }
+      if (!e.changedTouches || !e.changedTouches[0]) return;
+      var diffX = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(diffX) > 50) goToSlide(requestedIndex + (diffX < 0 ? 1 : -1), false);
     }, { passive: true });
   }
 
-  // Page visibility awareness
   document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      pauseTimer();
-    } else if (isPlaying) {
-      startTimer();
-    }
+    if (document.hidden) pauseTimer();
+    else if (isPlaying) startTimer();
   });
 
-  // Respect reduced-motion preferences for animation styling, but keep the
-  // wildlife showcase rotating automatically (the hero has no playback UI).
-
-  // Initial setup: ensure Snow Leopard is displayed and start timer
   if (heroCatalogue.length) {
     updateSlideText(heroCatalogue[0], 1);
     preloadImage(1);
@@ -2215,7 +2205,6 @@
     startTimer();
   }
 
-  // Expose hero controller to QA and global scope
   window.__ANIVERA_HERO__ = {
     getCatalogue: function () { return heroCatalogue; },
     getCurrentIndex: function () { return currentIndex; },
@@ -2225,7 +2214,6 @@
     play: function () { isPlaying = true; startTimer(); }
   };
 })();
-
 // =============================================================================
 // 10. REAL-TIME NAVIGATION SEARCH
 // =============================================================================
