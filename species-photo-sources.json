@@ -1,0 +1,870 @@
+{
+  "target": "3840x2160 WebP hero images",
+  "crop": "centered 16:9 cover crop matching the hero frame",
+  "license_policy": "CC0, public domain, CC BY, CC BY-SA only",
+  "replaced": [
+    {
+      "animal": "African Bush Elephant",
+      "scientific_name": "Loxodonta africana",
+      "file": "public/assets/species/african-bush-elephant.webp",
+      "source_title": "File:Elefantes africanos de sabana (Loxodonta africana), Elephant Sands, Botsuana, 2018-07-28, DD 114-117 PAN.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Elefantes_africanos_de_sabana_%28Loxodonta_africana%29%2C_Elephant_Sands%2C_Botsuana%2C_2018-07-28%2C_DD_114-117_PAN.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        17250,
+        4784
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Diego Delso",
+      "credit": "Own work",
+      "attribution": "Diego Delso"
+    },
+    {
+      "animal": "Bengal Tiger",
+      "scientific_name": "Panthera tigris tigris",
+      "file": "public/assets/species/bengal-tiger.webp",
+      "source_title": "File:Bengal tiger (Panthera tigris tigris) female.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Bengal_tiger_%28Panthera_tigris_tigris%29_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Charles J. Sharp",
+      "credit": "Own work, from Sharp Photography, sharpphotography.co.uk",
+      "attribution": ""
+    },
+    {
+      "animal": "Snow Leopard",
+      "scientific_name": "Panthera uncia",
+      "file": "public/assets/species/snow-leopard.webp",
+      "source_title": "File:Snow leopard(Panthera uncia).jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Snow_leopard%28Panthera_uncia%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        4971,
+        3107
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "artist": "PeCeT_full",
+      "credit": "Flickr",
+      "attribution": ""
+    },
+    {
+      "animal": "Red Panda",
+      "scientific_name": "Ailurus fulgens",
+      "file": "public/assets/species/red-panda.webp",
+      "source_title": "File:Red panda(Ailurus fulgens).jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Red_panda%28Ailurus_fulgens%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        8256,
+        5504
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "artist": "Mathias Appel",
+      "credit": "Flickr",
+      "attribution": ""
+    },
+    {
+      "animal": "Giant Panda",
+      "scientific_name": "Ailuropoda melanoleuca",
+      "file": "public/assets/species/giant-panda.webp",
+      "source_title": "File:Xing Ya, a captive giant panda (Ailuropoda melanoleuca) held at Ouwehands Zoo.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Xing_Ya%2C_a_captive_giant_panda_%28Ailuropoda_melanoleuca%29_held_at_Ouwehands_Zoo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        6016,
+        4016
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Ruben van Kuik",
+      "credit": "Own work",
+      "attribution": ""
+    },
+    {
+      "animal": "Ring-Tailed Lemur",
+      "scientific_name": "Lemur catta",
+      "file": "public/assets/species/ring-tailed-lemur.webp",
+      "source_title": "File:Lemur catta 2018.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Lemur_catta_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        5504,
+        8256
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Architas",
+      "credit": "Own work",
+      "attribution": ""
+    },
+    {
+      "animal": "Masai Giraffe",
+      "scientific_name": "Giraffa tippelskirchi",
+      "file": "public/assets/species/masai-giraffe.webp",
+      "source_title": "File:Jirafa Masai (Giraffa camelopardalis tippelskirchi), parque nacional Serengueti, Tanzania, 2024-05-26, DD 76.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Jirafa_Masai_%28Giraffa_camelopardalis_tippelskirchi%29%2C_parque_nacional_Serengueti%2C_Tanzania%2C_2024-05-26%2C_DD_76.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        8688,
+        5792
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Diego Delso",
+      "credit": "Own work",
+      "attribution": "Diego Delso"
+    },
+    {
+      "animal": "Gray Wolf",
+      "scientific_name": "Canis lupus",
+      "file": "public/assets/species/gray-wolf.webp",
+      "source_title": "File:Canis lupus lupus in Alpenzoo, Innsbruck.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Canis_lupus_lupus_in_Alpenzoo%2C_Innsbruck.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        8256,
+        5504
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "artist": "Wilfredor",
+      "credit": "Own work",
+      "attribution": ""
+    },
+    {
+      "animal": "Koala",
+      "scientific_name": "Phascolarctos cinereus",
+      "file": "public/assets/species/koala.webp",
+      "source_title": "File:Koala (Phascolarctos cinereus) female Mount Lofty 4.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Koala_%28Phascolarctos_cinereus%29_female_Mount_Lofty_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        5152,
+        3435
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Charles J. Sharp",
+      "credit": "Own work, from Sharp Photography, sharpphotography.co.uk",
+      "attribution": ""
+    },
+    {
+      "animal": "Plains Zebra",
+      "scientific_name": "Equus quagga",
+      "file": "public/assets/species/plains-zebra.webp",
+      "source_title": "File:Plains zebras (Equus quagga) Kruger.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Plains_zebras_%28Equus_quagga%29_Kruger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_dimensions": [
+        5913,
+        3271
+      ],
+      "output_dimensions": [
+        3840,
+        2160
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Charles J. Sharp",
+      "credit": "Own work, from Sharp Photography, sharpphotography.co.uk",
+      "attribution": ""
+    }
+  ],
+  "unchanged": [],
+  "errors": [
+    {
+      "animal": "African Lion",
+      "file": "african-lion.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Panthera+leo&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Cheetah",
+      "file": "cheetah.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Acinonyx+jubatus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Hippopotamus",
+      "file": "hippopotamus.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hippopotamus+amphibius&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Mountain Gorilla",
+      "file": "mountain-gorilla.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Gorilla+beringei+beringei&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Leopard",
+      "file": "leopard.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Panthera+pardus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Jaguar",
+      "file": "jaguar.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Panthera+onca&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Puma",
+      "file": "puma.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Puma+concolor&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Eurasian Lynx",
+      "file": "eurasian-lynx.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Lynx+lynx&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Ocelot",
+      "file": "ocelot.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Leopardus+pardalis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Caracal",
+      "file": "caracal.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Caracal+caracal&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Serval",
+      "file": "serval.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Leptailurus+serval&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Clouded Leopard",
+      "file": "clouded-leopard.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Neofelis+nebulosa&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "African Wild Dog",
+      "file": "african-wild-dog.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Lycaon+pictus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Red Fox",
+      "file": "red-fox.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Vulpes+vulpes&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Arctic Fox",
+      "file": "arctic-fox.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Vulpes+lagopus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Fennec Fox",
+      "file": "fennec-fox.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Vulpes+zerda&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Maned Wolf",
+      "file": "maned-wolf.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chrysocyon+brachyurus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Ethiopian Wolf",
+      "file": "ethiopian-wolf.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Canis+simensis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Dhole",
+      "file": "dhole.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Cuon+alpinus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Brown Bear",
+      "file": "brown-bear.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ursus+arctos&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Polar Bear",
+      "file": "polar-bear.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ursus+maritimus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "American Black Bear",
+      "file": "american-black-bear.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ursus+americanus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Spectacled Bear",
+      "file": "spectacled-bear.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Tremarctos+ornatus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Sun Bear",
+      "file": "sun-bear.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Helarctos+malayanus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Sloth Bear",
+      "file": "sloth-bear.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Melursus+ursinus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "White Rhinoceros",
+      "file": "white-rhinoceros.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ceratotherium+simum&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Black Rhinoceros",
+      "file": "black-rhinoceros.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Diceros+bicornis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Greater One-Horned Rhinoceros",
+      "file": "greater-one-horned-rhinoceros.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Rhinoceros+unicornis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Pygmy Hippopotamus",
+      "file": "pygmy-hippopotamus.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Choeropsis+liberiensis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Reticulated Giraffe",
+      "file": "reticulated-giraffe.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Giraffa+reticulata&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Okapi",
+      "file": "okapi.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Okapia+johnstoni&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Chimpanzee",
+      "file": "chimpanzee.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Pan+troglodytes&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Bonobo",
+      "file": "bonobo.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Pan+paniscus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Bornean Orangutan",
+      "file": "bornean-orangutan.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Pongo+pygmaeus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Mandrill",
+      "file": "mandrill.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mandrillus+sphinx&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Japanese Macaque",
+      "file": "japanese-macaque.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Macaca+fuscata&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Golden Lion Tamarin",
+      "file": "golden-lion-tamarin.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Leontopithecus+rosalia&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Capuchin Monkey",
+      "file": "capuchin-monkey.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Cebus+capucinus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "African Buffalo",
+      "file": "african-buffalo.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Syncerus+caffer&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Plains Bison",
+      "file": "plains-bison.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bison+bison+bison&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Moose",
+      "file": "moose.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Alces+alces&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Caribou",
+      "file": "caribou.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Rangifer+tarandus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Red Kangaroo",
+      "file": "red-kangaroo.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Osphranter+rufus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Tasmanian Devil",
+      "file": "tasmanian-devil.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sarcophilus+harrisii&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Common Wombat",
+      "file": "common-wombat.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Vombatus+ursinus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Platypus",
+      "file": "platypus.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ornithorhynchus+anatinus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Three-Toed Sloth",
+      "file": "three-toed-sloth.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bradypus+tridactylus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Giant Anteater",
+      "file": "giant-anteater.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Myrmecophaga+tridactyla&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Nine-Banded Armadillo",
+      "file": "nine-banded-armadillo.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Dasypus+novemcinctus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Pangolin (Sunda)",
+      "file": "pangolin-(sunda).webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Manis+javanica&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Capybara",
+      "file": "capybara.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hydrochoerus+hydrochaeris&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "North American Beaver",
+      "file": "north-american-beaver.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Castor+canadensis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Meerkat",
+      "file": "meerkat.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Suricata+suricatta&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Spotted Hyena",
+      "file": "spotted-hyena.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Crocuta+crocuta&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Aardvark",
+      "file": "aardvark.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Orycteropus+afer&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Honey Badger",
+      "file": "honey-badger.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mellivora+capensis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "European Badger",
+      "file": "european-badger.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Meles+meles&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Wolverine",
+      "file": "wolverine.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Gulo+gulo&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Binturong",
+      "file": "binturong.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Arctictis+binturong&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Fossa",
+      "file": "fossa.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Cryptoprocta+ferox&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Iberian Lynx",
+      "file": "iberian-lynx.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Lynx+pardinus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Holstein Friesian Cattle",
+      "file": "holstein-friesian-cattle.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bos+taurus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Golden Retriever",
+      "file": "golden-retriever.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Canis+lupus+familiaris&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Humpback Whale",
+      "file": "humpback-whale.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Megaptera+novaeangliae&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Clown Anemonefish",
+      "file": "clown-anemonefish.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Amphiprion+ocellaris&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Green Sea Turtle",
+      "file": "green-sea-turtle.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chelonia+mydas&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Red-Eyed Tree Frog",
+      "file": "red-eyed-tree-frog.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Agalychnis+callidryas&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Monarch Butterfly",
+      "file": "monarch-butterfly.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Danaus+plexippus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Common Bottlenose Dolphin",
+      "file": "common-bottlenose-dolphin.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Tursiops+truncatus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "British Shorthair Cat",
+      "file": "british-shorthair-cat.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Felis+catus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Merino Sheep",
+      "file": "merino-sheep.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ovis+aries&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Orca (Killer Whale)",
+      "file": "orca.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Orcinus+orca&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Komodo Dragon",
+      "file": "komodo-dragon.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Varanus+komodoensis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Axolotl",
+      "file": "axolotl.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Ambystoma+mexicanum&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Giant Pacific Octopus",
+      "file": "giant-pacific-octopus.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Enteroctopus+dofleini&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Arabian Horse",
+      "file": "arabian-horse.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Equus+caballus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Alpaca (Huacaya)",
+      "file": "alpaca-(huacaya).webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Vicugna+pacos&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Bactrian Camel",
+      "file": "bactrian-camel.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Camelus+bactrianus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Anglo-Nubian Goat",
+      "file": "anglo-nubian-goat.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Capra+hircus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Berkshire Pig",
+      "file": "berkshire-pig.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sus+scrofa+domesticus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Water Buffalo (Murrah)",
+      "file": "water-buffalo-(murrah).webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bubalus+bubalis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Domestic Yak",
+      "file": "domestic-yak.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bos+grunniens&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Miniature Donkey",
+      "file": "miniature-donkey.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Equus+asinus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Llama",
+      "file": "llama.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Lama+glama&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Highland Cattle",
+      "file": "highland-cattle.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bos+taurus+scotica&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "European Rabbit (Domestic)",
+      "file": "european-rabbit-(domestic).webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Oryctolagus+cuniculus+domesticus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Abyssinian Guinea Pig",
+      "file": "abyssinian-guinea-pig.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Cavia+porcellus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Syrian Hamster",
+      "file": "syrian-hamster.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mesocricetus+auratus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Domestic Ferret",
+      "file": "domestic-ferret.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mustela+putorius+furo&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Chinchilla",
+      "file": "chinchilla.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chinchilla+lanigera&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Fancy Rat",
+      "file": "fancy-rat.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Rattus+norvegicus+forma+domestica&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "African Pygmy Hedgehog",
+      "file": "african-pygmy-hedgehog.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Atelerix+albiventris&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Blue Whale",
+      "file": "blue-whale.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Balaenoptera+musculus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Sperm Whale",
+      "file": "sperm-whale.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Physeter+macrocephalus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Beluga Whale",
+      "file": "beluga-whale.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Delphinapterus+leucas&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Narwhal",
+      "file": "narwhal.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monodon+monoceros&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Sea Otter",
+      "file": "sea-otter.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Enhydra+lutris&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "West Indian Manatee",
+      "file": "west-indian-manatee.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Trichechus+manatus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Dugong",
+      "file": "dugong.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Dugong+dugon&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Harbor Seal",
+      "file": "harbor-seal.webp",
+      "error": "429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Phoca+vitulina&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Whale Shark",
+      "file": "whale-shark.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Rhincodon+typus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Great White Shark",
+      "file": "great-white-shark.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Carcharodon+carcharias&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Reef Manta Ray",
+      "file": "reef-manta-ray.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mobula+alfredi&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Lined Seahorse",
+      "file": "lined-seahorse.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hippocampus+erectus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Atlantic Salmon",
+      "file": "atlantic-salmon.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Salmo+salar&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Arapaima",
+      "file": "arapaima.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Arapaima+gigas&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Regal Blue Tang",
+      "file": "regal-blue-tang.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Paracanthurus+hepatus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Koi (Amur Carp)",
+      "file": "koi-(amur-carp).webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Cyprinus+rubrofuscus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Red Lionfish",
+      "file": "red-lionfish.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Pterois+volitans&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Galápagos Giant Tortoise",
+      "file": "galapagos-giant-tortoise.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chelonoidis+niger&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Saltwater Crocodile",
+      "file": "saltwater-crocodile.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Crocodylus+porosus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Green Iguana",
+      "file": "green-iguana.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Iguana+iguana&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Panther Chameleon",
+      "file": "panther-chameleon.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Furcifer+pardalis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Ball Python",
+      "file": "ball-python.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Python+regius&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Leatherback Sea Turtle",
+      "file": "leatherback-sea-turtle.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Dermochelys+coriacea&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Gharial",
+      "file": "gharial.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Gavialis+gangeticus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Leopard Gecko",
+      "file": "leopard-gecko.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Eublepharis+macularius&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Dyeing Poison Dart Frog",
+      "file": "dyeing-poison-dart-frog.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Dendrobates+tinctorius&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Chinese Giant Salamander",
+      "file": "chinese-giant-salamander.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Andrias+davidianus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Fire Salamander",
+      "file": "fire-salamander.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Salamandra+salamandra&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Cane Toad",
+      "file": "cane-toad.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Rhinella+marina&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Golden Poison Frog",
+      "file": "golden-poison-frog.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Phyllobates+terribilis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Japanese Giant Salamander",
+      "file": "japanese-giant-salamander.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Andrias+japonicus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "American Bullfrog",
+      "file": "american-bullfrog.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Lithobates+catesbeianus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Hellbender",
+      "file": "hellbender.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Cryptobranchus+alleganiensis&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Chambered Nautilus",
+      "file": "chambered-nautilus.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nautilus+pompilius&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Western Honey Bee",
+      "file": "western-honey-bee.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Apis+mellifera&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Emperor Scorpion",
+      "file": "emperor-scorpion.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Pandinus+imperator&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Harlequin Mantis Shrimp",
+      "file": "harlequin-mantis-shrimp.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Odontodactylus+scyllarus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Mexican Redknee Tarantula",
+      "file": "mexican-redknee-tarantula.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Brachypelma+hamorii&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Hercules Beetle",
+      "file": "hercules-beetle.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Dynastes+hercules&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    },
+    {
+      "animal": "Atlantic Horseshoe Crab",
+      "file": "atlantic-horseshoe-crab.webp",
+      "error": "429 Client Error: Too many requests (f061ab2) for url: https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Limulus+polyphemus&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json&formatversion=2"
+    }
+  ]
+}
