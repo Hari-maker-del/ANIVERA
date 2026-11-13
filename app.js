@@ -2112,7 +2112,7 @@
     resetProgress(false);
   }
 
-  // (Re)start a full 5s countdown. Called after every transition start and every manual click.
+  // (Re)start a full 5s countdown after the incoming animal has fully settled.
   function restartAuto() {
     clearTimeout(autoTimer);
     autoTimer = null;
@@ -2137,6 +2137,9 @@
     if (queue.length) {
       var step = queue.shift();
       go(wrap(index + step), step > 0 ? "up" : "down");
+    } else {
+      // Give each animal a full five seconds on screen after its transition ends.
+      restartAuto();
     }
   }
 
@@ -2173,7 +2176,6 @@
       outgoing.classList.remove("is-active");
       outgoing.classList.add(dir === "up" ? "hero-pos-above" : "hero-pos-below");
 
-      restartAuto();
       setTimeout(function () { finish(myToken); }, slideMs + 30);
     }
 
