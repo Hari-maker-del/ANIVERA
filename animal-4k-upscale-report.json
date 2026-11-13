@@ -1,0 +1,3701 @@
+{
+  "target": "4K-class (minimum 3840 pixels on the long edge)",
+  "method": "Lanczos upscale; this increases pixel dimensions but does not create native captured detail",
+  "processed_count": 284,
+  "error_count": 0,
+  "images": [
+    {
+      "file": "public/assets/animals/aardvark.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 617378,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/abyssinian-guinea-pig.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 488216,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/african-buffalo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 552818,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/african-bush-elephant.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 417010,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/african-lion.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 559056,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/african-pygmy-hedgehog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 428246,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/african-wild-dog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 324844,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/alpaca-(huacaya).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 364064,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/american-black-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 247370,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/american-bullfrog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 364582,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/anglo-nubian-goat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 470806,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/arabian-horse.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 297980,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/arapaima.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 341236,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/arctic-fox.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 249770,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/atlantic-horseshoe-crab.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 523250,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/atlantic-salmon.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 345836,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/axolotl.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 628704,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/bactrian-camel.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 480842,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/ball-python.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 459046,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/beluga-whale.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 188426,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/bengal-tiger.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 530196,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/berkshire-pig.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 671784,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/binturong.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 614862,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/black-rhinoceros.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 439882,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/blue-whale.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 243282,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/bonobo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 488684,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/bornean-orangutan.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 739820,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/british-shorthair-cat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 397408,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/brown-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 460064,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/cane-toad.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 517200,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/capuchin-monkey.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 369812,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/capybara.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 469754,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/caracal.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 316008,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/caribou.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 439906,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/chambered-nautilus.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 325174,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/cheetah.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 468918,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/chimpanzee.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 455720,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/chinchilla.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 430322,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/chinese-giant-salamander.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 443750,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/clouded-leopard.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 497012,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/clown-anemonefish.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 353848,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/common-bottlenose-dolphin.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 242462,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/common-wombat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 529078,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/dhole.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 391228,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/domestic-ferret.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 389070,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/domestic-yak.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 398016,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/dugong.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 384964,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/dyeing-poison-dart-frog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 494902,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/emperor-scorpion.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 477262,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/ethiopian-wolf.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 347110,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/eurasian-lynx.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 320368,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/european-badger.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 485896,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/european-rabbit-(domestic).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 430408,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/fancy-rat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 280298,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/fennec-fox.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 198144,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/fire-salamander.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 600222,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/fossa.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 626760,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/galapagos-giant-tortoise.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 687074,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/gharial.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 530926,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/giant-anteater.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 474412,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/giant-pacific-octopus.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 561190,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/giant-panda.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 412396,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/golden-lion-tamarin.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 401962,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/golden-poison-frog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 351392,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/golden-retriever.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 284896,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/gray-wolf.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 471780,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/great-white-shark.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 334376,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/greater-one-horned-rhinoceros.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 569262,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/green-iguana.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 746150,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/green-sea-turtle.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 628542,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/harbor-seal.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 538104,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/harlequin-mantis-shrimp.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 438136,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/hellbender.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 476016,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/hercules-beetle.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 543152,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/highland-cattle.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 452042,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/hippopotamus.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 577216,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/holstein-friesian-cattle.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 569398,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/honey-badger.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 440124,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/humpback-whale.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 262478,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/iberian-lynx.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 402690,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/jaguar.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 432592,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/japanese-giant-salamander.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 548496,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/japanese-macaque.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 507198,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/koala.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 529762,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/koi-(amur-carp).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 185880,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/komodo-dragon.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 733676,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/leatherback-sea-turtle.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 279634,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/leopard-gecko.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 340402,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/leopard.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 592284,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/lined-seahorse.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 351618,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/llama.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 495178,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/mandrill.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 486002,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/maned-wolf.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 442810,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/masai-giraffe.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 358950,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/meerkat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 366270,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/merino-sheep.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 516146,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/mexican-redknee-tarantula.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 429872,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/miniature-donkey.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 334206,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/monarch-butterfly.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 411994,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/moose.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 397738,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/mountain-gorilla.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 479636,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/narwhal.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 238508,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/nine-banded-armadillo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 452630,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/north-american-beaver.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 567362,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/ocelot.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 359486,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/okapi.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 273942,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/orca.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 512102,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/pangolin-(sunda).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 609172,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/panther-chameleon.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 542394,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/plains-bison.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 475566,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/plains-zebra.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 402538,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/platypus.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 599018,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/polar-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 569738,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/puma.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 356618,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/pygmy-hippopotamus.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 308546,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/red-eyed-tree-frog.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 395538,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/red-fox.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 370422,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/red-kangaroo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 355478,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/red-lionfish.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 419880,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/red-panda.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 428594,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/reef-manta-ray.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 158282,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/regal-blue-tang.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 258860,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/reticulated-giraffe.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 271964,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/ring-tailed-lemur.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 364064,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/saltwater-crocodile.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 405138,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/sea-otter.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 402218,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/serval.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 519696,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/sloth-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 318820,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/snow-leopard.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 405380,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/spectacled-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 472576,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/sperm-whale.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 269956,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/spotted-hyena.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 288382,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/sun-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 280294,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/syrian-hamster.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 303068,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/tasmanian-devil.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 324246,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/three-toed-sloth.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 517480,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/water-buffalo-(murrah).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 374468,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/west-indian-manatee.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 277204,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/western-honey-bee.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 350220,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/whale-shark.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 289004,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/white-rhinoceros.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 513140,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "public/assets/animals/wolverine.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 618828,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/aardvark.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 617378,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/abyssinian-guinea-pig.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 488216,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/african-buffalo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 552818,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/african-bush-elephant.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 417010,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/african-lion.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 559056,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/african-pygmy-hedgehog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 428246,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/african-wild-dog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 324844,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/alpaca-(huacaya).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 364064,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/american-black-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 247370,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/american-bullfrog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 364582,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/anglo-nubian-goat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 470806,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/arabian-horse.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 297980,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/arapaima.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 341236,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/arctic-fox.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 249770,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/atlantic-horseshoe-crab.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 523250,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/atlantic-salmon.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 345836,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/axolotl.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 628704,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/bactrian-camel.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 480842,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/ball-python.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 459046,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/beluga-whale.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 188426,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/bengal-tiger.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 530196,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/berkshire-pig.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 671784,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/binturong.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 614862,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/black-rhinoceros.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 439882,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/blue-whale.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 243282,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/bonobo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 488684,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/bornean-orangutan.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 739820,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/british-shorthair-cat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 397408,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/brown-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 460064,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/cane-toad.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 517200,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/capuchin-monkey.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 369812,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/capybara.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 469754,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/caracal.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 316008,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/caribou.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 439906,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/chambered-nautilus.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 325174,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/cheetah.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 468918,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/chimpanzee.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 455720,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/chinchilla.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 430322,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/chinese-giant-salamander.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 443750,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/clouded-leopard.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 497012,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/clown-anemonefish.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 353848,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/common-bottlenose-dolphin.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 242462,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/common-wombat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 529078,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/dhole.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 391228,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/domestic-ferret.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 389070,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/domestic-yak.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 398016,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/dugong.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 384964,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/dyeing-poison-dart-frog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 494902,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/emperor-scorpion.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 477262,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/ethiopian-wolf.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 347110,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/eurasian-lynx.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 320368,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/european-badger.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 485896,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/european-rabbit-(domestic).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 430408,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/fancy-rat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 280298,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/fennec-fox.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 198144,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/fire-salamander.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 600222,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/fossa.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 626760,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/galapagos-giant-tortoise.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 687074,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/gharial.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 530926,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/giant-anteater.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 474412,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/giant-pacific-octopus.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 561190,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/giant-panda.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 412396,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/golden-lion-tamarin.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 401962,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/golden-poison-frog.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 351392,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/golden-retriever.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 284896,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/gray-wolf.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 471780,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/great-white-shark.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 334376,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/greater-one-horned-rhinoceros.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 569262,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/green-iguana.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 746150,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/green-sea-turtle.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 628542,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/harbor-seal.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 538104,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/harlequin-mantis-shrimp.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 438136,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/hellbender.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 476016,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/hercules-beetle.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 543152,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/highland-cattle.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 452042,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/hippopotamus.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 577216,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/holstein-friesian-cattle.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 569398,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/honey-badger.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 440124,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/humpback-whale.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 262478,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/iberian-lynx.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 402690,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/jaguar.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 432592,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/japanese-giant-salamander.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 548496,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/japanese-macaque.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 507198,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/koala.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 529762,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/koi-(amur-carp).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 185880,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/komodo-dragon.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 733676,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/leatherback-sea-turtle.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 279634,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/leopard-gecko.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 340402,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/leopard.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 592284,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/lined-seahorse.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 351618,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/llama.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 495178,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/mandrill.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 486002,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/maned-wolf.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 442810,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/masai-giraffe.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 358950,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/meerkat.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 366270,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/merino-sheep.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 516146,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/mexican-redknee-tarantula.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 429872,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/miniature-donkey.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 334206,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/monarch-butterfly.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 411994,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/moose.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 397738,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/mountain-gorilla.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 479636,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/narwhal.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 238508,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/nine-banded-armadillo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 452630,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/north-american-beaver.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 567362,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/ocelot.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 359486,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/okapi.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 273942,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/orca.webp",
+      "source_dimensions": [
+        360,
+        268
+      ],
+      "output_dimensions": [
+        3840,
+        2859
+      ],
+      "bytes": 512102,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/pangolin-(sunda).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 609172,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/panther-chameleon.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 542394,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/plains-bison.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 475566,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/plains-zebra.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 402538,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/platypus.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 599018,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/polar-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 569738,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/puma.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 356618,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/pygmy-hippopotamus.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 308546,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/red-eyed-tree-frog.webp",
+      "source_dimensions": [
+        360,
+        270
+      ],
+      "output_dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 395538,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/red-fox.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 370422,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/red-kangaroo.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 355478,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/red-lionfish.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 419880,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/red-panda.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 428594,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/reef-manta-ray.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 158282,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/regal-blue-tang.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 258860,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/reticulated-giraffe.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 271964,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/ring-tailed-lemur.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 364064,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/saltwater-crocodile.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 405138,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/sea-otter.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 402218,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/serval.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 519696,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/sloth-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 318820,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/snow-leopard.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 405380,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/spectacled-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 472576,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/sperm-whale.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 269956,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/spotted-hyena.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 288382,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/sun-bear.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 280294,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/syrian-hamster.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 303068,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/tasmanian-devil.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 324246,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/three-toed-sloth.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 517480,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/water-buffalo-(murrah).webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 374468,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/west-indian-manatee.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 277204,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/western-honey-bee.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 350220,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/whale-shark.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 289004,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/white-rhinoceros.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 513140,
+      "long_edge_at_least_3840": true
+    },
+    {
+      "file": "dist/assets/animals/wolverine.webp",
+      "source_dimensions": [
+        1376,
+        768
+      ],
+      "output_dimensions": [
+        3840,
+        2143
+      ],
+      "bytes": 618828,
+      "long_edge_at_least_3840": true
+    }
+  ],
+  "errors": []
+}
