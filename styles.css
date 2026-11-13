@@ -2699,6 +2699,26 @@ body.modal-open {
   height:22px!important;
   background:linear-gradient(to bottom,transparent,rgba(251,129,34,.85),transparent)!important;
 }
+#cinematic-hero .hero-pause-nav-btn {
+  width:auto!important;
+  min-width:48px!important;
+  height:28px!important;
+  padding:0 8px!important;
+  border-radius:16px!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+@media(max-width:800px) {
+  #cinematic-hero .hero-pause-nav-btn {
+    width:auto!important;
+    min-width:44px!important;
+    height:25px!important;
+    padding:0 6px!important;
+    font-size:8px!important;
+  }
+}
 @media(max-width:800px) {
   #cinematic-hero .hero-vertical-nav {
     right:12px!important;
