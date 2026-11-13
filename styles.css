@@ -2730,10 +2730,9 @@ body.modal-open {
 
 
 /* =============================================================================
-   ANIVERA hero slideshow — canonical styles (single source of truth).
-   Vertical slide: "next" enters from the bottom and pushes the old photo up;
-   "previous" enters from the top and pushes the old photo down. 900ms, matched
-   by SLIDE_MS in app.js. Driven only by the hero controller in app.js.
+   ANIVERA hero slideshow — cinematic crossfade.
+   Each incoming animal fades in as the outgoing animal fades away.
+   900ms transition, matched by SLIDE_MS in app.js.
    ============================================================================= */
 #cinematic-hero .cinematic-hero-stage {
   position:relative!important;
@@ -2747,23 +2746,25 @@ body.modal-open {
   height:100%!important;
   display:block!important;
   object-fit:cover!important;
-  opacity:1!important;
+  opacity:0!important;
   pointer-events:none!important;
-  transform:translate3d(0,100%,0) scale(1.035)!important;
-  transition:transform 900ms cubic-bezier(.22,.75,.2,1)!important;
-  will-change:transform;
+  transform:scale(1.035)!important;
+  transition:opacity 900ms ease-in-out!important;
+  will-change:opacity;
   backface-visibility:hidden;
 }
-#cinematic-hero .cinematic-hero-img.is-active { transform:translate3d(0,0,0) scale(1.035)!important; }
-#cinematic-hero .cinematic-hero-img.hero-pos-above { transform:translate3d(0,-100%,0) scale(1.035)!important; }
-#cinematic-hero .cinematic-hero-img.hero-pos-below { transform:translate3d(0,100%,0) scale(1.035)!important; }
+#cinematic-hero .cinematic-hero-img.is-active { opacity:1!important; }
+#cinematic-hero .cinematic-hero-img.hero-pos-above,
+#cinematic-hero .cinematic-hero-img.hero-pos-below { opacity:0!important; }
 #cinematic-hero .cinematic-hero-img.hero-no-anim { transition:none!important; }
 
-/* Text enters in the direction of travel, in step with the photo. */
-#cinematic-hero .hero-text-in-up   { animation:aniveraHeroTextUp 700ms cubic-bezier(.22,.75,.2,1) both; }
-#cinematic-hero .hero-text-in-down { animation:aniveraHeroTextDown 700ms cubic-bezier(.22,.75,.2,1) both; }
-@keyframes aniveraHeroTextUp   { from { opacity:0; transform:translateY(16px); }  to { opacity:1; transform:translateY(0); } }
-@keyframes aniveraHeroTextDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+/* Supporting species text fades in cleanly with the photograph. */
+#cinematic-hero .hero-text-in-up,
+#cinematic-hero .hero-text-in-down { animation:aniveraHeroTextFade 650ms ease-in-out both; }
+@keyframes aniveraHeroTextFade {
+  from { opacity:0; }
+  to { opacity:1; }
+}
 
 /* Counter and Play/Pause controls (existing ANIVERA tracker + controls bar styling). */
 #cinematic-hero .hero-slide-num { display:inline !important; color:#FB8122 !important; font-variant-numeric:tabular-nums; }
