@@ -1996,7 +1996,8 @@
   "use strict";
 
   var AUTO_INTERVAL_MS = 5000;   // automatic rotation period
-  var SLIDE_MS = 900;            // must match the 900ms transform transition in styles.css  var IMAGE_WAIT_MS = 3000;      // never stall the slideshow on a slow image
+  var SLIDE_MS = 900;            // must match the 900ms transform transition in styles.css
+  var IMAGE_WAIT_MS = 3000;      // never stall the slideshow on a slow image
   var MAX_QUEUED_STEPS = 3;      // rapid clicks are queued, not dropped
 
   // The catalogue is created in the main app module and shared via window.
