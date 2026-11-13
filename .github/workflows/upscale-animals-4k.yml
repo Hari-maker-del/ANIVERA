@@ -2,6 +2,10 @@ name: Upscale animal images to 4K
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'tools/upscale_animals_4k.py'
+      - '.github/workflows/upscale-animals-4k.yml'
 
 permissions:
   contents: write
