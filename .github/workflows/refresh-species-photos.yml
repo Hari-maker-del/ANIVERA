@@ -1,0 +1,45 @@
+name: Refresh ANIVERA species photography
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/refresh_species_photos.py'
+      - '.github/workflows/refresh-species-photos.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: anivera-species-photo-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install image tools
+        run: python -m pip install --upgrade pip Pillow requests
+      - name: Fetch licensed high-resolution species photography
+        run: python tools/refresh_species_photos.py
+      - name: Commit refreshed hero images and attribution report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/species dist/assets/species species-photo-sources.json
+          if git diff --cached --quiet; then
+            echo "No eligible replacement photographs were found."
+          else
+            git commit -m "chore: refresh species hero photography with licensed high-resolution images"
+            git push origin HEAD:main
+          fi
