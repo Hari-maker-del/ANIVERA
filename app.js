@@ -2002,9 +2002,15 @@
 
   // The catalogue is created in the main app module and shared via window.
   var SPECIES_CATALOGUE = window.__ANIVERA_SPECIES__ || [];
-  var snowLeopard = SPECIES_CATALOGUE.filter(function (s) { return s.id === "ANV-SP-003"; })[0];
-  var others = SPECIES_CATALOGUE.filter(function (s) { return s.id !== "ANV-SP-003"; });
-  var catalogue = snowLeopard ? [snowLeopard].concat(others) : SPECIES_CATALOGUE.slice();
+  // Shuffle the complete catalogue once per page load. The slideshow then
+  // visits every species in this randomized order before starting a new cycle.
+  var catalogue = SPECIES_CATALOGUE.slice();
+  for (var shuffleIndex = catalogue.length - 1; shuffleIndex > 0; shuffleIndex--) {
+    var randomIndex = Math.floor(Math.random() * (shuffleIndex + 1));
+    var temporary = catalogue[shuffleIndex];
+    catalogue[shuffleIndex] = catalogue[randomIndex];
+    catalogue[randomIndex] = temporary;
+  }
   var total = catalogue.length;
 
   var imgA = document.getElementById("cinematic-hero-img-front");
