@@ -26,6 +26,9 @@
     SPECIES_CATALOGUE = window.ANIVERA_ANIMALS_DATA || [];
   }
 
+  // Shared with the hero slideshow and nav search modules (separate IIFEs).
+  window.__ANIVERA_SPECIES__ = SPECIES_CATALOGUE;
+
   var FORBIDDEN_AVIAN_REGEX = /\b(aves|bird|birds|avian|eagle|hawk|falcon|owl|parrot|macaw|penguin|ostrich|flamingo|sparrow|pigeon|dove|peacock|peafowl|swan|duck|goose|chicken|rooster|turkey|quail|canary|finch|cockatoo|toucan|hornbill|pelican|albatross|heron|stork|crane|hummingbird|kingfisher|woodpecker|crow|raven|magpie|gull)\b/i;
 
   function validateCatalogueRuntime(records) {
@@ -994,8 +997,7 @@
       if (!el) return;
       var currentVal = el.value || "all";
       el.innerHTML =
-        '<option value="all">' +
-        escapeHtml(item.defaultLabel) +
+        '<option value="all">' +        escapeHtml(item.defaultLabel) +
         "</option>" +
         workspaceState.profiles
           .map(function (p) {
@@ -1987,31 +1989,30 @@
 })();
 
 // =============================================================================
-// 9. CINEMATIC WILDLIFE HERO SLIDESHOW & NAVIGATION SEARCH (ANIVERA V2.5)
+// 9. CINEMATIC WILDLIFE HERO SLIDESHOW — single centralized controller
+//    Auto-rotation every 5s, vertical 900ms slides, manual arrows, Play/Pause.
 // =============================================================================
 (function initCinematicWildlifeHero() {
   "use strict";
 
+  var AUTO_INTERVAL_MS = 5000;   // automatic rotation period
+  var SLIDE_MS = 900;            // must match the 900ms transform transition in styles.css  var IMAGE_WAIT_MS = 3000;      // never stall the slideshow on a slow image
+  var MAX_QUEUED_STEPS = 3;      // rapid clicks are queued, not dropped
+
+  // The catalogue is created in the main app module and shared via window.
+  var SPECIES_CATALOGUE = window.__ANIVERA_SPECIES__ || [];
   var snowLeopard = SPECIES_CATALOGUE.filter(function (s) { return s.id === "ANV-SP-003"; })[0];
   var others = SPECIES_CATALOGUE.filter(function (s) { return s.id !== "ANV-SP-003"; });
-  var heroCatalogue = snowLeopard ? [snowLeopard].concat(others) : SPECIES_CATALOGUE.slice();
-  var currentIndex = 0;
-  var requestedIndex = 0;
-  var isPlaying = false;
-  var slideInterval = 3000;
-  var imageFadeDuration = 1050;
-  var nameFadeDuration = 750;
-  var slideTimer = null;
-  var progressStartTime = 0;
-  var progressRafId = null;
-  var transitionToken = 0;
-  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var catalogue = snowLeopard ? [snowLeopard].concat(others) : SPECIES_CATALOGUE.slice();
+  var total = catalogue.length;
 
-  var frontImg = document.getElementById("cinematic-hero-img-front");
-  var backImg = document.getElementById("cinematic-hero-img-back");
+  var imgA = document.getElementById("cinematic-hero-img-front");
+  var imgB = document.getElementById("cinematic-hero-img-back");
   var slideNumEl = document.getElementById("hero-slide-num");
   var catEl = document.getElementById("hero-category-label");
   var nameEl = document.getElementById("hero-common-name");
+  var nameFirstEl = document.getElementById("hero-name-first");
+  var nameRestEl = document.getElementById("hero-name-rest");
   var sciEl = document.getElementById("hero-scientific-name");
   var descEl = document.getElementById("hero-description");
   var habEl = document.getElementById("hero-habitat");
@@ -2022,180 +2023,228 @@
   var nextBtn = document.getElementById("hero-next-btn");
   var playPauseBtn = document.getElementById("hero-play-pause-btn");
   var progressBar = document.getElementById("hero-progress-bar");
+  var timerLabel = document.querySelector("#cinematic-hero .hero-timer-label");
   var heroSection = document.getElementById("cinematic-hero");
+  var textEls = [
+    document.querySelector("#cinematic-hero .hero-slide-tracker"),
+    document.querySelector("#cinematic-hero .hero-animal-heading"),
+    sciEl,
+    descEl
+  ];
 
-  function normalizeIndex(idx) {
-    return ((idx % heroCatalogue.length) + heroCatalogue.length) % heroCatalogue.length;
+  if (!total || !imgA || !imgB) return;
+
+  var reducedMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var slideMs = reducedMotion ? 0 : SLIDE_MS;
+
+  var index = 0;               // slide currently shown (or being shown)
+  var current = imgA;          // visible layer
+  var standby = imgB;          // off-stage layer that receives the next photo
+  var busy = false;
+  var queue = [];              // pending manual steps (+1 / -1)
+  var playing = true;
+  var autoTimer = null;
+  var token = 0;
+  var preloaded = {};
+
+  function wrap(i) { return ((i % total) + total) % total; }
+
+  function imageUrl(sp) { return sp.imageUrl || sp.imageSource || ""; }
+
+  function preload(i) {
+    var sp = catalogue[wrap(i)];
+    var url = sp && imageUrl(sp);
+    if (!url || preloaded[url]) return;
+    var im = new Image();
+    im.decoding = "async";
+    im.src = url;
+    preloaded[url] = im;
   }
 
-  function preloadImage(idx) {
-    if (!heroCatalogue.length) return;
-    var sp = heroCatalogue[normalizeIndex(idx)];
-    if (sp && sp.imageUrl) {
-      var image = new Image();
-      image.decoding = "async";
-      image.src = sp.imageUrl;
+  // ---- text / counter -------------------------------------------------------
+  function renderText(sp, i, dir) {
+    var label = sp.name || sp.commonName || "";
+    var parts = label.split(" ");
+    if (nameFirstEl && nameRestEl) {
+      nameFirstEl.textContent = parts[0] || "";
+      nameRestEl.textContent = parts.slice(1).join(" ");
+      if (nameEl && nameFirstEl.nextSibling === nameRestEl) nameEl.insertBefore(document.createTextNode(" "), nameRestEl);
+    } else if (nameEl) {
+      nameEl.textContent = label;
     }
-  }
-
-  function updateSlideText(sp, slideNum) {
-    if (slideNumEl) slideNumEl.textContent = (slideNum < 10 ? "0" : "") + slideNum + " / " + heroCatalogue.length;
+    if (slideNumEl) slideNumEl.textContent = (i + 1 < 10 ? "0" : "") + (i + 1) + " / " + total;
     if (catEl) catEl.textContent = (sp.category || "WILDLIFE").toUpperCase();
-    if (nameEl) nameEl.textContent = sp.name || sp.commonName || "";
     if (sciEl) sciEl.textContent = sp.scientificName || "";
     if (descEl) descEl.textContent = sp.description || "";
     if (habEl) habEl.textContent = sp.habitat || "";
     if (dietEl) dietEl.textContent = sp.diet || "";
     if (statusEl) statusEl.textContent = sp.conservationStatus || "";
     if (learnBtn) learnBtn.setAttribute("data-species-id", sp.id);
-  }
 
-  function updateProgressBar() {
-    if (!isPlaying || !progressBar) return;
-    var elapsed = Date.now() - progressStartTime;
-    progressBar.style.width = Math.min(100, (elapsed / slideInterval) * 100) + "%";
-    if (elapsed < slideInterval) progressRafId = requestAnimationFrame(updateProgressBar);
-  }
-
-  function pauseTimer() {
-    clearTimeout(slideTimer);
-    if (progressRafId) cancelAnimationFrame(progressRafId);
-    progressRafId = null;
-    if (progressBar) progressBar.style.width = "0%";
-  }
-
-  function startTimer() {
-    pauseTimer();
-    if (!isPlaying || document.hidden || !heroCatalogue.length) return;
-    progressStartTime = Date.now();
-    updateProgressBar();
-    // The transition occupies the final 1,050ms of each 3-second cycle.
-    slideTimer = setTimeout(function () {
-      goToSlide(requestedIndex + 1, true);
-    }, Math.max(0, slideInterval - imageFadeDuration));
-  }
-
-  function setNameTransitionOut() {
-    if (!nameEl) return;
-    nameEl.classList.remove("hero-name-enter", "hero-name-exit");
-    void nameEl.offsetWidth;
-    nameEl.classList.add("hero-name-exit");
-  }
-
-  function setNameTransitionIn() {
-    if (!nameEl) return;
-    nameEl.classList.remove("hero-name-exit", "hero-name-enter");
-    void nameEl.offsetWidth;
-    nameEl.classList.add("hero-name-enter");
-  }
-
-  function goToSlide(targetIdx, automatic) {
-    if (!heroCatalogue.length || !frontImg || !backImg) return;
-    targetIdx = normalizeIndex(targetIdx);
-
-    // If a transition is interrupted, keep whichever layer is currently visible
-    // as the outgoing layer before starting the latest requested transition.
-    if (backImg.classList.contains("is-active")) {
-      var layerSwap = frontImg;
-      frontImg = backImg;
-      backImg = layerSwap;
-    }
-    frontImg.classList.add("is-active");
-    backImg.classList.remove("is-active");
-
-    var token = ++transitionToken;
-    requestedIndex = targetIdx;
-    pauseTimer();
-
-    if (targetIdx === currentIndex) {
-      if (isPlaying) startTimer();
-      return;
-    }
-
-    var nextSp = heroCatalogue[targetIdx];
-    var slideDirection = targetIdx === normalizeIndex(currentIndex - 1) ? "down" : "up";
-    if (!nextSp || !nextSp.imageUrl) {
-      currentIndex = requestedIndex = targetIdx;
-      updateSlideText(nextSp, targetIdx + 1);
-      if (isPlaying) startTimer();
-      return;
-    }
-
-    var incoming = backImg;
-    var outgoing = frontImg;
-    incoming.classList.remove("is-active", "hero-slide-from-top", "hero-slide-from-bottom");
-    outgoing.classList.remove("hero-slide-leave-up", "hero-slide-leave-down");
-    incoming.classList.add(slideDirection === "up" ? "hero-slide-from-bottom" : "hero-slide-from-top");
-    incoming.onload = function () {
-      if (token !== transitionToken) return;
-      incoming.onload = null;
-      incoming.onerror = null;
-      incoming.alt = (nextSp.name || nextSp.commonName) + " (" + (nextSp.scientificName || "") + ")";
-      setNameTransitionOut();
-
-      var nameSwapDelay = reducedMotion ? 0 : nameFadeDuration / 2;
-      setTimeout(function () {
-        if (token !== transitionToken) return;
-        updateSlideText(nextSp, targetIdx + 1);
-        setNameTransitionIn();
-      }, nameSwapDelay);
-
-      requestAnimationFrame(function () {
-        if (token !== transitionToken) return;
-        outgoing.classList.add(slideDirection === "up" ? "hero-slide-leave-up" : "hero-slide-leave-down");
-        incoming.classList.remove("hero-slide-from-top", "hero-slide-from-bottom");
-        incoming.classList.add("is-active");
-        outgoing.classList.remove("is-active");
+    if (!reducedMotion) {
+      var cls = dir === "up" ? "hero-text-in-up" : "hero-text-in-down";
+      textEls.forEach(function (el, n) {
+        if (!el) return;
+        el.classList.remove("hero-text-in-up", "hero-text-in-down");
+        void el.offsetWidth;
+        el.style.animationDelay = (n * 45) + "ms";
+        el.classList.add(cls);
       });
+    }
+  }
 
-      setTimeout(function () {
-        if (token !== transitionToken) return;
-        // Keep both DOM image layers alive; swap their roles without copying src.
-        frontImg = incoming;
-        backImg = outgoing;
-        outgoing.classList.remove("hero-slide-leave-up", "hero-slide-leave-down");
-        incoming.classList.remove("hero-slide-from-top", "hero-slide-from-bottom");
-        currentIndex = requestedIndex = targetIdx;
-        preloadImage(currentIndex + 1);
-        preloadImage(currentIndex - 1);
-        if (isPlaying) startTimer();
-      }, reducedMotion ? 80 : imageFadeDuration);
-    };
-    incoming.onerror = function () {
-      if (token !== transitionToken) return;
-      incoming.onload = null;
-      incoming.onerror = null;
-      currentIndex = requestedIndex = targetIdx;
-      updateSlideText(nextSp, targetIdx + 1);
+  // ---- automatic timer + progress bar ---------------------------------------
+  function resetProgress(run) {
+    if (!progressBar) return;
+    progressBar.style.transition = "none";
+    progressBar.style.width = "0%";
+    if (run) {
+      void progressBar.offsetWidth;
+      progressBar.style.transition = "width " + AUTO_INTERVAL_MS + "ms linear";
+      progressBar.style.width = "100%";
+    }
+  }
+
+  function stopAuto() {
+    clearTimeout(autoTimer);
+    autoTimer = null;
+    resetProgress(false);
+  }
+
+  // (Re)start a full 5s countdown. Called after every transition start and every manual click.
+  function restartAuto() {
+    clearTimeout(autoTimer);
+    autoTimer = null;
+    if (!playing || document.hidden) { resetProgress(false); return; }
+    resetProgress(true);
+    autoTimer = setTimeout(function () {
+      autoTimer = null;
+      if (busy) { restartAuto(); return; }
+      go(wrap(index + 1), "up");
+    }, AUTO_INTERVAL_MS);
+  }
+
+  // ---- the one transition routine -------------------------------------------
+  function finish(myToken) {
+    if (myToken !== token) return;
+    var outgoing = current;
+    current = standby;
+    standby = outgoing;
+    busy = false;
+    preload(index + 1);
+    preload(index - 1);
+    if (queue.length) {
+      var step = queue.shift();
+      go(wrap(index + step), step > 0 ? "up" : "down");
+    }
+  }
+
+  // dir "up": new photo enters from the bottom, old one leaves upward (next).
+  // dir "down": new photo enters from the top, old one leaves downward (previous).
+  function go(target, dir) {
+    if (busy) return;
+    busy = true;
+    var myToken = ++token;
+    var sp = catalogue[target];
+    var started = false;
+
+    function start() {
+      if (started || myToken !== token) return;
+      started = true;
+      var incoming = standby;
+      var outgoing = current;
+
+      // Park the incoming layer off-stage without animating it there.
+      incoming.classList.add("hero-no-anim");
+      incoming.classList.remove("is-active", "hero-pos-above", "hero-pos-below");
+      incoming.classList.add(dir === "up" ? "hero-pos-below" : "hero-pos-above");
+      incoming.alt = (sp.name || sp.commonName || "Animal") + " (" + (sp.scientificName || "") + ")";
+      void incoming.offsetHeight;
+      incoming.classList.remove("hero-no-anim");
+      void incoming.offsetHeight;
+
+      // Photo, name, scientific name, description and counter change together.
+      index = target;
+      renderText(sp, target, dir);
+
+      incoming.classList.remove("hero-pos-above", "hero-pos-below");
       incoming.classList.add("is-active");
       outgoing.classList.remove("is-active");
-      frontImg = incoming;
-      backImg = outgoing;
-      if (isPlaying) startTimer();
+      outgoing.classList.add(dir === "up" ? "hero-pos-above" : "hero-pos-below");
+
+      restartAuto();
+      setTimeout(function () { finish(myToken); }, slideMs + 30);
+    }
+
+    var url = imageUrl(sp);
+    var loader = standby;
+    if (!url) { start(); return; }
+    loader.onload = loader.onerror = function () {
+      loader.onload = loader.onerror = null;
+      start();
     };
-    incoming.src = nextSp.imageUrl;
-    if (incoming.complete && incoming.naturalWidth > 0) incoming.onload();
+    loader.src = url;
+    if (loader.complete && loader.naturalWidth > 0) { loader.onload = loader.onerror = null; start(); }
+    else setTimeout(start, IMAGE_WAIT_MS);
   }
 
-  // Arrow controls are bound after the public API is exposed below, in capture phase.
-  if (playPauseBtn) {
-    playPauseBtn.addEventListener("click", function () {
-      isPlaying = !isPlaying;
-      playPauseBtn.textContent = isPlaying ? "Pause" : "Play";
-      if (isPlaying) startTimer(); else pauseTimer();
-    });
+  // ---- public actions -------------------------------------------------------
+  function step(delta) {
+    restartAuto();                       // every manual click resets the 5s timer
+    if (busy) {
+      if (queue.length < MAX_QUEUED_STEPS) queue.push(delta);
+      return;
+    }
+    go(wrap(index + delta), delta > 0 ? "up" : "down");
   }
+
+  function goToSlide(i) {
+    var target = wrap(i);
+    if (target === index && !busy) { restartAuto(); return; }
+    queue.length = 0;
+    restartAuto();
+    if (busy) { queue.push(target > index ? 1 : -1); return; }
+    var dir = target === wrap(index - 1) ? "down" : (target > index || target === wrap(index + 1) ? "up" : "down");
+    go(target, dir);
+  }
+
+  function play() {
+    playing = true;
+    if (playPauseBtn) {
+      playPauseBtn.textContent = "Pause";
+      playPauseBtn.setAttribute("aria-pressed", "false");
+      playPauseBtn.setAttribute("aria-label", "Pause slideshow auto-rotation");
+    }
+    if (timerLabel) timerLabel.textContent = "5s Auto";
+    restartAuto();
+  }
+
+  function pause() {
+    playing = false;
+    if (playPauseBtn) {
+      playPauseBtn.textContent = "Play";
+      playPauseBtn.setAttribute("aria-pressed", "true");
+      playPauseBtn.setAttribute("aria-label", "Play slideshow auto-rotation");
+    }
+    if (timerLabel) timerLabel.textContent = "Paused";
+    stopAuto();
+  }
+
+  // ---- event wiring (each control is bound exactly once) --------------------
+  if (nextBtn) nextBtn.addEventListener("click", function () { step(1); });
+  if (prevBtn) prevBtn.addEventListener("click", function () { step(-1); });
+  if (playPauseBtn) playPauseBtn.addEventListener("click", function () { if (playing) pause(); else play(); });
   if (learnBtn) {
     learnBtn.addEventListener("click", function () {
-      var spId = learnBtn.getAttribute("data-species-id") || heroCatalogue[currentIndex].id;
+      var spId = learnBtn.getAttribute("data-species-id") || catalogue[index].id;
       if (window.__ANIVERA_QA__ && window.__ANIVERA_QA__.openSpeciesModal) window.__ANIVERA_QA__.openSpeciesModal(spId);
     });
   }
 
   window.addEventListener("keydown", function (e) {
-    if (document.activeElement && /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
-    if (e.key === "ArrowLeft") goToSlide(requestedIndex - 1, false);
-    else if (e.key === "ArrowRight") goToSlide(requestedIndex + 1, false);
+    if (document.activeElement && /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
+    if (e.key === "ArrowLeft") step(-1);
+    else if (e.key === "ArrowRight") step(1);
   });
 
   if (heroSection) {
@@ -2206,62 +2255,34 @@
     heroSection.addEventListener("touchend", function (e) {
       if (!e.changedTouches || !e.changedTouches[0]) return;
       var diffX = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(diffX) > 50) goToSlide(requestedIndex + (diffX < 0 ? 1 : -1), false);
+      if (Math.abs(diffX) > 50) step(diffX < 0 ? 1 : -1);
     }, { passive: true });
   }
 
   document.addEventListener("visibilitychange", function () {
-    if (document.hidden) pauseTimer();
-    else if (isPlaying) startTimer();
+    if (document.hidden) stopAuto(); else if (playing) restartAuto();
   });
 
-  if (heroCatalogue.length) {
-    updateSlideText(heroCatalogue[0], 1);
-    preloadImage(1);
-    preloadImage(2);
-    startTimer();
-  }
+  // ---- initial state --------------------------------------------------------
+  current.classList.add("is-active");
+  standby.classList.remove("is-active");
+  renderText(catalogue[0], 0, "up");
+  preload(1);
+  preload(total - 1);
+  play();
 
   window.__ANIVERA_HERO__ = {
-    getCatalogue: function () { return heroCatalogue; },
-    getCurrentIndex: function () { return currentIndex; },
-    getCurrentSpecies: function () { return heroCatalogue[currentIndex]; },
+    getCatalogue: function () { return catalogue; },
+    getCurrentIndex: function () { return index; },
+    getCurrentSpecies: function () { return catalogue[index]; },
+    isPlaying: function () { return playing; },
+    isBusy: function () { return busy; },
     goToSlide: goToSlide,
-    next: function () { isPlaying = false; pauseTimer(); goToSlide(currentIndex + 1, false); },
-    previous: function () { isPlaying = false; pauseTimer(); goToSlide(currentIndex - 1, false); },
-    pause: function () { isPlaying = false; pauseTimer(); },
-    play: function () { isPlaying = true; startTimer(); }
+    next: function () { step(1); },
+    previous: function () { step(-1); },
+    play: play,
+    pause: pause
   };
-
-  // Bind vertical navigation explicitly after the slideshow API is ready.
-  function bindVerticalNavigation() {
-    var previous = document.getElementById("hero-prev-btn");
-    var next = document.getElementById("hero-next-btn");
-    if (previous && !previous.dataset.heroBound) {
-      previous.dataset.heroBound = "true";
-      previous.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        isPlaying = false;
-        pauseTimer();
-        goToSlide(currentIndex - 1, false);
-      }, true);
-    }
-    if (next && !next.dataset.heroBound) {
-      next.dataset.heroBound = "true";
-      next.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        isPlaying = false;
-        pauseTimer();
-        goToSlide(currentIndex + 1, false);
-      }, true);
-    }
-  }
-  bindVerticalNavigation();
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bindVerticalNavigation, { once: true });
-  }
 })();
 // =============================================================================
 // 10. REAL-TIME NAVIGATION SEARCH
@@ -2269,6 +2290,7 @@
 (function initNavSpeciesSearch() {
   "use strict";
 
+  var SPECIES_CATALOGUE = window.__ANIVERA_SPECIES__ || [];
   var searchInput = document.getElementById("nav-species-search");
   var resultsBox = document.getElementById("nav-search-results");
   if (!searchInput || !resultsBox) return;

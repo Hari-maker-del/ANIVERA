@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=anivera-vertical-nav-20261112" />
+  <link rel="stylesheet" href="styles.css?v=anivera-hero-slideshow-20261113" />
   <link rel="stylesheet" href="loading-experience.css" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#000000" />
@@ -102,7 +102,7 @@
             </div>
 
             <div class="hero-animal-heading">
-              <h1 id="hero-common-name" class="hero-common-name"><span id="hero-name-first">Snow</span><span id="hero-name-rest">Leopard</span></h1>
+              <h1 id="hero-common-name" class="hero-common-name"><span id="hero-name-first">Snow</span> <span id="hero-name-rest">Leopard</span></h1>
             </div>
             <p id="hero-scientific-name" class="hero-scientific-name">Panthera uncia</p>
             <p id="hero-description" class="hero-description">
@@ -133,12 +133,11 @@
             </div>
 
             <div class="hero-controls-bar">
-              <button type="button" id="hero-play-pause-btn" class="hero-play-btn" aria-label="Toggle slideshow auto-rotation">Pause</button>
-              <button type="button" id="hero-play-pause-btn" class="hero-play-btn" aria-label="Toggle slideshow auto-rotation">Pause</button>
+              <button type="button" id="hero-play-pause-btn" class="hero-play-btn" aria-label="Pause slideshow auto-rotation" aria-pressed="false">Pause</button>
               <div class="hero-progress-container" aria-hidden="true">
                 <div id="hero-progress-bar" class="hero-progress-bar"></div>
               </div>
-              <span class="hero-timer-label">3s Auto</span>
+              <span class="hero-timer-label">5s Auto</span>
             </div>
           </div>
 
@@ -149,11 +148,11 @@
               <img id="cinematic-hero-img-back" class="cinematic-hero-img" alt="Next animal species" />
               <div class="hero-stage-vignette"></div>
               <div class="hero-vertical-nav" role="group" aria-label="Browse animal species">
-                <button type="button" id="hero-prev-btn" class="hero-vertical-nav-btn" aria-label="Previous animal species" title="Previous animal" onclick="if(window.__ANIVERA_HERO__) window.__ANIVERA_HERO__.previous()">
+                <button type="button" id="hero-prev-btn" class="hero-vertical-nav-btn" aria-label="Previous animal species" title="Previous animal">
                   <span aria-hidden="true">↑</span>
                 </button>
                 <span class="hero-vertical-nav-line" aria-hidden="true"></span>
-                <button type="button" id="hero-next-btn" class="hero-vertical-nav-btn" aria-label="Next animal species" title="Next animal" onclick="if(window.__ANIVERA_HERO__) window.__ANIVERA_HERO__.next()">
+                <button type="button" id="hero-next-btn" class="hero-vertical-nav-btn" aria-label="Next animal species" title="Next animal">
                   <span aria-hidden="true">↓</span>
                 </button>
               </div>
@@ -533,73 +532,7 @@
   <script id="anivera-species-data" type="application/json">__SPECIES_DATA_PLACEHOLDER__</script>
   <script src="animals-data.js"></script>
   <script src="cloud-sync.js"></script>
-  <script src="app.js?v=anivera-manual-vertical-nav-20261112-4" ></script>
-  <script>
-  /* Standalone hero navigation fallback: independent of app.js slideshow internals. */
-  (function () {
-    var data = window.ANIVERA_ANIMALS_DATA || [];
-    var featured = data.findIndex(function (item) { return item.id === "ANV-SP-003"; });
-    var catalogue = featured >= 0 ? [data[featured]].concat(data.filter(function (item, i) { return i !== featured; })) : data.slice();
-    var index = 0;
-    var busy = false;
-    var front = document.getElementById("cinematic-hero-img-front");
-    var back = document.getElementById("cinematic-hero-img-back");
-    var name = document.getElementById("hero-common-name");
-    var sci = document.getElementById("hero-scientific-name");
-    var desc = document.getElementById("hero-description");
-    var category = document.getElementById("hero-category-label");
-    var counter = document.getElementById("hero-slide-num");
-    function show(target, direction) {
-      if (!catalogue.length || !front || busy) return;
-      index = (target + catalogue.length) % catalogue.length;
-      var item = catalogue[index];
-      busy = true;
-      var imageUrl = item.imageUrl || item.imageSource;
-      var incoming = new Image();
-      incoming.onload = function () {
-        front.classList.remove("hero-manual-up", "hero-manual-down");
-        void front.offsetWidth;
-        front.src = imageUrl;
-        front.alt = (item.name || item.commonName || "Animal") + " (" + (item.scientificName || "") + ")";
-        front.classList.add(direction === "up" ? "hero-manual-up" : "hero-manual-down");
-        if (name) name.textContent = item.name || item.commonName || "";
-        if (sci) sci.textContent = item.scientificName || "";
-        if (desc) desc.textContent = item.description || "";
-        if (category) category.textContent = (item.category || "WILDLIFE").toUpperCase();
-        if (counter) counter.textContent = String(index + 1).padStart(2, "0") + " / " + catalogue.length;
-        if (back) { back.removeAttribute("src"); back.classList.remove("is-active"); }
-        window.setTimeout(function () {
-          front.classList.remove("hero-manual-up", "hero-manual-down");
-          busy = false;
-        }, 760);
-      };
-      incoming.onerror = function () { busy = false; };
-      incoming.src = imageUrl;
-      if (incoming.complete && incoming.naturalWidth) incoming.onload();
-    }
-    function bind() {
-      var up = document.getElementById("hero-prev-btn");
-      var down = document.getElementById("hero-next-btn");
-      if (up && !up.dataset.manualFallbackBound) {
-        up.dataset.manualFallbackBound = "1";
-        up.addEventListener("click", function (event) {
-          event.preventDefault(); event.stopImmediatePropagation();
-          show(index - 1, "down");
-        }, true);
-      }
-      if (down && !down.dataset.manualFallbackBound) {
-        down.dataset.manualFallbackBound = "1";
-        down.addEventListener("click", function (event) {
-          event.preventDefault(); event.stopImmediatePropagation();
-          show(index + 1, "up");
-        }, true);
-      }
-    }
-    bind();
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bind, { once: true });
-    window.__ANIVERA_MANUAL_NAV__ = { next: function () { show(index + 1, "up"); }, previous: function () { show(index - 1, "down"); } };
-  })();
-  </script>
+  <script src="app.js?v=anivera-hero-slideshow-20261113"></script>
   <script src="loading-experience.js"></script>
 </body>
 </html>

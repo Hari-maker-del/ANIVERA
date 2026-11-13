@@ -997,7 +997,6 @@ body.modal-open {
   color: var(--anv-charcoal);
   font-weight: 700;
 }
-
 .workspace-body {
   padding: 24px;
 }
@@ -1997,8 +1996,7 @@ body.modal-open {
   .brand-link { gap: 6px !important; }
   .brand-mark { width: 28px !important; height: 28px !important; max-width: 28px !important; object-fit: contain !important; }
   .brand-wordmark { font-size: .9rem !important; }
-  .brand-sub { font-size: .42rem !important; }
-  .header-actions { gap: 6px !important; }
+  .brand-sub { font-size: .42rem !important; }  .header-actions { gap: 6px !important; }
   .header-actions .btn-primary { min-height: 36px !important; padding: 7px 10px !important; font-size: .74rem !important; }
   .mobile-menu-toggle { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; }
   .cinematic-hero-section { padding-top: 4px !important; }
@@ -2054,11 +2052,8 @@ body.modal-open {
 }
 
 
-/* ANIVERA hero cleanup: remove numeric slide counter, hero CTAs, and carousel controls */
-.hero-slide-num,
-.hero-divider { display: none !important; }
-.hero-actions,
-.hero-controls-bar { display: none !important; }
+/* ANIVERA hero cleanup: hero CTAs (counter and Play/Pause controls are shown again for the slideshow) */
+.hero-actions { display: none !important; }
 
 
 /* ANIVERA cinematic wildlife hero — editorial premium refinement */
@@ -2141,7 +2136,7 @@ body.modal-open {
   z-index: 2; background: linear-gradient(90deg,#000 0%,rgba(0,0,0,.42) 9%,transparent 32%,transparent 82%,#000 100%), linear-gradient(0deg,#000 0%,transparent 17%,transparent 82%,#000 100%) !important;
 }
 /* Existing hero controls and action links stay intentionally absent. */
-#cinematic-hero .hero-actions, #cinematic-hero .hero-controls-bar { display:none !important; }
+#cinematic-hero .hero-actions { display:none !important; }
 @media (max-width: 1024px) {
   #cinematic-hero.cinematic-hero-section { padding: 100px 0 46px !important; }
   #cinematic-hero .cinematic-hero-grid { grid-template-columns: minmax(0,1fr) !important; gap: 8px !important; }
@@ -2217,21 +2212,6 @@ body.modal-open {
   html { scroll-behavior: auto; }
   main > section .container { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
-
-
-/* Hero animal photography: reliable, visible cross-fade */
-#cinematic-hero .cinematic-hero-img {
-  transition: opacity 1.4s cubic-bezier(.22,.61,.36,1) !important;
-  will-change: opacity;
-}
-#cinematic-hero .cinematic-hero-img:not(.is-active) { opacity: 0 !important; }
-#cinematic-hero .cinematic-hero-img.is-active { opacity: 1 !important; }
-
-
-/* Approved 3-second hero animal crossfade */
-#cinematic-hero .cinematic-hero-img{transition:opacity 1.2s ease-in-out!important;will-change:opacity}
-#cinematic-hero .cinematic-hero-img:not(.is-active){opacity:0!important}
-#cinematic-hero .cinematic-hero-img.is-active{opacity:1!important}
 
 
 /* ANIVERA editorial wildlife landing — clean animal-name navigation */
@@ -2651,8 +2631,7 @@ body.modal-open {
   font-size:.72rem!important;
   letter-spacing:.09em!important;
 }
-#cinematic-hero .hero-specs-grid,
-#cinematic-hero .hero-controls-bar {display:none!important}
+#cinematic-hero .hero-specs-grid {display:none!important}
 @media(max-width:800px) {
   #cinematic-hero .cinematic-hero-info {
     left:24px!important;right:24px!important;top:auto!important;bottom:42px!important;
@@ -2666,81 +2645,6 @@ body.modal-open {
 @media(max-width:520px) {
   #cinematic-hero .cinematic-hero-info {left:22px!important;right:22px!important;bottom:30px!important;max-width:none!important}
   #cinematic-hero .hero-description {max-width:92%!important}
-}
-
-
-/* Cinematic two-layer hero slideshow transition. */
-#cinematic-hero .cinematic-hero-stage { isolation:isolate!important; }
-#cinematic-hero .cinematic-hero-img {
-  opacity:0!important;
-  transform:scale(1)!important;
-  transform-origin:center center!important;
-  object-fit:cover!important;
-  transition:opacity 1050ms ease-in-out, transform 1050ms ease-in-out!important;
-  will-change:opacity,transform;
-  backface-visibility:hidden;
-}
-#cinematic-hero .cinematic-hero-img.is-active {
-  opacity:1!important;
-  transform:scale(1.035)!important;
-}
-#cinematic-hero .hero-common-name {
-  transition:opacity 375ms ease, transform 375ms ease!important;
-  will-change:opacity,transform;
-}
-#cinematic-hero .hero-common-name.hero-name-exit {
-  opacity:0!important;
-  transform:translateY(8px)!important;
-}
-#cinematic-hero .hero-common-name.hero-name-enter {
-  animation:aniveraHeroNameIn 375ms ease both!important;
-}
-@keyframes aniveraHeroNameIn {
-  from {opacity:0;transform:translateY(8px)}
-  to {opacity:1;transform:translateY(0)}
-}
-@media(prefers-reduced-motion:reduce) {
-  #cinematic-hero .cinematic-hero-img {
-    transition:opacity 80ms linear!important;
-    transform:none!important;
-  }
-  #cinematic-hero .cinematic-hero-img.is-active {transform:none!important}
-  #cinematic-hero .hero-common-name {
-    transition:opacity 80ms linear!important;
-    animation:none!important;
-    transform:none!important;
-  }
-}
-
-
-/* ANIVERA vertical editorial slide: next travels upward, previous travels downward. */
-#cinematic-hero .cinematic-hero-img {
-  opacity:1!important;
-  transform:translate3d(0,100%,0) scale(1.035)!important;
-  transition:transform 900ms cubic-bezier(.22,.75,.2,1)!important;
-  will-change:transform;
-}
-#cinematic-hero .cinematic-hero-img.is-active {
-  opacity:1!important;
-  transform:translate3d(0,0,0) scale(1.035)!important;
-}
-#cinematic-hero .cinematic-hero-img.hero-slide-from-top {
-  transform:translate3d(0,-100%,0) scale(1.035)!important;
-}
-#cinematic-hero .cinematic-hero-img.hero-slide-from-bottom {
-  transform:translate3d(0,100%,0) scale(1.035)!important;
-}
-#cinematic-hero .cinematic-hero-img.hero-slide-leave-up {
-  transform:translate3d(0,-100%,0) scale(1.035)!important;
-}
-#cinematic-hero .cinematic-hero-img.hero-slide-leave-down {
-  transform:translate3d(0,100%,0) scale(1.035)!important;
-}
-@media(prefers-reduced-motion:reduce) {
-  #cinematic-hero .cinematic-hero-img {
-    transition:none!important;
-    transform:translate3d(0,0,0)!important;
-  }
 }
 
 
@@ -2825,7 +2729,12 @@ body.modal-open {
 }
 
 
-/* Make hero slide images animate within a clipped viewport, without blocking controls. */
+/* =============================================================================
+   ANIVERA hero slideshow — canonical styles (single source of truth).
+   Vertical slide: "next" enters from the bottom and pushes the old photo up;
+   "previous" enters from the top and pushes the old photo down. 900ms, matched
+   by SLIDE_MS in app.js. Driven only by the hero controller in app.js.
+   ============================================================================= */
 #cinematic-hero .cinematic-hero-stage {
   position:relative!important;
   overflow:hidden!important;
@@ -2837,34 +2746,40 @@ body.modal-open {
   width:100%!important;
   height:100%!important;
   display:block!important;
+  object-fit:cover!important;
+  opacity:1!important;
   pointer-events:none!important;
+  transform:translate3d(0,100%,0) scale(1.035)!important;
+  transition:transform 900ms cubic-bezier(.22,.75,.2,1)!important;
+  will-change:transform;
+  backface-visibility:hidden;
 }
-#cinematic-hero .hero-stage-vignette {
-  pointer-events:none!important;
-}
-#cinematic-hero .hero-vertical-nav {
-  z-index:9999!important;
-  pointer-events:auto!important;
-}
-#cinematic-hero .hero-vertical-nav-btn {
-  z-index:10000!important;
-  pointer-events:auto!important;
-  cursor:pointer!important;
-}
+#cinematic-hero .cinematic-hero-img.is-active { transform:translate3d(0,0,0) scale(1.035)!important; }
+#cinematic-hero .cinematic-hero-img.hero-pos-above { transform:translate3d(0,-100%,0) scale(1.035)!important; }
+#cinematic-hero .cinematic-hero-img.hero-pos-below { transform:translate3d(0,100%,0) scale(1.035)!important; }
+#cinematic-hero .cinematic-hero-img.hero-no-anim { transition:none!important; }
 
+/* Text enters in the direction of travel, in step with the photo. */
+#cinematic-hero .hero-text-in-up   { animation:aniveraHeroTextUp 700ms cubic-bezier(.22,.75,.2,1) both; }
+#cinematic-hero .hero-text-in-down { animation:aniveraHeroTextDown 700ms cubic-bezier(.22,.75,.2,1) both; }
+@keyframes aniveraHeroTextUp   { from { opacity:0; transform:translateY(16px); }  to { opacity:1; transform:translateY(0); } }
+@keyframes aniveraHeroTextDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
 
-/* Independent manual slide animation fallback. */
-#cinematic-hero .cinematic-hero-img.hero-manual-up {
-  animation: aniveraManualSlideUp 720ms cubic-bezier(.22,.75,.2,1) both!important;
+/* Counter and Play/Pause controls (existing ANIVERA tracker + controls bar styling). */
+#cinematic-hero .hero-slide-num { display:inline !important; color:#FB8122 !important; font-variant-numeric:tabular-nums; }
+#cinematic-hero .hero-divider { display:inline !important; }
+#cinematic-hero .hero-controls-bar {
+  display:flex !important;
+  margin-top:26px !important;
+  max-width:480px !important;
 }
-#cinematic-hero .cinematic-hero-img.hero-manual-down {
-  animation: aniveraManualSlideDown 720ms cubic-bezier(.22,.75,.2,1) both!important;
+#cinematic-hero .hero-play-btn { min-width:72px; min-height:34px; font-family:inherit; }
+#cinematic-hero .hero-play-btn:focus-visible { outline:2px solid #FB8122; outline-offset:2px; }
+@media(max-width:800px) {
+  #cinematic-hero .hero-controls-bar { margin-top:16px !important; max-width:none !important; }
 }
-@keyframes aniveraManualSlideUp {
-  from { transform:translate3d(0,100%,0) scale(1.035); }
-  to { transform:translate3d(0,0,0) scale(1.035); }
-}
-@keyframes aniveraManualSlideDown {
-  from { transform:translate3d(0,-100%,0) scale(1.035); }
-  to { transform:translate3d(0,0,0) scale(1.035); }
+@media(prefers-reduced-motion:reduce) {
+  #cinematic-hero .cinematic-hero-img { transition:none!important; }
+  #cinematic-hero .hero-text-in-up,
+  #cinematic-hero .hero-text-in-down { animation:none!important; }
 }
