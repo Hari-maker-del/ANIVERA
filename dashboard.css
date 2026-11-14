@@ -148,3 +148,88 @@ body:has(#lifecycle-workspace) code { color:#ffad70; background:#21160f; }
   body:has(#lifecycle-workspace) .ws-stat-box { padding:13px; }
   body:has(#lifecycle-workspace) .ws-stat-value { font-size:1.6rem; }
 }
+
+
+/* Dashboard layout corrections: full-width KPI row, visible header and balanced branding */
+body:has(#lifecycle-workspace) #lifecycle-workspace {
+  padding-top: 112px;
+}
+body:has(#lifecycle-workspace) .workspace-stats-wrap {
+  grid-area: stats;
+  min-width: 0;
+  padding: 22px 26px 12px;
+  background: #0d0d0d;
+}
+body:has(#lifecycle-workspace) .ws-stats-row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+body:has(#lifecycle-workspace) .ws-stat-box {
+  min-width: 0;
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+}
+body:has(#lifecycle-workspace) .ws-stat-label {
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+body:has(#lifecycle-workspace) .ws-stat-value {
+  line-height: 1;
+}
+body:has(#lifecycle-workspace) .brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  min-width: 220px;
+}
+body:has(#lifecycle-workspace) .brand-mark {
+  display: block;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px;
+  max-width: 48px !important;
+  flex: 0 0 48px;
+}
+body:has(#lifecycle-workspace) .brand-text-group {
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+  flex: 0 0 auto;
+}
+body:has(#lifecycle-workspace) .brand-wordmark {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+body:has(#lifecycle-workspace) .brand-sub {
+  display: block;
+  font-size: .62rem;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+body:has(#lifecycle-workspace) .header-inner {
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  body:has(#lifecycle-workspace) #lifecycle-workspace { padding-top: 104px; }
+  body:has(#lifecycle-workspace) .workspace-stats-wrap { padding: 16px 16px 8px; }
+  body:has(#lifecycle-workspace) .ws-stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body:has(#lifecycle-workspace) .brand-link { min-width: 0; }
+}
+@media (max-width: 560px) {
+  body:has(#lifecycle-workspace) #lifecycle-workspace { padding-top: 92px; }
+  body:has(#lifecycle-workspace) .ws-stats-row { grid-template-columns: 1fr 1fr; }
+  body:has(#lifecycle-workspace) .ws-stat-box { min-height: 100px; padding: 13px; }
+  body:has(#lifecycle-workspace) .brand-mark { width: 40px !important; height: 40px !important; min-width: 40px; max-width: 40px !important; flex-basis: 40px; }
+  body:has(#lifecycle-workspace) .brand-sub { white-space: normal; max-width: 130px; }
+}
