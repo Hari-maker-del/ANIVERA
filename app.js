@@ -2436,6 +2436,20 @@
   if (mobileSignUpBtn) mobileSignUpBtn.addEventListener("click", openSignUpModal);
   if (signupCloseBtn) signupCloseBtn.addEventListener("click", closeSignUpModal);
 
+  // Existing-account shortcut: carry the email into Sign In instead of asking users to register again.
+  var signupSwitchToSignin = document.getElementById("signup-switch-to-signin");
+  if (signupSwitchToSignin) {
+    signupSwitchToSignin.addEventListener("click", function () {
+      var signupEmail = document.getElementById("nav-signup-email");
+      var signinEmail = document.getElementById("nav-signin-email");
+      var signupError = document.getElementById("signup-error-alert");
+      if (signinEmail && signupEmail) signinEmail.value = signupEmail.value.trim();
+      if (signupError) signupError.style.display = "none";
+      closeSignUpModal();
+      openSignInModal();
+    });
+  }
+
   // Quick Demo account buttons
   var demoResearcher = document.getElementById("demo-fill-researcher");
   var demoSanctuary = document.getElementById("demo-fill-sanctuary");
@@ -2503,7 +2517,11 @@
       } else {
         if (errEl) {
           errEl.style.display = "block";
-          errEl.textContent = "Registration failed (" + (res.code || "ERROR") + "): " + (res.message || "Please check inputs.");
+          if (res.code === "USER_EXISTS") {
+            errEl.textContent = "An ANIVERA account already exists with this email. Sign in instead to continue.";
+          } else {
+            errEl.textContent = "Registration failed (" + (res.code || "ERROR") + "): " + (res.error || res.message || "Please check your details.");
+          }
         }
       }
     });
