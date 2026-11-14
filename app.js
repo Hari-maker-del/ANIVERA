@@ -2484,9 +2484,8 @@
         if (errEl) errEl.style.display = "none";
         closeSignInModal();
         if (navSignInBtn) navSignInBtn.textContent = (res.session.user.fullName || "User").split(" ")[0];
-        // Scroll to workspace
-        var ws = document.getElementById("lifecycle-workspace");
-        if (ws) ws.scrollIntoView({ behavior: "smooth" });
+        // Open the dedicated dashboard after successful authentication.
+        window.location.href = "dashboard.html";
       } else {
         if (errEl) {
           errEl.style.display = "block";
@@ -2512,8 +2511,8 @@
         if (errEl) errEl.style.display = "none";
         closeSignUpModal();
         if (navSignInBtn) navSignInBtn.textContent = name.split(" ")[0];
-        var ws = document.getElementById("lifecycle-workspace");
-        if (ws) ws.scrollIntoView({ behavior: "smooth" });
+        // Open the dedicated dashboard after successful account creation.
+        window.location.href = "dashboard.html";
       } else {
         if (errEl) {
           errEl.style.display = "block";
