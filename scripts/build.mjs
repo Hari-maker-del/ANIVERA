@@ -52,6 +52,9 @@ if (fs.existsSync(path.resolve('public/brand/anivera-logo.svg'))) {
 }
 fs.writeFileSync(path.resolve('dist/index.html'), distIndex, 'utf8');
 fs.writeFileSync(path.resolve('dist/dashboard.html'), dashboardTemplate, 'utf8');
+if (fs.existsSync(path.resolve('dashboard.css'))) {
+  fs.copyFileSync(path.resolve('dashboard.css'), path.resolve('dist/dashboard.css'));
+}
 fs.writeFileSync(path.resolve('dist/styles.css'), cssContent, 'utf8');
 fs.writeFileSync(path.resolve('dist/cloud-sync.js'), cloudSyncContent, 'utf8');
 fs.writeFileSync(path.resolve('dist/app.js'), jsContent, 'utf8');
