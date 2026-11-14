@@ -78,7 +78,7 @@ create table if not exists public.animal_locations (
   updated_at timestamptz not null default now(),
   unique (id, owner_id),
   foreign key (parent_location_id, owner_id)
-    references public.animal_locations(id, owner_id) on delete set null
+    references public.animal_locations(id, owner_id) on delete set null (parent_location_id)
 );
 
 create table if not exists public.animal_location_history (
