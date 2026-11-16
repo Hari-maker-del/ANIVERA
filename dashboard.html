@@ -41,10 +41,10 @@
     <section id="lifecycle-workspace" class="section-block alt-bg" aria-labelledby="heading-workspace">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Connected Application Workspace</span>
+          <span class="section-eyebrow">ANIMAL OPERATIONS · WORKSPACE</span>
           <h1 id="heading-workspace" class="section-title">ANIVERA Animal Lifecycle Workspace &amp; Dashboard</h1>
           <p class="section-desc">
-            Manage owner-scoped animal profiles, clinical health records, care tasks, and chronological lifecycle milestones backed by Supabase project <code>qbwulpofftxfddlykcxg</code>.
+            A single command centre for animal profiles, clinical history, daily care, and lifecycle milestones. Your current workspace mode and connection state are shown below.
           </p>
         </div>
 
@@ -53,13 +53,13 @@
             <div>
               <h2 style="font-size:1.15rem; font-weight:800;">Lifecycle Operations Console</h2>
               <p id="ws-persistence-indicator" style="font-size:0.8rem; color:#E1E2E2;">
-                Supabase Project: qbwulpofftxfddlykcxg • Owner-Scoped RLS Persistence Active
+                Workspace overview • Local data mode until cloud authentication is connected
               </p>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
               <button type="button" id="ws-snapshot-btn" class="btn btn-primary btn-sm">Save Snapshot</button>
               <button type="button" id="ws-export-json-btn" class="btn btn-outline btn-sm">Export Workspace JSON</button>
-              <button type="button" id="ws-reset-demo-btn" class="btn btn-outline btn-sm">Restore Default Seed</button>
+              <button type="button" id="ws-reset-demo-btn" class="btn btn-outline btn-sm">Restore Demo Data</button>
             </div>
           </div>
 
@@ -67,12 +67,12 @@
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
               <span class="status-dot" id="ws-auth-dot"></span>
               <span id="ws-auth-user-summary" style="font-size:0.85rem; font-weight:700; color:#1D2228;">
-                Signed in as Dr. Aravind Menon (researcher@anivera.org) • Owner ID: usr-anv-primary-001
+                Workspace session status is loading…
               </span>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               <button type="button" id="ws-switch-user-btn" class="btn btn-outline btn-sm">
-                Switch User / Test RLS Isolation
+                Switch Workspace User
               </button>
               <button type="button" id="ws-open-auth-tab-btn" class="btn btn-outline btn-sm">
                 Auth &amp; Supabase Settings
@@ -390,18 +390,18 @@
               <div class="grid-2">
                 <div class="info-card">
                   <h3>Supabase Project &amp; Owner-Scoped RLS Architecture</h3>
-                  <p>Configured for ANIVERA's dedicated Supabase project with zero hardcoded service-role secrets and strict owner-scoped Row-Level Security (<code>auth.uid() = owner_id</code>).</p>
+                  <p>ANIVERA's database foundation is provisioned. The browser workspace currently runs in local mode; real Supabase authentication and cloud record sync are not yet enabled.</p>
                   <ul class="info-list">
                     <li><strong>Project ID:</strong> <code>qbwulpofftxfddlykcxg</code></li>
                     <li><strong>Project URL:</strong> <code>https://qbwulpofftxfddlykcxg.supabase.co</code></li>
                     <li><strong>Relational Tables:</strong> <code>animal_profiles</code>, <code>health_records</code>, <code>care_tasks</code>, <code>lifecycle_events</code>, <code>workspace_snapshots</code>.</li>
-                    <li><strong>Connection Status:</strong> <span id="db-endpoint-status">Owner-Scoped Local RLS Persistence Active (Honest Offline Mode)</span>.</li>
+                    <li><strong>Connection Status:</strong> <span id="db-endpoint-status">Local workspace mode — Supabase cloud sync is not connected.</span>.</li>
                   </ul>
 
                   <div style="margin-top:14px; padding-top:14px; border-top:1px solid #E1E2E2;">
-                    <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:8px;">Real 10-Step Persistence &amp; RLS Verification</h4>
+                    <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:8px;">Local Demo Persistence Check</h4>
                     <button type="button" id="run-rls-audit-btn" class="btn btn-primary btn-sm">
-                      Run 10-Step Persistence &amp; RLS Test
+                      Run Local Workspace Check
                     </button>
                     <pre id="rls-audit-output" style="margin-top:10px; padding:10px; background:#F8F9FA; border:1px solid #E1E2E2; border-radius:6px; font-size:0.74rem; white-space:pre-wrap; display:none;"></pre>
                   </div>
@@ -412,11 +412,11 @@
                     <h4 style="font-size:1rem; font-weight:800; margin-bottom:10px;">Authentication &amp; Session Management</h4>
                     <div class="form-group">
                       <label for="auth-email-input">Account Email *</label>
-                      <input type="email" id="auth-email-input" class="input-field" value="researcher@anivera.org" required />
+                      <input type="email" id="auth-email-input" class="input-field" value="" required />
                     </div>
                     <div class="form-group">
                       <label for="auth-password-input">Password *</label>
-                      <input type="password" id="auth-password-input" class="input-field" value="AniveraCare#2026" required />
+                      <input type="password" id="auth-password-input" class="input-field" value="" required />
                     </div>
                     <div style="display:flex; gap:8px; flex-wrap:wrap;">
                       <button type="submit" class="btn btn-primary btn-sm">Sign In</button>
