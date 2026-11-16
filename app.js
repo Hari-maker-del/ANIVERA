@@ -933,14 +933,12 @@
   }
 
   function saveWorkspaceData() {
-    if (syncEngine) {
-      var res = syncEngine.saveOwnerScopedWorkspace(workspaceState);
-      if (!res.ok) {
-        showWorkspaceBanner("Authorization Error (" + res.code + "): " + res.error);
-        return false;
-      }
-    }
+    if (!syncEngine) return false;
     renderWorkspaceAll();
+    syncEngine.saveOwnerScopedWorkspace(workspaceState).then(function (res) {
+      if (!res.ok) showWorkspaceBanner('Cloud save failed (' + res.code + '): ' + res.error);
+      else showWorkspaceBanner('Workspace saved securely to your ANIVERA cloud account.');
+    });
     return true;
   }
 
@@ -1962,7 +1960,7 @@
   startCarouselLoop();
   renderCategoryCards();
   renderExplorer();
-  refreshWorkspaceFromSync();
+  syncEngine.initialize().then(function (result) { refreshWorkspaceFromSync(); if (result.ok) showWorkspaceBanner('Supabase connected. Workspace is protected by owner-scoped RLS.'); else if (result.code !== 'SIGNED_OUT') showWorkspaceBanner('Supabase setup error: ' + result.error); });
 
   window.__ANIVERA_QA__ = {
     validationReport: VALIDATION_REPORT,
