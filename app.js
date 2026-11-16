@@ -1775,7 +1775,11 @@
         showWorkspaceBanner("Sign-Up Error (" + res.code + "): " + res.error);
         return;
       }
-      refreshWorkspaceFromSync();
+      if (res.confirmationRequired || !res.session || !res.session.user) {
+        showWorkspaceBanner(res.message || "Account created. Check your email to confirm the address, then sign in.");
+        return;
+      }
+      await refreshWorkspaceFromSync();
       showWorkspaceBanner("Registered & signed in new caretaker account: " + res.session.user.email + ".");
     });
   }
@@ -2395,7 +2399,13 @@
 
       var res = window.AniveraCloudSync ? await window.AniveraCloudSync.signUp({ fullName: name, organization: org, email: email, password: pass }) : { ok: false };
       if (res.ok) {
-        if (errEl) errEl.style.display = "none";
+        if (errEl) {
+          errEl.style.display = "block";
+          errEl.textContent = res.confirmationRequired
+            ? (res.message || "Account created. Check your email to confirm your address, then sign in.")
+            : "Account created successfully. Opening your ANIVERA workspace...";
+        }
+        if (res.confirmationRequired || !res.session || !res.session.user) return;
         closeSignUpModal();
         if (navSignInBtn) navSignInBtn.textContent = name.split(" ")[0];
         // Open the dedicated dashboard after successful account creation.
