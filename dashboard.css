@@ -233,3 +233,245 @@ body:has(#lifecycle-workspace) .header-inner {
   body:has(#lifecycle-workspace) .brand-mark { width: 40px !important; height: 40px !important; min-width: 40px; max-width: 40px !important; flex-basis: 40px; }
   body:has(#lifecycle-workspace) .brand-sub { white-space: normal; max-width: 130px; }
 }
+
+
+/* --------------------------------------------------------------------------
+   ANIVERA dashboard refinement — command-centre hierarchy and interaction
+   -------------------------------------------------------------------------- */
+body:has(#lifecycle-workspace) {
+  color-scheme: dark;
+  background: #050505;
+}
+body:has(#lifecycle-workspace) .container {
+  width: min(1480px, calc(100% - 48px));
+}
+body:has(#lifecycle-workspace) .section-header {
+  position: relative;
+  padding: 10px 0 4px 18px;
+  border-left: 2px solid rgba(251,129,34,.75);
+}
+body:has(#lifecycle-workspace) .section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 750;
+}
+body:has(#lifecycle-workspace) .section-title {
+  max-width: 920px;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+body:has(#lifecycle-workspace) .section-desc {
+  font-size: .96rem;
+  line-height: 1.75;
+}
+body:has(#lifecycle-workspace) .workspace-shell {
+  border-color: rgba(255,255,255,.12);
+  border-radius: 20px;
+  background: #0b0b0b;
+}
+body:has(#lifecycle-workspace) .workspace-topbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:24px 28px;
+}
+body:has(#lifecycle-workspace) .workspace-topbar h2 {
+  font-size:1.05rem!important;
+  letter-spacing:.045em;
+}
+body:has(#lifecycle-workspace) #ws-persistence-indicator {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:7px;
+  font-size:.73rem!important;
+  letter-spacing:.025em;
+}
+body:has(#lifecycle-workspace) .workspace-topbar .btn,
+body:has(#lifecycle-workspace) .ws-auth-bar .btn {
+  min-height:38px;
+  border-radius:8px;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+body:has(#lifecycle-workspace) .ws-auth-bar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+body:has(#lifecycle-workspace) .status-dot {
+  width:9px;
+  height:9px;
+  box-shadow:0 0 0 4px rgba(251,129,34,.10);
+}
+body:has(#lifecycle-workspace) .workspace-stats-wrap {
+  padding-top:24px;
+}
+body:has(#lifecycle-workspace) .ws-stat-box {
+  position:relative;
+  overflow:hidden;
+  min-height:124px;
+  padding:20px 22px;
+  background:linear-gradient(145deg,#191919 0%,#101010 78%);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+body:has(#lifecycle-workspace) .ws-stat-box::after {
+  content:"";
+  position:absolute;
+  right:-24px;
+  bottom:-48px;
+  width:112px;
+  height:112px;
+  border:1px solid rgba(251,129,34,.12);
+  border-radius:50%;
+  box-shadow:0 0 0 14px rgba(251,129,34,.025),0 0 0 30px rgba(251,129,34,.018);
+  pointer-events:none;
+}
+body:has(#lifecycle-workspace) .ws-stat-box:hover {
+  transform:translateY(-2px);
+  border-color:rgba(251,129,34,.32);
+}
+body:has(#lifecycle-workspace) .ws-stat-label {
+  font-size:.66rem;
+  font-weight:750;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+body:has(#lifecycle-workspace) .ws-stat-value {
+  font-size:2.25rem;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-.045em;
+}
+body:has(#lifecycle-workspace) .workspace-tabs {
+  padding:24px 14px;
+}
+body:has(#lifecycle-workspace) .ws-tab-btn {
+  position:relative;
+  min-height:50px;
+  font-weight:650;
+}
+body:has(#lifecycle-workspace) .workspace-body {
+  padding:28px;
+}
+body:has(#lifecycle-workspace) .ws-form-card,
+body:has(#lifecycle-workspace) .info-card {
+  padding:22px!important;
+}
+body:has(#lifecycle-workspace) .ws-form-card h3,
+body:has(#lifecycle-workspace) .info-card h3 {
+  font-size:1.02rem!important;
+  letter-spacing:-.01em;
+}
+body:has(#lifecycle-workspace) .form-group {
+  margin-bottom:15px;
+}
+body:has(#lifecycle-workspace) .form-group label {
+  display:block;
+  margin-bottom:7px;
+  font-size:.78rem;
+  font-weight:650;
+  letter-spacing:.015em;
+}
+body:has(#lifecycle-workspace) .input-field,
+body:has(#lifecycle-workspace) .select-field,
+body:has(#lifecycle-workspace) .textarea-field {
+  min-height:43px;
+  padding:10px 12px;
+  font-size:.86rem;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+body:has(#lifecycle-workspace) .textarea-field {
+  min-height:104px;
+  resize:vertical;
+}
+body:has(#lifecycle-workspace) .ws-record-list {
+  gap:11px;
+}
+body:has(#lifecycle-workspace) .ws-record-card {
+  padding:17px 18px;
+  transition:border-color .18s ease,transform .18s ease;
+}
+body:has(#lifecycle-workspace) .ws-record-card:hover {
+  border-color:rgba(251,129,34,.32);
+  transform:translateY(-1px);
+}
+body:has(#lifecycle-workspace) .ws-record-card .species-id-pill {
+  border-radius:5px;
+  letter-spacing:.035em;
+}
+body:has(#lifecycle-workspace) .ws-panel [style*="grid-template-columns: 1.5fr 1fr 1fr"] {
+  grid-template-columns:minmax(180px,1.5fr) repeat(2,minmax(130px,1fr))!important;
+}
+body:has(#lifecycle-workspace) .ws-panel [style*="background:#FFF5ED"] {
+  color:#e8e2d8!important;
+  background:rgba(251,129,34,.09)!important;
+  border-color:rgba(251,129,34,.25)!important;
+}
+body:has(#lifecycle-workspace) .ws-panel [style*="background:#F8F9FA"] {
+  color:#e8e2d8!important;
+  background:#090909!important;
+  border-color:#34302b!important;
+}
+body:has(#lifecycle-workspace) .ws-banner {
+  padding:12px 15px;
+  border:1px solid rgba(251,129,34,.24);
+  background:rgba(251,129,34,.08);
+  color:#f4eee4;
+}
+body:has(#lifecycle-workspace) :is(button,a,input,select,textarea):focus-visible {
+  outline:2px solid #fb8122!important;
+  outline-offset:3px;
+}
+@media (max-width:1100px) {
+  body:has(#lifecycle-workspace) .workspace-topbar {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+@media (max-width:900px) {
+  body:has(#lifecycle-workspace) .container {
+    width:min(100% - 28px,1480px);
+  }
+  body:has(#lifecycle-workspace) .workspace-body { padding:18px; }
+  body:has(#lifecycle-workspace) .ws-auth-bar {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+@media (max-width:640px) {
+  body:has(#lifecycle-workspace) .section-header { padding-left:13px; }
+  body:has(#lifecycle-workspace) .section-title { font-size:2rem; }
+  body:has(#lifecycle-workspace) .workspace-topbar { padding:18px; }
+  body:has(#lifecycle-workspace) .workspace-topbar > div:last-child {
+    width:100%;
+    display:grid!important;
+    grid-template-columns:1fr;
+  }
+  body:has(#lifecycle-workspace) .ws-auth-bar { padding:14px 18px; }
+  body:has(#lifecycle-workspace) .ws-auth-bar > div:last-child {
+    width:100%;
+    display:grid!important;
+    grid-template-columns:1fr 1fr;
+  }
+  body:has(#lifecycle-workspace) .ws-auth-bar > div:last-child #ws-signout-btn {
+    grid-column:1/-1;
+  }
+  body:has(#lifecycle-workspace) .workspace-body { padding:13px; }
+  body:has(#lifecycle-workspace) .ws-form-card,
+  body:has(#lifecycle-workspace) .info-card { padding:16px!important; }
+  body:has(#lifecycle-workspace) .ws-panel [style*="grid-template-columns: 1.5fr 1fr 1fr"] {
+    grid-template-columns:1fr!important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  body:has(#lifecycle-workspace) *,
+  body:has(#lifecycle-workspace) *::before,
+  body:has(#lifecycle-workspace) *::after {
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
