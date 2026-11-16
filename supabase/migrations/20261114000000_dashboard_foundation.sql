@@ -10,7 +10,7 @@ create unique index if not exists animal_profiles_id_owner_uidx
 create table if not exists public.animal_identifiers (
   id uuid primary key default gen_random_uuid(),
   owner_id uuid not null references auth.users(id) on delete cascade,
-  animal_id text not null,
+  animal_id uuid not null,
   identifier_type text not null check (identifier_type in
     ('microchip','rfid','ear_tag','tattoo','brand','ring','qr','passport','research_id','biometric','other')),
   identifier_value text not null check (char_length(trim(identifier_value)) > 0),
@@ -47,7 +47,7 @@ create table if not exists public.animal_group_members (
   id uuid primary key default gen_random_uuid(),
   owner_id uuid not null references auth.users(id) on delete cascade,
   group_id uuid not null,
-  animal_id text not null,
+  animal_id uuid not null,
   joined_at timestamptz not null default now(),
   left_at timestamptz,
   notes text not null default '',
@@ -84,7 +84,7 @@ create table if not exists public.animal_locations (
 create table if not exists public.animal_location_history (
   id uuid primary key default gen_random_uuid(),
   owner_id uuid not null references auth.users(id) on delete cascade,
-  animal_id text not null,
+  animal_id uuid not null,
   from_location_id uuid,
   to_location_id uuid,
   moved_at timestamptz not null default now(),
@@ -104,7 +104,7 @@ create table if not exists public.animal_location_history (
 create table if not exists public.animal_timeline_events (
   id uuid primary key default gen_random_uuid(),
   owner_id uuid not null references auth.users(id) on delete cascade,
-  animal_id text not null,
+  animal_id uuid not null,
   event_type text not null,
   event_at timestamptz not null,
   title text not null check (char_length(trim(title)) > 0),
@@ -136,7 +136,7 @@ create table if not exists public.animal_custom_field_definitions (
 create table if not exists public.animal_custom_field_values (
   id uuid primary key default gen_random_uuid(),
   owner_id uuid not null references auth.users(id) on delete cascade,
-  animal_id text not null,
+  animal_id uuid not null,
   field_definition_id uuid not null,
   value jsonb not null,
   updated_at timestamptz not null default now(),
