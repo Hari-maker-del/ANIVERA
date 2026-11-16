@@ -1784,48 +1784,6 @@
     });
   }
 
-  var expireBtn = document.getElementById("auth-expire-btn");
-  if (expireBtn) {
-    expireBtn.addEventListener("click", function () {
-      if (!syncEngine) return;
-      var res = syncEngine.simulateExpiredSession();
-      refreshWorkspaceFromSync();
-      showWorkspaceBanner("Session Status (" + res.status + "): " + res.error);
-    });
-  }
-
-  var dbConfigForm = document.getElementById("ws-db-config-form");
-  if (dbConfigForm) {
-    dbConfigForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      if (!syncEngine) return;
-      var urlVal = document.getElementById("db-url-input").value.trim();
-      var anonVal = (document.getElementById("db-anon-key-input") || {}).value || "";
-      var statusSpan = document.getElementById("db-endpoint-status");
-      var probe = await syncEngine.probeSupabaseConnection(urlVal, anonVal);
-      if (statusSpan) statusSpan.textContent = probe.mode + " — " + probe.message;
-      showWorkspaceBanner(probe.message);
-    });
-  }
-
-  // 10-Step Persistence & RLS Verification Suite (Section 11.4)
-  function runTenStepPersistenceAudit() {
-    return { passed: false, log: ["Demo credential audit removed. Test with separate real Supabase accounts; RLS policies enforce tenant isolation."] };
-  }
-
-  var runRlsAuditBtn = document.getElementById("run-rls-audit-btn");
-  if (runRlsAuditBtn) {
-    runRlsAuditBtn.addEventListener("click", function () {
-      var res = runTenStepPersistenceAudit();
-      var pre = document.getElementById("rls-audit-output");
-      if (pre) {
-        pre.style.display = "block";
-        pre.textContent = res.log.join("\n") + "\nOVERALL VERDICT: " + (res.passed ? "10/10 PASSED" : "FAILED");
-      }
-      showWorkspaceBanner("Completed 10-Step Persistence & RLS Verification: " + (res.passed ? "10/10 Passed." : "Check output."));
-    });
-  }
-
   // ---------------------------------------------------------------------------
   // 7. Mobile Navigation Drawer
   // ---------------------------------------------------------------------------
