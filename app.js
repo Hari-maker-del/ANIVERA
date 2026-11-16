@@ -1764,9 +1764,9 @@
 
   var signOutBtn = document.getElementById("ws-signout-btn");
   if (signOutBtn) {
-    signOutBtn.addEventListener("click", function () {
+    signOutBtn.addEventListener("click", async function () {
       if (!syncEngine) return;
-      syncEngine.signOut();
+      await syncEngine.signOut();
       refreshWorkspaceFromSync();
       showWorkspaceBanner("Signed out. Private owner-scoped records are cleared from view until you sign in again.");
     });
@@ -1774,12 +1774,12 @@
 
   var authForm = document.getElementById("ws-auth-form");
   if (authForm) {
-    authForm.addEventListener("submit", function (e) {
+    authForm.addEventListener("submit", async function (e) {
       e.preventDefault();
       if (!syncEngine) return;
       var email = document.getElementById("auth-email-input").value.trim();
       var password = document.getElementById("auth-password-input").value;
-      var res = syncEngine.signIn({ email: email, password: password });
+      var res = await syncEngine.signIn({ email: email, password: password });
       if (!res.ok) {
         showWorkspaceBanner("Authentication Error (" + res.code + "): " + res.error);
         return;
@@ -1791,11 +1791,11 @@
 
   var signUpBtn = document.getElementById("auth-signup-btn");
   if (signUpBtn) {
-    signUpBtn.addEventListener("click", function () {
+    signUpBtn.addEventListener("click", async function () {
       if (!syncEngine) return;
       var email = document.getElementById("auth-email-input").value.trim();
       var password = document.getElementById("auth-password-input").value;
-      var res = syncEngine.signUp({ email: email, password: password });
+      var res = await syncEngine.signUp({ email: email, password: password });
       if (!res.ok) {
         showWorkspaceBanner("Sign-Up Error (" + res.code + "): " + res.error);
         return;
@@ -2471,13 +2471,13 @@
   // Sign In Form Submission
   var signinForm = document.getElementById("nav-signin-form");
   if (signinForm) {
-    signinForm.addEventListener("submit", function (e) {
+    signinForm.addEventListener("submit", async function (e) {
       e.preventDefault();
       var email = document.getElementById("nav-signin-email").value.trim();
       var pass = document.getElementById("nav-signin-password").value;
       var errEl = document.getElementById("signin-error-alert");
 
-      var res = window.AniveraCloudSync ? window.AniveraCloudSync.signIn({ email: email, password: pass }) : { ok: false, code: "NO_SYNC_ENGINE" };
+      var res = window.AniveraCloudSync ? await window.AniveraCloudSync.signIn({ email: email, password: pass }) : { ok: false, code: "NO_SYNC_ENGINE" };
       if (res.ok) {
         if (errEl) errEl.style.display = "none";
         closeSignInModal();
@@ -2496,7 +2496,7 @@
   // Sign Up Form Submission
   var signupForm = document.getElementById("nav-signup-form");
   if (signupForm) {
-    signupForm.addEventListener("submit", function (e) {
+    signupForm.addEventListener("submit", async function (e) {
       e.preventDefault();
       var name = document.getElementById("nav-signup-name").value.trim();
       var org = document.getElementById("nav-signup-org").value.trim();
@@ -2504,7 +2504,7 @@
       var pass = document.getElementById("nav-signup-password").value;
       var errEl = document.getElementById("signup-error-alert");
 
-      var res = window.AniveraCloudSync ? window.AniveraCloudSync.signUp({ fullName: name, organization: org, email: email, password: pass }) : { ok: false };
+      var res = window.AniveraCloudSync ? await window.AniveraCloudSync.signUp({ fullName: name, organization: org, email: email, password: pass }) : { ok: false };
       if (res.ok) {
         if (errEl) errEl.style.display = "none";
         closeSignUpModal();
