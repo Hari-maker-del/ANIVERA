@@ -475,14 +475,7 @@
           <div id="signin-error-alert" style="display:none; padding:8px 12px; margin-bottom:12px; border-radius:6px; background:rgba(235,87,87,0.15); border:1px solid #eb5757; color:#ff8080; font-size:0.8rem;"></div>
           <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Sign In &rarr;</button>
           
-          <div class="demo-account-hint">
-            <strong>Quick Demo Accounts:</strong><br/>
-            <span>Primary: <code>researcher@anivera.org</code></span>
-            <button type="button" class="demo-quick-btn" id="demo-fill-researcher">Fill Primary</button>
-            <br/>
-            <span>Secondary: <code>sanctuary@anivera.org</code></span>
-            <button type="button" class="demo-quick-btn" id="demo-fill-sanctuary">Fill Secondary</button>
-          </div>
+          <p class="auth-helper-text">Use the email address and password registered with your ANIVERA account. New users can create an account from the Sign Up option.</p>
         </form>
       </div>
     </div>
@@ -526,6 +519,7 @@
 
   <script id="anivera-species-data" type="application/json">__SPECIES_DATA_PLACEHOLDER__</script>
   <script src="animals-data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
   <script src="cloud-sync.js"></script>
   <script src="app.js?v=anivera-hero-slideshow-20261113"></script>
   <script src="loading-experience.js"></script>

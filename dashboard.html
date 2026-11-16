@@ -44,7 +44,7 @@
           <span class="section-eyebrow">ANIMAL OPERATIONS · WORKSPACE</span>
           <h1 id="heading-workspace" class="section-title">ANIVERA Animal Lifecycle Workspace &amp; Dashboard</h1>
           <p class="section-desc">
-            A single command centre for animal profiles, clinical history, daily care, and lifecycle milestones. Your current workspace mode and connection state are shown below.
+            A single command centre for animal profiles, clinical history, daily care, and lifecycle milestones. Sign in with your ANIVERA account to sync your workspace securely.
           </p>
         </div>
 
@@ -53,13 +53,13 @@
             <div>
               <h2 style="font-size:1.15rem; font-weight:800;">Lifecycle Operations Console</h2>
               <p id="ws-persistence-indicator" style="font-size:0.8rem; color:#E1E2E2;">
-                Workspace overview • Local data mode until cloud authentication is connected
+                Workspace overview • Sign in to load and save your private cloud workspace
               </p>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
               <button type="button" id="ws-snapshot-btn" class="btn btn-primary btn-sm">Save Snapshot</button>
               <button type="button" id="ws-export-json-btn" class="btn btn-outline btn-sm">Export Workspace JSON</button>
-              <button type="button" id="ws-reset-demo-btn" class="btn btn-outline btn-sm">Restore Demo Data</button>
+              <button type="button" id="ws-reset-demo-btn" class="btn btn-outline btn-sm">Reset Local View</button>
             </div>
           </div>
 
@@ -67,12 +67,12 @@
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
               <span class="status-dot" id="ws-auth-dot"></span>
               <span id="ws-auth-user-summary" style="font-size:0.85rem; font-weight:700; color:#1D2228;">
-                Workspace session status is loading…
+                Checking your ANIVERA cloud session…
               </span>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               <button type="button" id="ws-switch-user-btn" class="btn btn-outline btn-sm">
-                Switch Workspace User
+                Account Status
               </button>
               <button type="button" id="ws-open-auth-tab-btn" class="btn btn-outline btn-sm">
                 Auth &amp; Supabase Settings
@@ -390,20 +390,17 @@
               <div class="grid-2">
                 <div class="info-card">
                   <h3>Supabase Project &amp; Owner-Scoped RLS Architecture</h3>
-                  <p>ANIVERA's database foundation is provisioned. The browser workspace currently runs in local mode; real Supabase authentication and cloud record sync are not yet enabled.</p>
+                  <p>ANIVERA uses Supabase Auth and an owner-scoped cloud workspace snapshot. Sign in to access your private data across sessions.</p>
                   <ul class="info-list">
                     <li><strong>Project ID:</strong> <code>qbwulpofftxfddlykcxg</code></li>
                     <li><strong>Project URL:</strong> <code>https://qbwulpofftxfddlykcxg.supabase.co</code></li>
                     <li><strong>Relational Tables:</strong> <code>animal_profiles</code>, <code>health_records</code>, <code>care_tasks</code>, <code>lifecycle_events</code>, <code>workspace_snapshots</code>.</li>
-                    <li><strong>Connection Status:</strong> <span id="db-endpoint-status">Local workspace mode — Supabase cloud sync is not connected.</span>.</li>
+                    <li><strong>Connection Status:</strong> <span id="db-endpoint-status">Checking Supabase connection…</span>.</li>
                   </ul>
 
                   <div style="margin-top:14px; padding-top:14px; border-top:1px solid #E1E2E2;">
-                    <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:8px;">Local Demo Persistence Check</h4>
-                    <button type="button" id="run-rls-audit-btn" class="btn btn-primary btn-sm">
-                      Run Local Workspace Check
-                    </button>
-                    <pre id="rls-audit-output" style="margin-top:10px; padding:10px; background:#F8F9FA; border:1px solid #E1E2E2; border-radius:6px; font-size:0.74rem; white-space:pre-wrap; display:none;"></pre>
+                    <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:8px;">Data Isolation Verification</h4>
+                    <p>Workspace records are scoped by the signed-in account through Supabase Row Level Security. A full isolation test requires two separate real accounts; this dashboard does not simulate or claim that test has passed.</p>
                   </div>
                 </div>
 
@@ -421,22 +418,13 @@
                     <div style="display:flex; gap:8px; flex-wrap:wrap;">
                       <button type="submit" class="btn btn-primary btn-sm">Sign In</button>
                       <button type="button" id="auth-signup-btn" class="btn btn-charcoal btn-sm">Sign Up New User</button>
-                      <button type="button" id="auth-expire-btn" class="btn btn-outline btn-sm">Simulate Expired Session</button>
                     </div>
                   </form>
 
-                  <form id="ws-db-config-form" class="ws-form-card" novalidate>
-                    <h4 style="font-size:1rem; font-weight:800; margin-bottom:10px;">Supabase Cloud Endpoint Probe</h4>
-                    <div class="form-group">
-                      <label for="db-url-input">Supabase Project URL</label>
-                      <input type="url" id="db-url-input" class="input-field" value="https://qbwulpofftxfddlykcxg.supabase.co" />
-                    </div>
-                    <div class="form-group">
-                      <label for="db-anon-key-input">Public Browser Anon Key (Optional)</label>
-                      <input type="password" id="db-anon-key-input" class="input-field" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." />
-                    </div>
-                    <button type="submit" class="btn btn-charcoal btn-sm">Verify Supabase Connection</button>
-                  </form>
+                  <div class="ws-form-card">
+                    <h4 style="font-size:1rem; font-weight:800; margin-bottom:10px;">Cloud Configuration</h4>
+                    <p>ANIVERA connects to its configured Supabase project automatically. Public project configuration is managed by the application; never enter or share a service-role key in the browser.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -447,6 +435,7 @@
   </main>
 
   <script src="animals-data.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
   <script src="cloud-sync.js"></script>
   <script src="app.js"></script>
 </body>
