@@ -118,7 +118,7 @@
       snapshots: Array.isArray(nextWorkspace.snapshots) ? nextWorkspace.snapshots : []
     };
     var payload = JSON.parse(JSON.stringify(workspace));
-    saveQueue = saveQueue.then(async function () {
+    saveQueue = saveQueue.catch(function () {}).then(async function () {
       if (!session || session.user.id !== ownerId) throw new Error("Session changed before the workspace save completed.");
       var response = await client.from("workspace_snapshots").upsert({
         owner_id: ownerId,
