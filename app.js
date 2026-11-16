@@ -905,9 +905,9 @@
   };
   var activeDossierProfileId = null;
 
-  function refreshWorkspaceFromSync() {
+  async function refreshWorkspaceFromSync() {
     if (!syncEngine) return;
-    var res = syncEngine.getOwnerScopedWorkspace();
+    var res = await syncEngine.loadWorkspace();
     var authSummaryEl = document.getElementById("ws-auth-user-summary");
     var authDotEl = document.getElementById("ws-auth-dot");
     if (!res.ok) {
