@@ -1725,35 +1725,10 @@
   }
 
   var resetDemoBtn = document.getElementById("ws-reset-demo-btn");
-  if (resetDemoBtn) {
-    resetDemoBtn.addEventListener("click", function () {
-      if (syncEngine) {
-        syncEngine.resetSeedData();
-        refreshWorkspaceFromSync();
-      }
-      showWorkspaceBanner("Restored default verified ANIVERA seed data and primary session.");
-    });
-  }
+  if (resetDemoBtn) resetDemoBtn.addEventListener("click", function () { showWorkspaceBanner("Demo seed accounts and local demo data are disabled. Sign in with a real ANIVERA account."); });
 
   var switchUserBtn = document.getElementById("ws-switch-user-btn");
-  if (switchUserBtn) {
-    switchUserBtn.addEventListener("click", function () {
-      if (!syncEngine) return;
-      var current = syncEngine.getSession();
-      var currentEmail = current.session && current.session.user ? current.session.user.email : "";
-      if (currentEmail === "researcher@anivera.org") {
-        syncEngine.signIn({ email: "sanctuary@anivera.org", password: "Sanctuary#2026" });
-        refreshWorkspaceFromSync();
-        showWorkspaceBanner(
-          "Switched to Secondary User (sanctuary@anivera.org). Notice owner-scoped RLS isolation: Primary user's 6 records are hidden, and only Secondary user's sanctuary record (PRF-201) is visible."
-        );
-      } else {
-        syncEngine.signIn({ email: "researcher@anivera.org", password: "AniveraCare#2026" });
-        refreshWorkspaceFromSync();
-        showWorkspaceBanner("Switched to Primary Authorized User (researcher@anivera.org). Loaded 6 owner-scoped animal profiles.");
-      }
-    });
-  }
+  if (switchUserBtn) switchUserBtn.addEventListener("click", function () { showWorkspaceBanner("To switch accounts, sign out and sign in with another registered account."); });
 
   var openAuthTabBtn = document.getElementById("ws-open-auth-tab-btn");
   if (openAuthTabBtn) {
@@ -1831,93 +1806,7 @@
 
   // 10-Step Persistence & RLS Verification Suite (Section 11.4)
   function runTenStepPersistenceAudit() {
-    if (!syncEngine) return { passed: false, log: ["Sync engine unavailable"] };
-    var logs = [];
-
-    // Step 1: Sign in as authorized user
-    var s1 = syncEngine.signIn({ email: "researcher@anivera.org", password: "AniveraCare#2026" });
-    logs.push("1. Sign in as authorized user (researcher@anivera.org): " + (s1.ok ? "PASS" : "FAIL"));
-
-    // Step 2: Create an animal profile
-    var ws1 = syncEngine.getOwnerScopedWorkspace();
-    var testId = "PRF-AUDIT-999";
-    ws1.data.profiles = ws1.data.profiles.filter(function (p) { return p.id !== testId; });
-    ws1.data.profiles.unshift({
-      id: testId,
-      name: "Serengeti Cheetah #A9",
-      species: "Cheetah (Acinonyx jubatus)",
-      category: "Wild Mammals & Wildlife",
-      stage: "Adult",
-      tag: "VHF-TZ-999",
-      notes: "Created during 10-step persistence verification."
-    });
-    syncEngine.saveOwnerScopedWorkspace(ws1.data);
-    logs.push("2. Create animal profile (" + testId + "): PASS");
-
-    // Step 3 & 4: Reload state from storage and confirm profile remains
-    var wsReload1 = syncEngine.getOwnerScopedWorkspace();
-    var foundAfterCreate = wsReload1.data.profiles.find(function (p) { return p.id === testId; });
-    logs.push("3-4. Reload & confirm profile persists: " + (foundAfterCreate ? "PASS" : "FAIL"));
-
-    // Step 5: Edit the profile
-    wsReload1.data.profiles = wsReload1.data.profiles.map(function (p) {
-      return p.id === testId ? Object.assign({}, p, { stage: "Breeding / Conservation", notes: "Updated telemetry note" }) : p;
-    });
-    syncEngine.saveOwnerScopedWorkspace(wsReload1.data);
-    logs.push("5. Edit animal profile stage & notes: PASS");
-
-    // Step 6 & 7: Reload again and confirm update persists
-    var wsReload2 = syncEngine.getOwnerScopedWorkspace();
-    var foundAfterEdit = wsReload2.data.profiles.find(function (p) { return p.id === testId; });
-    var editPersisted = foundAfterEdit && foundAfterEdit.stage === "Breeding / Conservation";
-    logs.push("6-7. Reload & confirm edited profile update persists: " + (editPersisted ? "PASS" : "FAIL"));
-
-    // Step 8 & 9: Add a related health record and care task & confirm animal association
-    wsReload2.data.healthRecords.unshift({
-      id: "HLT-AUDIT-999",
-      animalId: testId,
-      type: "Clinical Examination",
-      date: "2026-10-22",
-      vet: "Dr. M. Ochieng",
-      treatment: "Telemetry collar check",
-      summary: "Healthy adult felid."
-    });
-    wsReload2.data.careTasks.unshift({
-      id: "TSK-AUDIT-999",
-      animalId: testId,
-      title: "Corridor Prey Density Survey",
-      frequency: "Weekly",
-      due: "2026-10-29",
-      priority: "High",
-      status: "Pending",
-      completed: false,
-      instructions: "Log Thomson gazelle herd counts."
-    });
-    syncEngine.saveOwnerScopedWorkspace(wsReload2.data);
-    var wsReload3 = syncEngine.getOwnerScopedWorkspace();
-    var linkedHealth = wsReload3.data.healthRecords.find(function (h) { return h.id === "HLT-AUDIT-999" && h.animalId === testId; });
-    var linkedTask = wsReload3.data.careTasks.find(function (t) { return t.id === "TSK-AUDIT-999" && t.animalId === testId; });
-    logs.push("8-9. Add related health record & care task and confirm animalId association: " + (linkedHealth && linkedTask ? "PASS" : "FAIL"));
-
-    // Step 10: Verify that an unauthorized / secondary user cannot access another user's private records
-    syncEngine.signIn({ email: "sanctuary@anivera.org", password: "Sanctuary#2026" });
-    var secondaryView = syncEngine.getOwnerScopedWorkspace();
-    var leaked = secondaryView.data.profiles.some(function (p) { return p.id === testId; });
-    var ownershipCheck = syncEngine.verifyRecordOwnership("animal_profiles", testId);
-    var rlsBlocked = !leaked && ownershipCheck.ok === false && ownershipCheck.code === "RLS_VIOLATION";
-    logs.push("10. Verify Secondary User cannot read/mutate Primary User's private record (RLS enforced): " + (rlsBlocked ? "PASS" : "FAIL"));
-
-    // Restore Primary User session and clean up temporary audit records so seed state stays clean
-    syncEngine.signIn({ email: "researcher@anivera.org", password: "AniveraCare#2026" });
-    var cleanWs = syncEngine.getOwnerScopedWorkspace();
-    cleanWs.data.profiles = cleanWs.data.profiles.filter(function (p) { return p.id !== testId; });
-    cleanWs.data.healthRecords = cleanWs.data.healthRecords.filter(function (h) { return h.id !== "HLT-AUDIT-999"; });
-    cleanWs.data.careTasks = cleanWs.data.careTasks.filter(function (t) { return t.id !== "TSK-AUDIT-999"; });
-    syncEngine.saveOwnerScopedWorkspace(cleanWs.data);
-    refreshWorkspaceFromSync();
-
-    var allPassed = logs.every(function (l) { return l.indexOf("PASS") !== -1; });
-    return { passed: allPassed, log: logs };
+    return { passed: false, log: ["Demo credential audit removed. Test with separate real Supabase accounts; RLS policies enforce tenant isolation."] };
   }
 
   var runRlsAuditBtn = document.getElementById("run-rls-audit-btn");
