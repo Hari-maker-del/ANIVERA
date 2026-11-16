@@ -1696,14 +1696,14 @@
   // Topbar & Auth Actions
   var snapshotBtn = document.getElementById("ws-snapshot-btn");
   if (snapshotBtn) {
-    snapshotBtn.addEventListener("click", function () {
+    snapshotBtn.addEventListener("click", async function () {
       if (!syncEngine) return;
-      var res = syncEngine.createSnapshot("Manual Workspace Checkpoint");
+      var res = await syncEngine.createSnapshot("Manual Workspace Checkpoint");
       if (res.ok) {
-        refreshWorkspaceFromSync();
-        showWorkspaceBanner("Saved workspace snapshot " + res.snapshot.id + " to workspace_snapshots.");
+        await refreshWorkspaceFromSync();
+        showWorkspaceBanner("Saved workspace snapshot " + res.snapshot.id + " to your private cloud workspace.");
       } else {
-        showWorkspaceBanner("Snapshot Error: " + res.error);
+        showWorkspaceBanner("Snapshot Error: " + (res.error || res.code || "Unable to save snapshot."));
       }
     });
   }
